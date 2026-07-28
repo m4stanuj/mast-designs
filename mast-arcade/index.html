@@ -1,0 +1,928 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M4ST // ARCADE</title>
+<meta name="description" content="M4ST — Anuj. Autonomous agent systems builder from Bareilly, India. 21 MCP servers, ₹0 inference. Retro arcade portfolio.">
+<meta name="theme-color" content="#0B0D21">
+<link rel="canonical" href="https://mast-arcade.vercel.app">
+<meta property="og:title" content="M4ST // ARCADE">
+<meta property="og:description" content="Autonomous agent systems builder. 21 MCP servers, ₹0 inference. From Bareilly, India.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mast-arcade.vercel.app">
+<meta property="og:image" content="https://mast-arcade.vercel.app/og-arcade.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="M4ST // ARCADE">
+<meta name="twitter:description" content="Autonomous agent systems builder. 21 MCP servers, ₹0 inference. From Bareilly, India.">
+<meta name="twitter:image" content="https://mast-arcade.vercel.app/og-arcade.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "M4ST — Anuj",
+  "jobTitle": "Autonomous Agent Systems Builder",
+  "homeLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Bareilly", "addressCountry": "IN" } },
+  "description": "Builder of production-grade autonomous agent systems. Creator of 21 MCP servers. Pioneer in cost-effective AI inference.",
+  "url": "https://mast-arcade.vercel.app",
+  "knowsAbout": ["Autonomous Agents", "MCP Servers", "AI Inference", "Agentic Systems"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+:root {
+  --neon-pink: #FF2D95;
+  --neon-cyan: #00FFF7;
+  --neon-yellow: #FFE600;
+  --neon-green: #39FF14;
+  --neon-orange: #FF6A00;
+  --dark-blue: #0B0D21;
+  --mid-blue: #141838;
+  --light-blue: #1E2460;
+  --pixel-white: #F0F0FF;
+  --pixel-gray: #8888AA;
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-terminal: 'VT323', monospace;
+  --font-body: 'Inter', sans-serif;
+  --border-pixel: 4px solid var(--neon-cyan);
+  --shadow-pink: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+  --shadow-cyan: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+}
+body {
+  font-family: var(--font-body);
+  background: var(--dark-blue);
+  color: var(--pixel-white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 8px;
+  z-index: 9999;
+  background: var(--neon-yellow);
+  color: var(--dark-blue);
+  font-family: var(--font-terminal);
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 8px; }
+#starfield {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+.scanlines {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0,0,0,0.08) 2px,
+    rgba(0,0,0,0.08) 4px
+  );
+}
+.coin-blink {
+  animation: coinBlink 0.15s ease-in-out;
+}
+@keyframes coinBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.hud {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(11,13,33,0.95);
+  border-bottom: 3px solid var(--neon-cyan);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  font-family: var(--font-terminal);
+  font-size: 1rem;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(0,255,247,0.3);
+}
+.hud-left, .hud-right { display: flex; align-items: center; gap: 16px; }
+.hud-score { color: var(--neon-yellow); }
+.hud-lives { color: var(--neon-pink); }
+.hud-level { color: var(--neon-cyan); }
+.hud-name {
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  color: var(--neon-green);
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.nav-toggle:hover { background: var(--neon-cyan); color: var(--dark-blue); }
+.nav-menu {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.nav-menu a {
+  color: var(--pixel-white);
+  text-decoration: none;
+  font-family: var(--font-terminal);
+  font-size: 1.1rem;
+  padding: 2px 8px;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+.nav-menu a:hover, .nav-menu a:focus {
+  color: var(--neon-yellow);
+  border-color: var(--neon-yellow);
+  outline: none;
+}
+main {
+  position: relative;
+  z-index: 2;
+  padding-top: 44px;
+}
+.level {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  position: relative;
+  border-bottom: 3px solid var(--light-blue);
+}
+.level-title {
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  color: var(--neon-pink);
+  text-shadow: var(--shadow-pink);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.level-subtitle {
+  font-family: var(--font-terminal);
+  font-size: 1.4rem;
+  color: var(--pixel-gray);
+  margin-bottom: 32px;
+  text-align: center;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+.mast-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(2rem, 10vw, 6rem);
+  color: var(--neon-cyan);
+  text-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan), 0 0 80px var(--neon-cyan);
+  line-height: 1.2;
+  margin-bottom: 8px;
+  animation: flicker 3s infinite;
+}
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.6; }
+}
+.mast-subtitle {
+  font-family: var(--font-terminal);
+  font-size: clamp(1rem, 3vw, 1.8rem);
+  color: var(--neon-yellow);
+  margin-bottom: 24px;
+  text-shadow: 0 0 10px var(--neon-yellow);
+}
+.mast-tagline {
+  font-family: var(--font-terminal);
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  color: var(--pixel-white);
+  margin-bottom: 8px;
+}
+.mast-location {
+  font-family: var(--font-terminal);
+  font-size: 1.3rem;
+  color: var(--pixel-gray);
+  margin-bottom: 32px;
+}
+.press-start {
+  font-family: var(--font-pixel);
+  font-size: clamp(0.6rem, 2vw, 0.9rem);
+  color: var(--neon-yellow);
+  background: transparent;
+  border: 4px solid var(--neon-yellow);
+  padding: 16px 32px;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.press-start:hover {
+  background: var(--neon-yellow);
+  color: var(--dark-blue);
+  box-shadow: 0 0 30px var(--neon-yellow);
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 5px var(--neon-yellow), 0 0 10px var(--neon-yellow); }
+  50% { box-shadow: 0 0 20px var(--neon-yellow), 0 0 40px var(--neon-yellow); }
+}
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1000px;
+}
+.char-card {
+  background: var(--mid-blue);
+  border: 3px solid var(--light-blue);
+  padding: 24px 16px;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+  cursor: default;
+}
+.char-card:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: var(--shadow-cyan);
+  transform: translateY(-4px);
+}
+.char-card.selected {
+  border-color: var(--neon-yellow);
+  box-shadow: 0 0 15px var(--neon-yellow);
+}
+.char-card .char-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  display: block;
+}
+.char-card h3 {
+  font-family: var(--font-pixel);
+  font-size: 0.55rem;
+  color: var(--neon-cyan);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.char-card p {
+  font-family: var(--font-terminal);
+  font-size: 1.1rem;
+  color: var(--pixel-gray);
+}
+.char-stat {
+  font-family: var(--font-terminal);
+  font-size: 1rem;
+  color: var(--neon-yellow);
+  margin-top: 8px;
+}
+.skills-container {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.skill-item {
+  background: var(--mid-blue);
+  border: 3px solid var(--light-blue);
+  padding: 16px 20px;
+  transition: all 0.3s;
+}
+.skill-item:hover {
+  border-color: var(--neon-pink);
+  box-shadow: var(--shadow-pink);
+}
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.skill-header h3 {
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  color: var(--pixel-white);
+}
+.skill-header span {
+  font-family: var(--font-terminal);
+  font-size: 1.2rem;
+  color: var(--neon-yellow);
+}
+.skill-bar-bg {
+  height: 16px;
+  background: var(--dark-blue);
+  border: 2px solid var(--light-blue);
+  position: relative;
+  overflow: hidden;
+}
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-cyan));
+  width: 0%;
+  transition: width 1s ease-out;
+  box-shadow: 0 0 8px var(--neon-pink);
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1000px;
+}
+.project-card {
+  background: var(--mid-blue);
+  border: 3px solid var(--light-blue);
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+  cursor: pointer;
+}
+.project-card::before {
+  content: "LEVEL " attr(data-level);
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  font-family: var(--font-pixel);
+  font-size: 0.45rem;
+  color: var(--neon-yellow);
+  background: var(--dark-blue);
+  padding: 2px 8px;
+  border: 2px solid var(--neon-yellow);
+}
+.project-card .level-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  display: block;
+}
+.project-card h3 {
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  color: var(--neon-cyan);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.project-card p {
+  font-family: var(--font-terminal);
+  font-size: 1.05rem;
+  color: var(--pixel-gray);
+  margin-bottom: 12px;
+}
+.project-card .project-stat {
+  font-family: var(--font-terminal);
+  font-size: 1rem;
+  color: var(--neon-green);
+}
+.project-card .project-stat .highlight {
+  color: var(--neon-yellow);
+}
+.project-card:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: var(--shadow-cyan);
+  transform: scale(1.02);
+}
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--neon-pink), var(--neon-cyan), var(--neon-yellow));
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+.timeline-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 32px;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-dot {
+  position: absolute;
+  left: 17px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+.timeline-dot.completed { background: var(--neon-green); border-color: var(--neon-green); box-shadow: 0 0 10px var(--neon-green); }
+.timeline-dot.current { background: var(--neon-yellow); border-color: var(--neon-yellow); box-shadow: 0 0 15px var(--neon-yellow); animation: pulse 1.5s infinite; }
+.timeline-year {
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  color: var(--neon-yellow);
+  margin-bottom: 4px;
+}
+.timeline-title {
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  color: var(--neon-cyan);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.timeline-desc {
+  font-family: var(--font-terminal);
+  font-size: 1.05rem;
+  color: var(--pixel-gray);
+}
+.contact-container {
+  text-align: center;
+  max-width: 600px;
+}
+.contact-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  color: var(--neon-pink);
+  text-shadow: var(--shadow-pink);
+  margin-bottom: 16px;
+}
+.contact-subtitle {
+  font-family: var(--font-terminal);
+  font-size: 1.8rem;
+  color: var(--neon-yellow);
+  margin-bottom: 32px;
+}
+.contact-link {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 0.55rem;
+  color: var(--neon-cyan);
+  text-decoration: none;
+  border: 3px solid var(--neon-cyan);
+  padding: 12px 24px;
+  margin: 8px;
+  transition: all 0.3s;
+}
+.contact-link:hover {
+  background: var(--neon-cyan);
+  color: var(--dark-blue);
+  box-shadow: var(--shadow-cyan);
+}
+.contact-meta {
+  font-family: var(--font-terminal);
+  font-size: 1.2rem;
+  color: var(--pixel-gray);
+  margin-top: 32px;
+}
+.stats-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 24px 0;
+}
+.stat-badge {
+  font-family: var(--font-pixel);
+  font-size: 0.45rem;
+  background: var(--mid-blue);
+  border: 2px solid var(--neon-pink);
+  color: var(--neon-pink);
+  padding: 8px 12px;
+  text-align: center;
+}
+.stat-badge .big {
+  font-size: 0.7rem;
+  display: block;
+  color: var(--neon-yellow);
+}
+.footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 24px 16px;
+  font-family: var(--font-terminal);
+  font-size: 1rem;
+  color: var(--pixel-gray);
+  border-top: 2px solid var(--light-blue);
+}
+.footer span { color: var(--neon-pink); }
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(11,13,33,0.98);
+    flex-direction: column;
+    padding: 16px;
+    border-bottom: 3px solid var(--neon-cyan);
+    gap: 12px;
+  }
+  .nav-menu.open { display: flex; }
+  .nav-menu a { font-size: 1.2rem; }
+  .hud-left, .hud-right { gap: 8px; }
+  .hud { font-size: 0.8rem; padding: 6px 10px; }
+  .timeline::before { left: 20px; }
+  .timeline-item { padding-left: 44px; }
+  .timeline-dot { left: 9px; }
+}
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 10px currentColor; }
+  50% { text-shadow: 0 0 25px currentColor, 0 0 50px currentColor; }
+}
+.glow-pulse { animation: glowPulse 2s infinite; }
+h2.level-title { margin-top: 16px; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#about">Skip to content</a>
+<div class="scanlines"></div>
+<canvas id="starfield"></canvas>
+<header class="hud" role="banner">
+  <div class="hud-left">
+    <span class="hud-score">SCORE: <span id="scoreDisplay">000000</span></span>
+    <span class="hud-lives">LIVES: <span id="livesDisplay">3</span></span>
+    <span class="hud-level">LV: <span id="levelDisplay">01</span></span>
+  </div>
+  <div class="hud-right">
+    <span class="hud-name">M4ST</span>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">MENU</button>
+    <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="level hero" id="hero" aria-label="Hero title screen">
+    <div class="hero-content">
+      <p class="level-title">ARCADE PRESENTS</p>
+      <h1 class="mast-title">M4ST</h1>
+      <p class="mast-subtitle" aria-label="Anuj">— Anuj —</p>
+      <p class="mast-tagline">AUTONOMOUS AGENT SYSTEMS BUILDER</p>
+      <p class="mast-location">Bareilly, India</p>
+      <div class="stats-row">
+        <span class="stat-badge"><span class="big">21</span> MCP SERVERS</span>
+        <span class="stat-badge"><span class="big">₹0</span> INFERENCE</span>
+        <span class="stat-badge"><span class="big">∞</span> AGENTS</span>
+      </div>
+      <a href="#about" class="press-start" id="pressStart">PRESS START</a>
+    </div>
+  </section>
+  <section class="level" id="about" aria-label="About character select">
+    <p class="level-title">CHARACTER SELECT</p>
+    <p class="level-subtitle">Choose your player</p>
+    <div class="character-grid">
+      <div class="char-card selected">
+        <span class="char-icon">👾</span>
+        <h3>M4ST — ANUJ</h3>
+        <p>Autonomous agent systems builder crafting production-grade AI architectures. Creator of 21 MCP servers connecting AI to real-world tools. From Bareilly, pushing the boundaries of what agents can do.</p>
+        <p class="char-stat">✦ SPECIALIST: AGENT SYSTEMS</p>
+      </div>
+      <div class="char-card">
+        <span class="char-icon">⚡</span>
+        <h3>THE ARCHITECT</h3>
+        <p>Designs multi-agent orchestration frameworks that scale. Focused on reliability, observability, and cost-effective inference — achieving ₹0 inference through clever architecture.</p>
+        <p class="char-stat">✦ SKILL: SYSTEM DESIGN</p>
+      </div>
+      <div class="char-card">
+        <span class="char-icon">🔧</span>
+        <h3>THE BUILDER</h3>
+        <p>Open-source contributor and framework creator. Builds tools that other developers use to create autonomous agents. Believes in practical, production-ready solutions.</p>
+        <p class="char-stat">✦ SKILL: OPEN SOURCE</p>
+      </div>
+    </div>
+  </section>
+  <section class="level" id="skills" aria-label="Skills power-ups">
+    <p class="level-title">POWER-UPS</p>
+    <p class="level-subtitle">Ability stats</p>
+    <div class="skills-container">
+      <div class="skill-item" data-skill="95">
+        <div class="skill-header">
+          <h3>MCP ARCHITECTURE</h3>
+          <span>95%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-item" data-skill="90">
+        <div class="skill-header">
+          <h3>AGENT SYSTEMS</h3>
+          <span>90%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-item" data-skill="85">
+        <div class="skill-header">
+          <h3>FULL-STACK AI</h3>
+          <span>85%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-item" data-skill="80">
+        <div class="skill-header">
+          <h3>SYSTEM DESIGN</h3>
+          <span>80%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-item" data-skill="75">
+        <div class="skill-header">
+          <h3>OPEN SOURCE</h3>
+          <span>75%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-item" data-skill="70">
+        <div class="skill-header">
+          <h3>AI INFERENCE</h3>
+          <span>70%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="level" id="projects" aria-label="Projects level select">
+    <p class="level-title">LEVEL SELECT</p>
+    <p class="level-subtitle">Choose a level to explore</p>
+    <div class="projects-grid">
+      <div class="project-card" data-level="1">
+        <span class="level-icon">🌐</span>
+        <h3>OpenWork MCP Ecosystem</h3>
+        <p>Architected and built 21 MCP servers connecting AI agents to Google Workspace, databases, APIs, and custom tools. Production-grade agent-tool integration layer.</p>
+        <p class="project-stat">21 SERVERS <span class="highlight">✦ COMPLETED</span></p>
+      </div>
+      <div class="project-card" data-level="2">
+        <span class="level-icon">⚙️</span>
+        <h3>OpenCode Framework</h3>
+        <p>AI-powered coding assistant framework enabling autonomous code generation, refactoring, and debugging. Used by developers building agentic workflows.</p>
+        <p class="project-stat">OPEN SOURCE <span class="highlight">✦ COMPLETED</span></p>
+      </div>
+      <div class="project-card" data-level="3">
+        <span class="level-icon">🤖</span>
+        <h3>AgentForge</h3>
+        <p>Multi-agent orchestration platform for coordinating swarms of autonomous agents. Features dynamic task allocation, memory systems, and tool routing.</p>
+        <p class="project-stat">ORCHESTRATION <span class="highlight">✦ COMPLETED</span></p>
+      </div>
+      <div class="project-card" data-level="4">
+        <span class="level-icon">💰</span>
+        <h3>₹0 Inference Engine</h3>
+        <p>Cost-effective AI inference architecture achieving zero-cost inference through intelligent caching, model routing, and speculative execution techniques.</p>
+        <p class="project-stat">₹0 PER TOKEN <span class="highlight">✦ COMPLETED</span></p>
+      </div>
+    </div>
+  </section>
+  <section class="level" id="timeline" aria-label="Timeline story mode">
+    <p class="level-title">STORY MODE</p>
+    <p class="level-subtitle">Progression log</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot completed"></div>
+        <p class="timeline-year">2023</p>
+        <p class="timeline-title">BEGINNING THE QUEST</p>
+        <p class="timeline-desc">Started building autonomous agent systems. Explored AI orchestration, tool-use patterns, and multi-agent communication protocols.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot completed"></div>
+        <p class="timeline-year">EARLY 2024</p>
+        <p class="timeline-title">FIRST MCP SERVERS</p>
+        <p class="timeline-desc">Launched first set of MCP servers connecting AI to real-world tools. Established patterns for reliable agent-tool integration.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot completed"></div>
+        <p class="timeline-year">MID 2024</p>
+        <p class="timeline-title">OPENCODE RELEASED</p>
+        <p class="timeline-desc">Released OpenCode framework — an AI-powered coding assistant. Open-sourced to help developers build agentic workflows.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot completed"></div>
+        <p class="timeline-year">LATE 2024</p>
+        <p class="timeline-title">21 MCP MILESTONE</p>
+        <p class="timeline-desc">Reached 21 production-grade MCP servers. Established a comprehensive ecosystem for agent-tool integration across domains.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot completed"></div>
+        <p class="timeline-year">2025</p>
+        <p class="timeline-title">₹0 INFERENCE BREAKTHROUGH</p>
+        <p class="timeline-desc">Achieved cost-effective AI inference at ₹0 through architectural innovation — intelligent caching, model routing, and speculative execution.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot current"></div>
+        <p class="timeline-year">2026</p>
+        <p class="timeline-title">CURRENT LEVEL</p>
+        <p class="timeline-desc">Building the next generation of autonomous agent systems. Pushing boundaries in multi-agent coordination, tool-use reliability, and cost-effective inference.</p>
+      </div>
+    </div>
+  </section>
+  <section class="level" id="contact" aria-label="Contact game over screen">
+    <div class="contact-container">
+      <p class="level-title">GAME OVER?</p>
+      <p class="contact-title glitch" data-text="CONTINUE?">CONTINUE?</p>
+      <p class="contact-subtitle">Insert coin to continue</p>
+      <div>
+        <a href="mailto:anuj@mast.xyz" class="contact-link" data-coin>📧 EMAIL</a>
+        <a href="https://github.com/m4stanuj" class="contact-link" target="_blank" rel="noopener noreferrer" data-coin>🐙 GITHUB</a>
+        <a href="https://x.com/m4stanuj" class="contact-link" target="_blank" rel="noopener noreferrer" data-coin>🐦 X</a>
+        <a href="https://linkedin.com/in/m4stanuj" class="contact-link" target="_blank" rel="noopener noreferrer" data-coin>💼 LINKEDIN</a>
+      </div>
+      <p class="contact-meta">M4ST — Anuj · Bareilly, India · Autonomous Agent Systems</p>
+      <p class="contact-meta" style="margin-top: 8px; color: var(--neon-green);">✦ CREDITS: ∞ COINS INSERTED ✦</p>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <p>&copy; 2026 <span>M4ST</span> // ARCADE. All rights reserved. Built with <span>❤</span> from Bareilly.</p>
+  <p style="font-size: 0.8rem; margin-top: 4px; color: var(--pixel-gray);">INSERT COIN TO CONTINUE</p>
+</footer>
+<script>
+(function() {
+  // Starfield canvas
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  let W, H;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  for (let i = 0; i < 200; i++) {
+    stars.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      z: Math.random() * 3 + 0.5,
+      size: Math.random() * 2 + 0.5,
+      speed: Math.random() * 0.3 + 0.05,
+      alpha: Math.random() * 0.8 + 0.2
+    });
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, W, H);
+    for (const s of stars) {
+      s.y -= s.speed;
+      if (s.y < -2) { s.y = H + 2; s.x = Math.random() * W; }
+      const glow = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.size * 4);
+      const hue = Math.random() > 0.6 ? 190 : 280;
+      glow.addColorStop(0, `hsla(${hue}, 100%, 70%, ${s.alpha})`);
+      glow.addColorStop(1, `hsla(${hue}, 100%, 70%, 0)`);
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.size * 4, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    requestAnimationFrame(drawStars);
+  }
+  drawStars();
+
+  // Audio beep
+  let audioCtx = null;
+
+  function initAudio() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  }
+
+  function playCoin() {
+    try {
+      initAudio();
+      const o = audioCtx.createOscillator();
+      const g = audioCtx.createGain();
+      o.connect(g);
+      g.connect(audioCtx.destination);
+      o.type = 'square';
+      o.frequency.setValueAtTime(880, audioCtx.currentTime);
+      o.frequency.setValueAtTime(1100, audioCtx.currentTime + 0.04);
+      o.frequency.setValueAtTime(660, audioCtx.currentTime + 0.08);
+      g.gain.setValueAtTime(0.12, audioCtx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.2);
+      o.start(audioCtx.currentTime);
+      o.stop(audioCtx.currentTime + 0.2);
+    } catch (_) {}
+  }
+
+  document.addEventListener('mouseover', function(e) {
+    const target = e.target.closest('[data-coin], a, button, .project-card, .char-card, .stat-badge');
+    if (target) {
+      playCoin();
+      target.classList.add('coin-blink');
+      setTimeout(function() { target.classList.remove('coin-blink'); }, 200);
+    }
+  });
+
+  // Skill bar animation on scroll
+  const skillItems = document.querySelectorAll('.skill-item');
+
+  function animateSkills() {
+    for (const item of skillItems) {
+      const rect = item.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight - 50 && rect.bottom > 0;
+      if (isVisible) {
+        const fill = item.querySelector('.skill-bar-fill');
+        const pct = item.dataset.skill;
+        if (fill && !fill.dataset.animated) {
+          fill.dataset.animated = 'true';
+          fill.style.width = pct + '%';
+        }
+      }
+    }
+  }
+  window.addEventListener('scroll', animateSkills);
+  window.addEventListener('load', function() {
+    setTimeout(animateSkills, 300);
+  });
+
+  // Mobile menu
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  navToggle.addEventListener('click', function() {
+    const open = navMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+
+  document.querySelectorAll('.nav-menu a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Score increment on scroll
+  let score = 0;
+  const scoreDisplay = document.getElementById('scoreDisplay');
+  const livesDisplay = document.getElementById('livesDisplay');
+  const levelDisplay = document.getElementById('levelDisplay');
+  let level = 1;
+
+  function updateHUD() {
+    score += Math.floor(Math.random() * 10) + 1;
+    scoreDisplay.textContent = String(score).padStart(6, '0');
+    levelDisplay.textContent = String(level).padStart(2, '0');
+  }
+
+  const sectionIds = ['hero', 'about', 'skills', 'projects', 'timeline', 'contact'];
+  let currentSection = 0;
+
+  function onScroll() {
+    for (let i = 0; i < sectionIds.length; i++) {
+      const el = document.getElementById(sectionIds[i]);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
+          if (i + 1 !== level) {
+            level = i + 1;
+            updateHUD();
+            if (score > 0 && Math.random() > 0.5) {
+              let lives = parseInt(livesDisplay.textContent);
+              if (lives < 9) livesDisplay.textContent = lives + 1;
+            }
+          }
+          break;
+        }
+      }
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  // Press Start scroll
+  document.getElementById('pressStart').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>

@@ -349,5 +349,10 @@ const navLinks=document.querySelectorAll('.nav-links a');
 const sections=document.querySelectorAll('section[id]');
 if(navLinks.length&&sections.length){const navObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.getAttribute('id');navLinks.forEach(a=>{a.removeAttribute('aria-current');if(a.getAttribute('href')==='#'+id)a.setAttribute('aria-current','true')})}})},{rootMargin:'-40% 0px -55% 0px'});sections.forEach(s=>navObs.observe(s))}
 </script>
+
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
+

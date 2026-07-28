@@ -3,6 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://m4st-premium.vercel.app/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%2307090e'/><text y='.9em' font-size='80' x='10' fill='%2300ff9d' font-family='monospace' font-weight='bold'>M</text></svg>">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://m4st-premium.vercel.app/">
+<meta property="og:image" content="https://m4st.vercel.app/og-m4st.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@m4stanuj">
+<meta name="twitter:image" content="https://m4st.vercel.app/og-m4st.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Anuj","alternateName":"M4ST","jobTitle":"AI Developer & Orchestrator","url":"https://m4st-premium.vercel.app/","email":"m4stanuj@gmail.com","sameAs":["https://github.com/m4stanuj","https://linkedin.com/in/mast-anuj","https://x.com/m4stanuj"],"knowsAbout":["Multi-Agent Systems","MCP Protocol","LangGraph","AI Orchestration","Python"]}
+</script>
 <title>M4ST | Anuj — AI Developer & Orchestrator</title>
 <meta name="description" content="M4ST (Anuj) — AI Developer & Orchestrator from Bareilly, India. Multi-agent orchestration, MCP protocol, zero-cost local agentic infrastructure.">
 <meta property="og:title" content="M4ST | Anuj — AI Developer & Orchestrator">
@@ -221,5 +235,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 </div>
 </div></footer>
 <script>var t=document.getElementById('themeToggle'),h=document.documentElement;var th=localStorage.getItem('m4st-theme')||'dark';h.setAttribute('data-theme',th);t.addEventListener('click',function(){var c=h.getAttribute('data-theme'),n=c==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('m4st-theme',n)});var p=document.getElementById('scrollProgress');window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;p.style.width=(s/d)*100+'%'});var n=document.getElementById('navbar');window.addEventListener('scroll',function(){n.classList.toggle('scrolled',window.scrollY>50)});var b=document.getElementById('hamburger'),l=document.getElementById('navLinks');b.addEventListener('click',function(){l.classList.toggle('active');b.classList.toggle('active')});document.querySelectorAll('.nav-link').forEach(function(x){x.addEventListener('click',function(){l.classList.remove('active');b.classList.remove('active')})});var c=document.getElementById('contactForm');if(c){c.addEventListener('submit',function(e){e.preventDefault();var b=c.querySelector('.form-submit');b.innerHTML='<i data-lucide="check"></i> Message Sent';b.disabled=true;lucide.createIcons();setTimeout(function(){b.innerHTML='<i data-lucide="send"></i> Send Message';b.disabled=false;c.reset();lucide.createIcons()},3000)})}var s=document.getElementById('agentCount'),x=document.getElementById('taskComplexity'),sv=document.getElementById('agentCountValue'),xv=document.getElementById('taskComplexityValue');if(s){s.addEventListener('input',function(){sv.textContent=s.value})}if(x){x.addEventListener('input',function(){xv.textContent=x.value})}var w=window;document.addEventListener('mousemove',function(e){w.mouseX=(e.clientX/w.innerWidth)*2-1;w.mouseY=-(e.clientY/w.innerHeight)*2+1});function init3D(){if(typeof THREE==='undefined')return;var container=document.getElementById('hero')||document.body;var s=new THREE.Scene(),c=new THREE.PerspectiveCamera(75,w.innerWidth/w.innerHeight,0.1,2000);c.position.z=400;var r=new THREE.WebGLRenderer({alpha:true,antialias:true});r.setSize(w.innerWidth,w.innerHeight);r.setPixelRatio(Math.min(w.devicePixelRatio,2));r.setClearColor(0,0);container.insertBefore(r.domElement,container.firstChild);r.domElement.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none';var g=new THREE.BufferGeometry(),cnt=3000,pos=new Float32Array(cnt*3);for(var i=0;i<cnt;i++){var rad=50+Math.random()*350,a=Math.random()*Math.PI*2,sp=a+rad*0.02;pos[i*3]=Math.cos(sp)*rad;pos[i*3+1]=(Math.random()-.5)*100;pos[i*3+2]=Math.sin(sp)*rad}g.setAttribute('position',new THREE.BufferAttribute(pos,3));var mat=new THREE.PointsMaterial({size:1.5,color:0x00ff9d,transparent:true,opacity:.6,blending:THREE.AdditiveBlending,depthWrite:false});var gal=new THREE.Points(g,mat);s.add(gal);[[50,20,-150,30,8],[30,30,-200,25,6],[40,-40,-250,20,4],[50,50,-100,15,3]].forEach(function(p){var gk=new THREE.TorusKnotGeometry(p[3],p[4],64,8,6,3);var mk=new THREE.MeshBasicMaterial({color:0x00ff9d,wireframe:true,transparent:true,opacity:.1});var k=new THREE.Mesh(gk,mk);k.position.set(p[0],p[1],p[2]);s.add(k)});var ico=new THREE.Mesh(new THREE.IcosahedronGeometry(25,0),new THREE.MeshBasicMaterial({color:0x00ff9d,wireframe:true,transparent:true,opacity:.06}));ico.position.set(-120,80,-250);s.add(ico);(function animate(){requestAnimationFrame(animate);if(gal){gal.rotation.y+=.0005;gal.rotation.x+=.0002}s.children.forEach(function(o){if(o.isMesh&&o.geometry.type==='TorusKnotGeometry'){o.rotation.x+=.002;o.rotation.y+=.003}});if(ico){ico.rotation.x+=.003;ico.rotation.y+=.005}if(w.mouseX!==undefined){c.position.x+=(w.mouseX*20-c.position.x)*.01;c.position.y+=(-w.mouseY*20-c.position.y)*.01;c.lookAt(s.position)}r.render(s,c)})()}lucide.createIcons();if(typeof THREE!=='undefined')init3D();setTimeout(function(){document.getElementById('loader').classList.add('loader-hidden')},1500);</script>
+
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
+
+

@@ -1,493 +1,1294 @@
-﻿<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M4ST — AI Automation & Agent Systems Developer</title>
-  <meta name="description" content="M4ST - Building autonomous AI agent systems, custom MCP servers, and zero-cost local inference pipelines. Available for freelance AI projects.">
-  <meta name="theme-color" content="#07090e">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anuj · AI Architect & Systems Builder | mast-anuj-site</title>
+<meta name="description" content="Anuj (M4ST) — AI systems builder from Bareilly, India. Liquid glass portfolio with Bento grid design. 21 MCP servers, autonomous agents, zero-cost AI stack.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://mast-anuj-site.vercel.app/">
+<meta property="og:title" content="Anuj · AI Architect & Systems Builder">
+<meta property="og:description" content="Liquid glass bento portfolio. 21 MCP servers, autonomous AI agents, zero-cost infrastructure. Anuj from Bareilly, India.">
+<meta property="og:image" content="https://m4st.vercel.app/og-m4st.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://mast-anuj-site.vercel.app/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@m4stanuj">
+<meta name="twitter:image" content="https://m4st.vercel.app/og-m4st.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0a14'/><circle cx='50' cy='50' r='35' fill='none' stroke='url(%23g)' stroke-width='3'/><text y='.88em' font-size='44' x='24' fill='white' font-family='system-ui' font-weight='700'>A</text><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%23a78bfa'/><stop offset='100%25' stop-color='%2334d399'/></linearGradient></defs></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Anuj","alternateName":"M4ST","jobTitle":"AI Automation & Agent Systems Developer","url":"https://mast-anuj-site.vercel.app/","email":"m4stanuj@gmail.com","sameAs":["https://github.com/m4stanuj","https://linkedin.com/in/mast-anuj","https://x.com/m4stanuj"],"knowsAbout":["Multi-Agent Systems","MCP Protocol","LangGraph","AI Orchestration","Python","Automation"]}
+{"@context":"https://schema.org","@type":"Person","name":"Anuj","alternateName":"M4ST","jobTitle":"AI Architect & Systems Builder","url":"https://mast-anuj-site.vercel.app/","email":"m4stanuj@gmail.com","image":"https://m4st.vercel.app/og-m4st.png","sameAs":["https://github.com/m4stanuj","https://linkedin.com/in/mast-anuj","https://x.com/m4stanuj"],"knowsAbout":["Multi-Agent Systems","MCP Protocol","LangGraph","CrewAI","ChromaDB","Python","Autonomous AI","OSINT"],"offers":{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI Agent System Architecture"},"availability":"https://schema.org/InStock","areaServed":"Worldwide"}}
 </script>
-  
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="M4ST — AI Automation & Agent Systems Developer">
-  <meta property="og:description" content="Building autonomous AI agent systems, custom MCP servers, and zero-cost local inference pipelines.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://mast-anuj-6g2j39yen-m4stanujs-projects.vercel.app/og-image.png">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="M4ST — AI Automation & Agent Systems Developer">
-  <meta name="twitter:description" content="Building autonomous AI agent systems, custom MCP servers, and zero-cost local inference pipelines.">
+<style>
+/* =========================================
+   RESET & DESIGN TOKENS
+   ========================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* Base */
+  --bg:#06060f;
+  --bg2:#0a0a18;
+  /* Glass */
+  --glass-bg:rgba(255,255,255,0.05);
+  --glass-bg2:rgba(255,255,255,0.08);
+  --glass-border:rgba(255,255,255,0.12);
+  --glass-border2:rgba(255,255,255,0.18);
+  --glass-shine:rgba(255,255,255,0.06);
+  /* Colors */
+  --purple:#7c3aed;
+  --violet:#a78bfa;
+  --violet2:#c4b5fd;
+  --violet3:#ddd6fe;
+  --emerald:#10b981;
+  --emerald2:#34d399;
+  --sky:#0ea5e9;
+  --sky2:#38bdf8;
+  --rose:#f43f5e;
+  --amber:#f59e0b;
+  --amber2:#fbbf24;
+  /* Text */
+  --text:#f1f5f9;
+  --text2:rgba(241,245,249,0.7);
+  --text3:rgba(241,245,249,0.45);
+  --text4:rgba(241,245,249,0.25);
+  /* Fonts */
+  --sans:'Inter',system-ui,sans-serif;
+  --serif:'Instrument Serif',Georgia,serif;
+  --mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  min-height:100vh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+}
+a{color:inherit;text-decoration:none}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--violet);border-radius:2px}
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <!-- Three.js for 3D -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r165/three.min.js"></script>
-  
-  <link rel="stylesheet" href="styles.css">
+/* =========================================
+   GLOBAL BG — ORBS + MESH
+   ========================================= */
+.global-bg{
+  position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+}
+.orb{
+  position:absolute;border-radius:50%;
+  filter:blur(100px);
+  animation:orbFloat ease-in-out infinite alternate;
+}
+.orb1{width:600px;height:600px;background:rgba(124,58,237,0.18);top:-150px;left:-100px;animation-duration:20s}
+.orb2{width:500px;height:500px;background:rgba(16,185,129,0.12);bottom:-100px;right:-80px;animation-duration:25s;animation-delay:-10s}
+.orb3{width:350px;height:350px;background:rgba(14,165,233,0.1);top:40%;right:20%;animation-duration:18s;animation-delay:-5s}
+.orb4{width:250px;height:250px;background:rgba(244,63,94,0.06);bottom:20%;left:15%;animation-duration:30s;animation-delay:-15s}
+@keyframes orbFloat{from{transform:translate(0,0) scale(1)}to{transform:translate(20px,20px) scale(1.06)}}
+
+/* Subtle grid */
+.bg-grid{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+
+/* =========================================
+   LIQUID GLASS UTILITY
+   ========================================= */
+.glass{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(20px) saturate(150%);
+  -webkit-backdrop-filter:blur(20px) saturate(150%);
+  position:relative;
+  overflow:hidden;
+}
+.glass::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);
+  pointer-events:none;
+}
+/* Left edge shine */
+.glass::after{
+  content:'';
+  position:absolute;
+  top:0;left:0;bottom:0;
+  width:1px;
+  background:linear-gradient(to bottom,rgba(255,255,255,0.15),transparent,rgba(255,255,255,0.08));
+  pointer-events:none;
+}
+.glass-hover{transition:all 0.4s cubic-bezier(0.23,1,0.32,1)}
+.glass-hover:hover{
+  background:var(--glass-bg2);
+  border-color:var(--glass-border2);
+  transform:translateY(-3px) scale(1.01);
+  box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.06) inset;
+}
+
+/* =========================================
+   NAV
+   ========================================= */
+nav{
+  position:fixed;top:1.2rem;left:50%;
+  transform:translateX(-50%);
+  z-index:500;
+  display:flex;align-items:center;
+  gap:0;
+  padding:0.5rem 0.5rem 0.5rem 1.2rem;
+  border-radius:100px;
+  width:min(750px,calc(100vw - 2rem));
+  background:rgba(10,10,24,0.7);
+  backdrop-filter:blur(28px) saturate(180%);
+  border:1px solid var(--glass-border);
+  box-shadow:0 8px 32px rgba(0,0,0,0.5);
+}
+.nav-logo{
+  font-weight:800;font-size:1rem;
+  background:linear-gradient(135deg,var(--violet),var(--emerald2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-right:1.5rem;
+  white-space:nowrap;
+}
+.nav-links{
+  display:flex;gap:0;list-style:none;flex:1;
+  justify-content:center;
+}
+.nav-links a{
+  font-size:0.8rem;font-weight:500;color:var(--text3);
+  padding:0.45rem 0.9rem;border-radius:100px;
+  transition:all 0.2s;white-space:nowrap;
+}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.06)}
+.nav-pill{
+  font-size:0.78rem;font-weight:600;
+  padding:0.6rem 1.4rem;border-radius:100px;
+  background:linear-gradient(135deg,var(--purple),var(--violet));
+  color:white;
+  white-space:nowrap;
+  box-shadow:0 4px 16px rgba(124,58,237,0.4);
+  transition:all 0.2s;
+}
+.nav-pill:hover{transform:scale(1.03);box-shadow:0 6px 24px rgba(124,58,237,0.5)}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  position:relative;z-index:1;
+  padding:8rem 2rem 4rem;
+  text-align:center;
+}
+
+/* HERO GLASS CARD */
+.hero-card{
+  border-radius:28px;
+  padding:4rem 3.5rem;
+  max-width:820px;
+  width:100%;
+}
+.hero-available{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:rgba(16,185,129,0.1);
+  border:1px solid rgba(16,185,129,0.25);
+  padding:0.4rem 1rem;
+  border-radius:100px;
+  font-size:0.72rem;font-weight:500;
+  color:var(--emerald2);
+  margin-bottom:2.5rem;
+}
+.avail-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--emerald2);
+  animation:pulse 2s ease infinite;
+  box-shadow:0 0 6px rgba(52,211,153,0.6);
+}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.5);opacity:0.6}}
+
+.hero-name{
+  font-family:var(--serif);
+  font-size:clamp(3.5rem,10vw,7rem);
+  font-weight:400;font-style:italic;
+  line-height:1;
+  background:linear-gradient(135deg,var(--text) 30%,var(--violet2) 70%,var(--emerald2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:0.75rem;
+  letter-spacing:-0.02em;
+}
+.hero-role{
+  font-size:clamp(0.85rem,2.5vw,1.1rem);
+  font-weight:400;color:var(--text3);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  margin-bottom:2rem;
+}
+
+.hero-chips{
+  display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;
+  margin-bottom:2.5rem;
+}
+.hchip{
+  font-size:0.75rem;font-weight:500;
+  padding:0.4rem 1rem;border-radius:100px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  color:var(--text2);
+  transition:all 0.2s;
+}
+.hchip:hover{background:rgba(124,58,237,0.1);border-color:rgba(167,139,250,0.3);color:var(--violet2)}
+.hchip.p{background:rgba(124,58,237,0.1);border-color:rgba(167,139,250,0.25);color:var(--violet2)}
+.hchip.e{background:rgba(16,185,129,0.08);border-color:rgba(52,211,153,0.2);color:var(--emerald2)}
+.hchip.s{background:rgba(14,165,233,0.08);border-color:rgba(56,189,248,0.2);color:var(--sky2)}
+
+.hero-p{
+  font-size:1rem;font-weight:300;
+  color:var(--text2);line-height:1.8;
+  max-width:600px;margin:0 auto 3rem;
+}
+.hero-p strong{color:var(--violet3);font-weight:500}
+
+.hero-ctas{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap}
+.btn-main{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  padding:0.85rem 2rem;border-radius:100px;
+  background:linear-gradient(135deg,var(--purple),var(--violet));
+  color:white;font-weight:600;font-size:0.9rem;
+  box-shadow:0 4px 24px rgba(124,58,237,0.4);
+  transition:all 0.3s;
+}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,0.6)}
+.btn-sec{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  padding:0.85rem 2rem;border-radius:100px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.12);
+  color:var(--text);font-weight:400;font-size:0.9rem;
+  transition:all 0.3s;
+}
+.btn-sec:hover{background:rgba(255,255,255,0.09);border-color:rgba(255,255,255,0.2);transform:translateY(-2px)}
+
+/* =========================================
+   BENTO GRID
+   ========================================= */
+.bento-section{
+  position:relative;z-index:1;
+  padding:3rem 1.5rem 6rem;
+  max-width:1280px;
+  margin:0 auto;
+}
+.bento-label{
+  text-align:center;margin-bottom:1rem;
+  font-size:0.68rem;font-weight:500;
+  letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--text4);
+}
+.bento-title{
+  text-align:center;margin-bottom:3rem;
+  font-size:clamp(1.8rem,5vw,3rem);
+  font-weight:800;letter-spacing:-0.03em;
+}
+.bento-title .g{
+  background:linear-gradient(135deg,var(--violet),var(--emerald2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+.bento-grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:minmax(80px,auto);
+  gap:1rem;
+}
+
+/* BENTO CARD BASE */
+.bc{
+  border-radius:20px;
+  padding:2rem;
+  position:relative;
+  overflow:hidden;
+  transition:all 0.4s cubic-bezier(0.23,1,0.32,1);
+}
+.bc:hover{
+  transform:translateY(-4px) scale(1.01);
+  box-shadow:0 24px 60px rgba(0,0,0,0.5);
+}
+
+/* Grid placements */
+.bc-identity{grid-column:span 4;grid-row:span 3}
+.bc-stack{grid-column:span 4;grid-row:span 3}
+.bc-mission{grid-column:span 4;grid-row:span 2}
+.bc-metrics{grid-column:span 4;grid-row:span 1}
+.bc-flagship{grid-column:span 8;grid-row:span 3}
+.bc-agents{grid-column:span 4;grid-row:span 2}
+.bc-memory{grid-column:span 4;grid-row:span 2}
+.bc-osint{grid-column:span 4;grid-row:span 2}
+.bc-location{grid-column:span 3;grid-row:span 2}
+.bc-github{grid-column:span 3;grid-row:span 2}
+.bc-contact{grid-column:span 6;grid-row:span 2}
+.bc-services{grid-column:span 4;grid-row:span 3}
+.bc-quote{grid-column:span 4;grid-row:span 2}
+.bc-links{grid-column:span 4;grid-row:span 2}
+
+/* Card color themes */
+.bc-purple{
+  background:linear-gradient(145deg,rgba(124,58,237,0.2),rgba(124,58,237,0.05));
+  border:1px solid rgba(167,139,250,0.2);
+}
+.bc-emerald{
+  background:linear-gradient(145deg,rgba(16,185,129,0.15),rgba(16,185,129,0.03));
+  border:1px solid rgba(52,211,153,0.15);
+}
+.bc-sky{
+  background:linear-gradient(145deg,rgba(14,165,233,0.15),rgba(14,165,233,0.03));
+  border:1px solid rgba(56,189,248,0.15);
+}
+.bc-rose{
+  background:linear-gradient(145deg,rgba(244,63,94,0.1),rgba(244,63,94,0.02));
+  border:1px solid rgba(244,63,94,0.12);
+}
+.bc-amber{
+  background:linear-gradient(145deg,rgba(245,158,11,0.12),rgba(245,158,11,0.02));
+  border:1px solid rgba(245,158,11,0.15);
+}
+.bc-dark{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+}
+.bc-mixed{
+  background:linear-gradient(145deg,rgba(124,58,237,0.12),rgba(16,185,129,0.08));
+  border:1px solid rgba(167,139,250,0.15);
+}
+
+/* Shine overlay on all bento cards */
+.bc::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
+}
+
+/* =========================================
+   IDENTITY CARD
+   ========================================= */
+.identity-initial{
+  font-family:var(--serif);
+  font-size:6rem;font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--violet2),var(--emerald2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1;display:block;margin-bottom:1rem;
+}
+.identity-name{font-size:1.6rem;font-weight:800;margin-bottom:0.3rem}
+.identity-role{
+  font-size:0.82rem;font-weight:400;
+  color:var(--text3);margin-bottom:1.5rem;
+}
+.identity-badge{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  background:rgba(16,185,129,0.1);
+  border:1px solid rgba(52,211,153,0.2);
+  padding:0.3rem 0.75rem;border-radius:100px;
+  font-size:0.68rem;font-weight:500;color:var(--emerald2);
+  margin-bottom:1rem;
+}
+.identity-loc{
+  font-size:0.75rem;color:var(--text4);
+  display:flex;align-items:center;gap:0.4rem;
+  margin-top:auto;
+}
+
+/* =========================================
+   STACK CARD — 3D ROTATING CUBE
+   ========================================= */
+.stack-header{
+  display:flex;justify-content:space-between;align-items:start;
+  margin-bottom:1.5rem;
+}
+.stack-h{font-size:1rem;font-weight:700}
+.stack-count{
+  font-family:var(--mono);font-size:0.68rem;
+  color:var(--violet);
+  background:rgba(124,58,237,0.1);
+  border:1px solid rgba(167,139,250,0.2);
+  padding:0.25rem 0.6rem;border-radius:4px;
+}
+.stack-items{display:flex;flex-direction:column;gap:0.6rem}
+.si{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.6rem 0.8rem;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:10px;
+  transition:all 0.2s;
+}
+.si:hover{background:rgba(255,255,255,0.07);border-color:rgba(167,139,250,0.2)}
+.si-name{font-size:0.8rem;font-weight:500;display:flex;align-items:center;gap:0.5rem}
+.si-icon{font-size:1rem}
+.si-lv{
+  display:flex;gap:2px;
+}
+.lv-dot{
+  width:5px;height:5px;border-radius:50%;
+  background:rgba(255,255,255,0.1);
+}
+.lv-dot.on{background:var(--violet)}
+
+/* =========================================
+   FLAGSHIP PROJECT CARD
+   ========================================= */
+.flagship-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+  height:100%;
+}
+.flagship-left{display:flex;flex-direction:column}
+.flagship-right{
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+}
+.proj-badge{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(124,58,237,0.12);
+  border:1px solid rgba(167,139,250,0.2);
+  padding:0.3rem 0.8rem;
+  border-radius:6px;
+  font-family:var(--mono);font-size:0.65rem;
+  color:var(--violet);margin-bottom:1.2rem;
+}
+.flagship-title{
+  font-size:clamp(1.3rem,3vw,2.2rem);
+  font-weight:800;line-height:1.1;
+  margin-bottom:1rem;
+}
+.flagship-desc{
+  font-size:0.88rem;color:var(--text2);
+  line-height:1.8;margin-bottom:1.5rem;flex:1;
+}
+.flagship-chips{display:flex;flex-wrap:wrap;gap:0.4rem}
+.fc{
+  font-family:var(--mono);font-size:0.62rem;
+  padding:0.25rem 0.65rem;border-radius:6px;
+  background:rgba(167,139,250,0.1);
+  border:1px solid rgba(167,139,250,0.15);
+  color:var(--violet2);
+}
+
+/* Architecture viz */
+.arch-viz{
+  background:rgba(0,0,0,0.3);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:12px;
+  padding:1.2rem;
+  font-family:var(--mono);
+  font-size:0.7rem;
+  color:var(--text3);
+  line-height:1.9;
+}
+.arch-line{display:flex;align-items:center;gap:0.5rem}
+.arch-arrow{color:var(--violet);font-size:0.8rem}
+.arch-node{color:var(--text);font-weight:500}
+.arch-sub{color:var(--emerald2);font-size:0.65rem}
+
+.flagship-stats{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0.5rem;
+}
+.fs{
+  background:rgba(0,0,0,0.2);
+  border-radius:10px;padding:1rem;text-align:center;
+}
+.fs-val{
+  font-size:1.6rem;font-weight:800;
+  background:linear-gradient(135deg,var(--violet),var(--emerald2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  display:block;
+}
+.fs-label{font-size:0.65rem;color:var(--text4);font-family:var(--mono)}
+
+/* =========================================
+   METRICS / MINI CARDS
+   ========================================= */
+.metrics-row{
+  display:flex;gap:1rem;align-items:center;height:100%;
+}
+.metric-mini{
+  flex:1;text-align:center;
+}
+.mm-val{
+  font-size:2rem;font-weight:800;
+  background:linear-gradient(135deg,var(--violet2),var(--sky2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  display:block;line-height:1;
+}
+.mm-label{font-size:0.65rem;color:var(--text4);font-family:var(--mono);margin-top:0.3rem}
+
+/* =========================================
+   PROJECT MINI CARDS
+   ========================================= */
+.proj-mini-icon{font-size:1.8rem;margin-bottom:0.75rem;display:block}
+.proj-mini-title{font-size:1rem;font-weight:700;margin-bottom:0.5rem}
+.proj-mini-desc{font-size:0.78rem;color:var(--text3);line-height:1.7;margin-bottom:1rem}
+.proj-mini-chips{display:flex;flex-wrap:wrap;gap:0.3rem}
+.pmc{
+  font-family:var(--mono);font-size:0.58rem;
+  padding:0.2rem 0.5rem;border-radius:4px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);
+  color:var(--text4);
+}
+
+/* =========================================
+   MISSION CARD
+   ========================================= */
+.mission-content{
+  display:flex;flex-direction:column;height:100%;
+}
+.mission-icon{font-size:2.5rem;margin-bottom:1rem}
+.mission-title{font-size:1rem;font-weight:700;margin-bottom:0.75rem}
+.mission-text{
+  font-size:0.82rem;color:var(--text2);line-height:1.8;flex:1;
+  font-family:'Inter',sans-serif;
+}
+.mission-text strong{color:var(--violet2);font-weight:600}
+
+/* =========================================
+   LOCATION / CONTACT CARDS
+   ========================================= */
+.loc-content{display:flex;flex-direction:column;gap:0.75rem}
+.loc-city{font-size:1.6rem;font-weight:800}
+.loc-details{font-size:0.78rem;color:var(--text3);line-height:1.7}
+.loc-emoji{font-size:2rem;margin-bottom:0.5rem}
+.loc-timezone{
+  font-family:var(--mono);font-size:0.68rem;
+  color:var(--sky2);
+  background:rgba(14,165,233,0.08);
+  border:1px solid rgba(56,189,248,0.15);
+  padding:0.2rem 0.6rem;border-radius:4px;
+  display:inline-block;margin-top:0.5rem;
+}
+
+.contact-card-content{
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;height:100%;gap:1.5rem;
+}
+.contact-big-text{
+  font-family:var(--serif);
+  font-size:clamp(2rem,5vw,3.5rem);
+  font-style:italic;font-weight:400;
+  line-height:1.1;
+  background:linear-gradient(135deg,var(--text),var(--violet2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.contact-email-btn{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  padding:0.75rem 2rem;border-radius:100px;
+  background:linear-gradient(135deg,var(--purple),var(--violet));
+  color:white;font-weight:600;font-size:0.85rem;
+  box-shadow:0 4px 20px rgba(124,58,237,0.4);
+  transition:all 0.3s;
+}
+.contact-email-btn:hover{transform:scale(1.04);box-shadow:0 6px 30px rgba(124,58,237,0.6)}
+
+/* =========================================
+   QUOTE CARD
+   ========================================= */
+.quote-text{
+  font-family:var(--serif);
+  font-size:clamp(1rem,3vw,1.5rem);
+  font-style:italic;font-weight:400;
+  line-height:1.6;
+  color:var(--text2);
+  margin-bottom:1.5rem;
+}
+.quote-text em{color:var(--violet2);font-style:normal}
+.quote-attr{
+  font-size:0.72rem;font-weight:500;
+  color:var(--text4);
+  display:flex;align-items:center;gap:0.5rem;
+}
+.quote-attr::before{content:'—'}
+
+/* =========================================
+   SERVICES CARD
+   ========================================= */
+.services-list{display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem}
+.svc{
+  display:flex;align-items:center;gap:0.75rem;
+  padding:0.75rem;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:10px;
+  font-size:0.8rem;
+  transition:all 0.2s;
+}
+.svc:hover{background:rgba(124,58,237,0.06);border-color:rgba(167,139,250,0.15);color:var(--violet3)}
+.svc-icon{font-size:1rem;flex-shrink:0}
+.svc-name{font-weight:500}
+.svc-arrow{margin-left:auto;color:var(--text4);transition:transform 0.2s}
+.svc:hover .svc-arrow{transform:translateX(3px);color:var(--violet)}
+
+/* =========================================
+   SOCIAL LINKS CARD
+   ========================================= */
+.links-grid{
+  display:flex;flex-direction:column;gap:0.6rem;
+  margin-top:1rem;
+}
+.lnk{
+  display:flex;align-items:center;gap:0.75rem;
+  padding:0.8rem 1rem;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:12px;
+  font-size:0.82rem;font-weight:500;
+  transition:all 0.25s;
+}
+.lnk:hover{
+  background:rgba(255,255,255,0.06);
+  border-color:rgba(255,255,255,0.12);
+  transform:translateX(4px);
+}
+.lnk-icon{font-size:1.1rem;flex-shrink:0}
+.lnk-text{flex:1}
+.lnk-arr{color:var(--text4);font-size:0.8rem}
+
+/* =========================================
+   GITHUB CARD
+   ========================================= */
+.github-big{font-size:3rem;margin-bottom:0.75rem;display:block}
+.github-handle{
+  font-family:var(--mono);font-size:1rem;
+  color:var(--text);font-weight:500;
+  margin-bottom:0.5rem;
+}
+.github-sub{font-size:0.75rem;color:var(--text4);line-height:1.6}
+.github-cta{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  margin-top:1rem;
+  font-size:0.78rem;font-weight:500;
+  color:var(--violet2);
+  border:1px solid rgba(167,139,250,0.2);
+  padding:0.4rem 0.9rem;border-radius:8px;
+  background:rgba(124,58,237,0.08);
+  transition:all 0.2s;
+}
+.github-cta:hover{background:rgba(124,58,237,0.15);border-color:rgba(167,139,250,0.35)}
+
+/* =========================================
+   ABOUT SECTION (below bento)
+   ========================================= */
+.about-section{
+  position:relative;z-index:1;
+  padding:6rem 1.5rem;
+  max-width:1280px;margin:0 auto;
+}
+.about-2col{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;
+}
+.about-glass-card{
+  border-radius:24px;
+  padding:3rem;
+  display:flex;flex-direction:column;gap:2rem;
+}
+.al-label{
+  font-size:0.65rem;font-weight:600;letter-spacing:0.3em;
+  text-transform:uppercase;color:var(--text4);margin-bottom:1rem;
+}
+.al-h2{
+  font-size:clamp(2rem,5vw,3rem);
+  font-weight:800;letter-spacing:-0.03em;
+  line-height:1.1;margin-bottom:1.5rem;
+}
+.al-h2 .g{
+  background:linear-gradient(135deg,var(--violet),var(--emerald2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.al-p{
+  font-size:0.95rem;font-weight:300;
+  color:var(--text2);line-height:1.85;
+  margin-bottom:1.5rem;
+}
+.al-p strong{color:var(--violet3);font-weight:500}
+
+/* Principles list */
+.principles{display:flex;flex-direction:column;gap:1rem}
+.principle{
+  display:flex;gap:1rem;
+  padding:1.2rem;
+  border-radius:12px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  transition:all 0.2s;
+}
+.principle:hover{background:rgba(124,58,237,0.06);border-color:rgba(167,139,250,0.15)}
+.principle-icon{font-size:1.3rem;flex-shrink:0;margin-top:0.1rem}
+.principle-title{font-size:0.88rem;font-weight:700;margin-bottom:0.3rem}
+.principle-text{font-size:0.78rem;color:var(--text3);line-height:1.7}
+
+/* =========================================
+   CONTACT SECTION
+   ========================================= */
+.contact-full{
+  position:relative;z-index:1;
+  padding:6rem 1.5rem 8rem;
+  text-align:center;
+}
+.cf-inner{max-width:700px;margin:0 auto}
+.cf-glass{border-radius:28px;padding:4rem 3rem}
+.cf-label{
+  font-size:0.65rem;font-weight:500;letter-spacing:0.3em;
+  text-transform:uppercase;color:var(--text4);margin-bottom:1.5rem;
+}
+.cf-h2{
+  font-family:var(--serif);
+  font-size:clamp(2.5rem,8vw,4.5rem);
+  font-style:italic;font-weight:400;
+  line-height:1.1;margin-bottom:1rem;
+  background:linear-gradient(135deg,var(--text),var(--violet2),var(--emerald2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.cf-sub{font-size:0.9rem;color:var(--text3);margin-bottom:3rem;line-height:1.8}
+
+.cf-contact-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:0.75rem;margin-bottom:2.5rem;
+}
+.cf-card{
+  border-radius:14px;
+  padding:1.5rem;
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  transition:all 0.3s;
+}
+.cf-card:hover{transform:translateY(-3px)}
+.cf-card-icon{font-size:1.5rem}
+.cf-card-label{font-size:0.62rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--text4);font-family:var(--mono)}
+.cf-card-val{font-size:0.85rem;font-weight:600;color:var(--violet2)}
+
+.cf-big-btn{
+  display:inline-flex;align-items:center;gap:0.75rem;
+  padding:1rem 3rem;border-radius:100px;
+  background:linear-gradient(135deg,var(--purple),var(--violet));
+  color:white;font-weight:700;font-size:1rem;
+  box-shadow:0 8px 32px rgba(124,58,237,0.5);
+  transition:all 0.3s;
+  width:100%;justify-content:center;
+}
+.cf-big-btn:hover{transform:translateY(-3px);box-shadow:0 12px 50px rgba(124,58,237,0.7)}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer{
+  position:relative;z-index:1;
+  padding:4rem 1.5rem 2rem;
+  border-top:1px solid rgba(255,255,255,0.06);
+  max-width:1280px;margin:0 auto;
+}
+.footer-inner{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:3rem;margin-bottom:3rem;
+}
+.footer-brand{
+  font-size:2rem;font-weight:800;
+  background:linear-gradient(135deg,var(--violet),var(--emerald2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:0.75rem;
+}
+.footer-desc{font-size:0.82rem;color:var(--text3);line-height:1.8;max-width:260px}
+.fc-h{font-size:0.62rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--text4);margin-bottom:1.2rem}
+.fc-links{display:flex;flex-direction:column;gap:0.6rem}
+.fc-links a{font-size:0.82rem;color:var(--text3);transition:color 0.2s;display:flex;align-items:center;gap:0.4rem}
+.fc-links a:hover{color:var(--violet2)}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+  padding-top:2rem;border-top:1px solid rgba(255,255,255,0.05);
+  font-size:0.72rem;color:var(--text4);font-family:var(--mono);
+}
+
+/* =========================================
+   REVEAL
+   ========================================= */
+.rv{opacity:0;transform:translateY(24px);transition:all 0.8s cubic-bezier(0.23,1,0.32,1)}
+.rv.on{opacity:1;transform:translateY(0)}
+.rv-d1{transition-delay:0.05s}
+.rv-d2{transition-delay:0.1s}
+.rv-d3{transition-delay:0.15s}
+.rv-d4{transition-delay:0.2s}
+.rv-d5{transition-delay:0.25s}
+
+/* 3D hover tilt for bento cards */
+.bc{cursor:default}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media(max-width:1024px){
+  .bento-grid{grid-template-columns:repeat(6,1fr)}
+  .bc-identity{grid-column:span 3;grid-row:span 2}
+  .bc-stack{grid-column:span 3;grid-row:span 2}
+  .bc-mission{grid-column:span 6;grid-row:span 1}
+  .bc-metrics{grid-column:span 6;grid-row:span 1}
+  .bc-flagship{grid-column:span 6;grid-row:span 3}
+  .flagship-card{grid-template-columns:1fr}
+  .bc-agents{grid-column:span 3}
+  .bc-memory{grid-column:span 3}
+  .bc-osint{grid-column:span 3}
+  .bc-location{grid-column:span 3}
+  .bc-github{grid-column:span 3}
+  .bc-contact{grid-column:span 6}
+  .bc-services{grid-column:span 6;grid-row:span 2}
+  .bc-quote{grid-column:span 3}
+  .bc-links{grid-column:span 3}
+  .about-2col{grid-template-columns:1fr;gap:2rem}
+  .cf-contact-grid{grid-template-columns:1fr}
+  nav{width:calc(100% - 2rem)}
+  .nav-links{display:none}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:640px){
+  .bento-grid{grid-template-columns:1fr 1fr}
+  .bc-identity,.bc-stack,.bc-mission,.bc-metrics,.bc-flagship,.bc-agents,.bc-memory,
+  .bc-osint,.bc-location,.bc-github,.bc-contact,.bc-services,.bc-quote,.bc-links{
+    grid-column:span 2
+  }
+  .hero{padding:7rem 1rem 3rem}
+  .hero-card{padding:2.5rem 1.5rem}
+  .bento-section{padding:2rem 1rem 4rem}
+  .cf-glass{padding:2.5rem 1.5rem}
+  footer{padding:3rem 1rem 2rem}
+  .footer-inner{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-  <!-- Theme Toggle Button -->
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme (Ctrl+Shift+T)">
-    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-    </svg>
-  </button>
+<div class="global-bg">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="orb orb4"></div>
+</div>
+<div class="bg-grid"></div>
 
-  <!-- 3D Canvas Container -->
-  <div id="canvas-container" class="canvas-container"></div>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Anuj · M4ST</div>
+  <ul class="nav-links">
+    <li><a href="#bento">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:m4stanuj@gmail.com" class="nav-pill">Hire Me →</a>
+</nav>
 
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <span class="bracket">[</span> M4ST <span class="bracket">]</span>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-card glass">
+    <div class="hero-available">
+      <div class="avail-dot"></div>
+      Open to new projects — Worldwide
+    </div>
+    <h1 class="hero-name">Anuj</h1>
+    <p class="hero-role">AI Systems Architect &amp; Agent Orchestrator</p>
+    <div class="hero-chips">
+      <span class="hchip p">Multi-Agent Systems</span>
+      <span class="hchip e">21 MCP Servers</span>
+      <span class="hchip s">Zero Cloud Cost</span>
+      <span class="hchip p">LangGraph + CrewAI</span>
+      <span class="hchip e">ChromaDB Memory</span>
+      <span class="hchip s">Local-First AI</span>
+    </div>
+    <p class="hero-p">
+      I build <strong>autonomous AI agent systems</strong> that operate independently, collaborate across specialized sub-agents, maintain persistent semantic memory, and execute complex workflows — all running locally at <strong>zero recurring cost</strong>.
+    </p>
+    <div class="hero-ctas">
+      <a href="#bento" class="btn-main">Explore Projects →</a>
+      <a href="https://m4st.vercel.app" class="btn-sec">Main Portfolio</a>
+      <a href="mailto:m4stanuj@gmail.com" class="btn-sec">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- BENTO GRID -->
+<div id="bento" class="bento-section">
+  <p class="bento-label rv">Everything, everywhere</p>
+  <h2 class="bento-title rv rv-d1">My work, <span class="g">at a glance</span></h2>
+
+  <div class="bento-grid">
+
+    <!-- IDENTITY -->
+    <div class="bc bc-identity bc-purple glass-hover rv">
+      <span class="identity-initial">A</span>
+      <div class="identity-name">Anuj</div>
+      <div class="identity-role">AI Architect · M4ST</div>
+      <div class="identity-badge">
+        <div class="avail-dot"></div>
+        Available for work
       </div>
-      <div class="nav-links" id="navLinks">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#simulation" class="nav-link">Simulation</a>
-        <a href="dossier.html" class="nav-link dossier-link">
-          <i data-lucide="shield-alert"></i> Classified Dossier
+      <div class="identity-loc">📍 Bareilly, India</div>
+    </div>
+
+    <!-- STACK -->
+    <div class="bc bc-stack bc-dark glass-hover rv rv-d1">
+      <div class="stack-header">
+        <span class="stack-h">Tech Stack</span>
+        <span class="stack-count">21 tools</span>
+      </div>
+      <div class="stack-items">
+        <div class="si"><span class="si-name"><span class="si-icon">⚡</span>LangGraph</span><div class="si-lv"><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div></div></div>
+        <div class="si"><span class="si-name"><span class="si-icon">🤝</span>CrewAI</span><div class="si-lv"><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div></div></div>
+        <div class="si"><span class="si-name"><span class="si-icon">🧠</span>ChromaDB</span><div class="si-lv"><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot"></div></div></div>
+        <div class="si"><span class="si-name"><span class="si-icon">🔗</span>MCP Protocol</span><div class="si-lv"><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div></div></div>
+        <div class="si"><span class="si-name"><span class="si-icon">🐍</span>Python</span><div class="si-lv"><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div><div class="lv-dot on"></div></div></div>
+      </div>
+    </div>
+
+    <!-- MISSION -->
+    <div class="bc bc-mission bc-emerald glass-hover rv rv-d2">
+      <div class="mission-content">
+        <span class="mission-icon">🎯</span>
+        <div class="mission-title">The Mission</div>
+        <p class="mission-text">Build <strong>autonomous AI systems</strong> that genuinely work without human babysitting — local-first, <strong>zero cloud cost</strong>, production-grade. 21 MCP servers across 11 free LLM providers. This is not a demo. This is production.</p>
+      </div>
+    </div>
+
+    <!-- METRICS -->
+    <div class="bc bc-metrics bc-dark rv rv-d3" style="padding:1.5rem 2rem">
+      <div class="metrics-row">
+        <div class="metric-mini">
+          <span class="mm-val" id="bm1">21</span>
+          <div class="mm-label">MCP Servers</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,0.06);align-self:stretch"></div>
+        <div class="metric-mini">
+          <span class="mm-val">11</span>
+          <div class="mm-label">LLM APIs</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,0.06);align-self:stretch"></div>
+        <div class="metric-mini">
+          <span class="mm-val">$0</span>
+          <div class="mm-label">Monthly Cost</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,0.06);align-self:stretch"></div>
+        <div class="metric-mini">
+          <span class="mm-val">∞</span>
+          <div class="mm-label">Scale</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLAGSHIP PROJECT -->
+    <div class="bc bc-flagship bc-mixed glass-hover rv">
+      <div class="flagship-card">
+        <div class="flagship-left">
+          <div class="proj-badge">⚡ FLAGSHIP PROJECT</div>
+          <h3 class="flagship-title">M4ST Agent Orchestration Stack</h3>
+          <p class="flagship-desc">The pinnacle of local-first AI architecture. A complete multi-agent orchestration system running on LangGraph and CrewAI, coordinating specialist agents across 21 MCP servers. ChromaDB-backed semantic memory enables agents to remember across sessions. 11 free LLM providers routed intelligently via LiteLLM. Zero cloud cost. Production ready. Runs completely offline.</p>
+          <div class="flagship-chips">
+            <span class="fc">LangGraph</span><span class="fc">CrewAI</span>
+            <span class="fc">ChromaDB</span><span class="fc">MCP</span>
+            <span class="fc">Ollama</span><span class="fc">Python</span>
+            <span class="fc">LiteLLM</span>
+          </div>
+        </div>
+        <div class="flagship-right">
+          <div class="arch-viz">
+            <div class="arch-line"><span class="arch-arrow">▶</span><span class="arch-node">Orchestrator Agent</span></div>
+            <div class="arch-line"><span style="margin-left:1rem">├</span><span class="arch-arrow">→</span><span class="arch-node">Research Agent</span><span style="margin-left:0.3rem;color:var(--sky2);font-size:0.62rem">· web MCP</span></div>
+            <div class="arch-line"><span style="margin-left:1rem">├</span><span class="arch-arrow">→</span><span class="arch-node">Code Agent</span><span style="margin-left:0.3rem;color:var(--sky2);font-size:0.62rem">· exec MCP</span></div>
+            <div class="arch-line"><span style="margin-left:1rem">├</span><span class="arch-arrow">→</span><span class="arch-node">Memory Agent</span><span style="margin-left:0.3rem;color:var(--sky2);font-size:0.62rem">· chroma</span></div>
+            <div class="arch-line"><span style="margin-left:1rem">└</span><span class="arch-arrow">→</span><span class="arch-node">File Agent</span><span style="margin-left:0.3rem;color:var(--sky2);font-size:0.62rem">· fs MCP</span></div>
+            <div style="border-top:1px solid rgba(255,255,255,0.06);margin:0.8rem 0"></div>
+            <div class="arch-line"><span class="arch-arrow">→</span><span class="arch-sub">LLM: Gemini / Groq / Mistral (free)</span></div>
+            <div class="arch-line"><span class="arch-arrow">→</span><span class="arch-sub">Memory: ChromaDB local vector store</span></div>
+          </div>
+          <div class="flagship-stats">
+            <div class="fs"><span class="fs-val">21</span><span class="fs-label">MCP Servers</span></div>
+            <div class="fs"><span class="fs-val">11</span><span class="fs-label">LLM Providers</span></div>
+            <div class="fs"><span class="fs-val">$0</span><span class="fs-label">Monthly Cost</span></div>
+            <div class="fs"><span class="fs-val">∞</span><span class="fs-label">Scale</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGENTS MINI -->
+    <div class="bc bc-agents bc-sky glass-hover rv rv-d1">
+      <span class="proj-mini-icon">🔍</span>
+      <h4 class="proj-mini-title">OSINT Intelligence System</h4>
+      <p class="proj-mini-desc">Autonomous intelligence gathering. Multi-source fusion, anomaly detection, pattern recognition, automated reports. Zero human intervention.</p>
+      <div class="proj-mini-chips">
+        <span class="pmc">LangChain</span><span class="pmc">OSINT APIs</span><span class="pmc">Agents</span>
+      </div>
+    </div>
+
+    <!-- MEMORY MINI -->
+    <div class="bc bc-memory bc-purple glass-hover rv rv-d2">
+      <span class="proj-mini-icon">🧠</span>
+      <h4 class="proj-mini-title">Semantic Memory Engine</h4>
+      <p class="proj-mini-desc">Persistent vector memory with semantic clustering, relevance decay, and context-aware injection. Agents that genuinely remember.</p>
+      <div class="proj-mini-chips">
+        <span class="pmc">ChromaDB</span><span class="pmc">Embeddings</span><span class="pmc">RAG</span>
+      </div>
+    </div>
+
+    <!-- OSINT MINI -->
+    <div class="bc bc-osint bc-emerald glass-hover rv rv-d3">
+      <span class="proj-mini-icon">🐙</span>
+      <h4 class="proj-mini-title">Smart GitHub Manager</h4>
+      <p class="proj-mini-desc">AI repo intelligence. Auto docs, PR analysis, issue triage, code review agents. Live on GitHub right now.</p>
+      <div class="proj-mini-chips">
+        <span class="pmc">GitHub API</span><span class="pmc">MCP</span><span class="pmc">AI Agents</span>
+      </div>
+    </div>
+
+    <!-- LOCATION -->
+    <div class="bc bc-location bc-amber glass-hover rv">
+      <span class="loc-emoji">📍</span>
+      <div class="loc-city">Bareilly</div>
+      <div class="loc-details">Uttar Pradesh, India<br>Working globally, remotely</div>
+      <div class="loc-timezone">IST UTC+5:30</div>
+    </div>
+
+    <!-- GITHUB -->
+    <div class="bc bc-github bc-dark glass-hover rv rv-d1">
+      <span class="github-big">🐙</span>
+      <div class="github-handle">m4stanuj</div>
+      <div class="github-sub">Open-source agent systems<br>MCP servers &amp; AI tools</div>
+      <a href="https://github.com/m4stanuj" target="_blank" class="github-cta">View Profile ↗</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="bc bc-contact bc-mixed glass-hover rv rv-d2">
+      <div class="contact-card-content">
+        <div class="contact-big-text">Let's build<br>something great</div>
+        <a href="mailto:m4stanuj@gmail.com" class="contact-email-btn">
+          ✉ m4stanuj@gmail.com
         </a>
-        <a href="#contact" class="nav-link">Contact</a>
       </div>
-      <a href="mailto:m4stanuj@gmail.com" class="btn btn-primary nav-cta">
-        <i data-lucide="mail"></i> Hire Me
+    </div>
+
+    <!-- SERVICES -->
+    <div class="bc bc-services bc-dark glass-hover rv">
+      <p style="font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text4);margin-bottom:0.5rem">Services</p>
+      <p style="font-size:1.1rem;font-weight:700;margin-bottom:0.25rem">What I offer</p>
+      <div class="services-list">
+        <div class="svc"><span class="svc-icon">⚡</span><span class="svc-name">Multi-Agent System Design</span><span class="svc-arrow">→</span></div>
+        <div class="svc"><span class="svc-icon">🔗</span><span class="svc-name">MCP Server Development</span><span class="svc-arrow">→</span></div>
+        <div class="svc"><span class="svc-icon">🤖</span><span class="svc-name">AI Pipeline Automation</span><span class="svc-arrow">→</span></div>
+        <div class="svc"><span class="svc-icon">💡</span><span class="svc-name">LLM Orchestration &amp; Routing</span><span class="svc-arrow">→</span></div>
+        <div class="svc"><span class="svc-icon">🧠</span><span class="svc-name">Semantic Memory Systems</span><span class="svc-arrow">→</span></div>
+        <div class="svc"><span class="svc-icon">🔍</span><span class="svc-name">OSINT &amp; Intelligence Systems</span><span class="svc-arrow">→</span></div>
+      </div>
+    </div>
+
+    <!-- QUOTE -->
+    <div class="bc bc-quote bc-sky glass-hover rv rv-d1">
+      <blockquote class="quote-text">
+        "Intelligence should be <em>autonomous</em>, not dependent — <em>local</em>, not leased. The edge is the future."
+      </blockquote>
+      <div class="quote-attr">Anuj · M4ST · 2026</div>
+    </div>
+
+    <!-- LINKS -->
+    <div class="bc bc-links bc-dark glass-hover rv rv-d2">
+      <p style="font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text4);margin-bottom:0.5rem">Connect</p>
+      <p style="font-size:0.95rem;font-weight:700;margin-bottom:0.25rem">Find me online</p>
+      <div class="links-grid">
+        <a href="https://github.com/m4stanuj" target="_blank" class="lnk"><span class="lnk-icon">🐙</span><span class="lnk-text">GitHub</span><span class="lnk-arr">↗</span></a>
+        <a href="https://linkedin.com/in/mast-anuj" target="_blank" class="lnk"><span class="lnk-icon">💼</span><span class="lnk-text">LinkedIn</span><span class="lnk-arr">↗</span></a>
+        <a href="https://x.com/m4stanuj" target="_blank" class="lnk"><span class="lnk-icon">𝕏</span><span class="lnk-text">X / Twitter</span><span class="lnk-arr">↗</span></a>
+        <a href="https://m4st.vercel.app" class="lnk"><span class="lnk-icon">🌐</span><span class="lnk-text">Portfolio</span><span class="lnk-arr">↗</span></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="about-section">
+  <div class="about-2col">
+    <div>
+      <p class="al-label rv">About</p>
+      <h2 class="al-h2 rv rv-d1">Building AI<br><span class="g">differently</span></h2>
+      <p class="al-p rv rv-d2">
+        I'm <strong>Anuj</strong> — a solo AI systems engineer from <strong>Bareilly, Uttar Pradesh, India</strong>. I specialize in building autonomous multi-agent AI systems that think independently, collaborate across specialized agents, and execute complex workflows without human oversight.
+      </p>
+      <p class="al-p rv rv-d3">
+        My entire stack is local-first: 21 MCP servers providing rich tool access, intelligent routing across 11 free LLM providers, ChromaDB for persistent semantic memory, and CrewAI + LangGraph for orchestration. The whole system runs in production at exactly <strong>$0 per month</strong>.
+      </p>
+      <p class="al-p rv rv-d4">
+        I'm available for <strong>AI freelance engagements worldwide</strong> — agent architecture, MCP development, pipeline automation, and AI infrastructure consulting.
+      </p>
+    </div>
+    <div>
+      <div class="about-glass-card glass rv rv-d2">
+        <div class="principles">
+          <div class="principle">
+            <span class="principle-icon">🏠</span>
+            <div>
+              <div class="principle-title">Local-First Architecture</div>
+              <div class="principle-text">Everything runs on your hardware. No cloud dependency. No data leaving your perimeter. No monthly SaaS bills. Offline capable by design.</div>
+            </div>
+          </div>
+          <div class="principle">
+            <span class="principle-icon">💰</span>
+            <div>
+              <div class="principle-title">Zero-Cost Operations</div>
+              <div class="principle-text">Production AI at $0/month. 11 free LLM providers routed intelligently. Enterprise capability at zero recurring cost — not a demo, actual production.</div>
+            </div>
+          </div>
+          <div class="principle">
+            <span class="principle-icon">🤖</span>
+            <div>
+              <div class="principle-title">Genuine Autonomy</div>
+              <div class="principle-text">Agents that decompose tasks, collaborate, build semantic memory, and execute — without asking for permission. Not wrappers. Real autonomous systems.</div>
+            </div>
+          </div>
+          <div class="principle">
+            <span class="principle-icon">🔧</span>
+            <div>
+              <div class="principle-title">Composable by Design</div>
+              <div class="principle-text">21 MCP servers, each purpose-built. Swap, extend, compose infinitely. Every component is a modular building block for any AI workflow.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact-full">
+  <div class="cf-inner">
+    <div class="cf-glass glass">
+      <p class="cf-label rv">Available for work</p>
+      <h2 class="cf-h2 rv rv-d1">Let's build<br>something great</h2>
+      <p class="cf-sub rv rv-d2">
+        I take on AI freelance projects worldwide — agent systems, MCP servers, automation pipelines, and AI infrastructure. Based in Bareilly, India, working remotely with global clients.
+      </p>
+      <div class="cf-contact-grid rv rv-d3">
+        <a href="mailto:m4stanuj@gmail.com" class="cf-card glass">
+          <span class="cf-card-icon">📧</span>
+          <span class="cf-card-label">Email</span>
+          <span class="cf-card-val">m4stanuj@gmail.com</span>
+        </a>
+        <a href="https://github.com/m4stanuj" target="_blank" class="cf-card glass">
+          <span class="cf-card-icon">🐙</span>
+          <span class="cf-card-label">GitHub</span>
+          <span class="cf-card-val">@m4stanuj</span>
+        </a>
+        <a href="https://linkedin.com/in/mast-anuj" target="_blank" class="cf-card glass">
+          <span class="cf-card-icon">💼</span>
+          <span class="cf-card-label">LinkedIn</span>
+          <span class="cf-card-val">mast-anuj</span>
+        </a>
+        <a href="https://x.com/m4stanuj" target="_blank" class="cf-card glass">
+          <span class="cf-card-icon">𝕏</span>
+          <span class="cf-card-label">X / Twitter</span>
+          <span class="cf-card-val">@m4stanuj</span>
+        </a>
+      </div>
+      <a href="mailto:m4stanuj@gmail.com" class="cf-big-btn rv rv-d4">
+        ✉ Send a Message — Let's talk AI
       </a>
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-        <i data-lucide="menu"></i>
-      </button>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- Hero Section -->
-  <header class="hero" id="hero">
-    <div class="hero-container">
-      <div class="hero-content">
-        <div class="status-indicator">
-          <span class="pulse-dot"></span>
-          <span>Available for Freelance AI Projects</span>
-        </div>
-        <h1 class="hero-title">
-          I Build <span class="highlight">Autonomous AI Agent Systems</span>
-        </h1>
-        <p class="hero-subtitle">
-          Specializing in multi-agent orchestration, custom MCP server architecture, and semantic caching. 
-          Production-grade pipelines running locally on consumer hardware at <span class="cost-zero">₹0/month API cost</span>.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">
-            View Projects <i data-lucide="arrow-right"></i>
-          </a>
-          <a href="#simulation" class="btn btn-secondary">
-            Simulate System <i data-lucide="play"></i>
-          </a>
-          <a href="dossier.html" class="btn btn-secondary dossier-btn">
-            <i data-lucide="shield-alert"></i> Classified Dossier
-          </a>
-        </div>
-        
-        <!-- Stats Bar -->
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-value" data-target="21">0</span>
-            <span class="stat-label">MCP Servers Built</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value" data-target="11">0</span>
-            <span class="stat-label">Free LLM Providers</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value" data-target="40">0</span>
-            <span class="stat-label">% Cost Reduction</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value" data-target="12">0</span>
-            <span class="stat-label">ms Cache Latency</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Terminal -->
-      <div class="hero-terminal">
-        <div class="terminal-header">
-          <span class="terminal-dot red"></span>
-          <span class="terminal-dot yellow"></span>
-          <span class="terminal-dot green"></span>
-          <span class="terminal-title">m4st@bareilly:~$ ./intro</span>
-        </div>
-        <div class="terminal-body" id="typing-terminal">
-          <p class="term-line"><span class="term-prompt">$</span> cat whoami.json</p>
-          <pre class="term-output">{
-  "name": "Anuj (M4ST)",
-  "role": "AI Developer & Orchestrator",
-  "base": "Uttar Pradesh, India",
-  "hardware": "RTX 2060 Super",
-  "mission": "Zero-cost local agentic infrastructure"
-}</pre>
-          <p class="term-line"><span class="term-prompt">$</span> inspect_stack --core</p>
-          <div class="tech-tags" id="techTags">
-            <span class="tech-tag tag-python">Python</span>
-            <span class="tech-tag tag-langgraph">LangGraph</span>
-            <span class="tech-tag tag-mcp">MCP Protocol</span>
-            <span class="tech-tag tag-chroma">ChromaDB</span>
-            <span class="tech-tag tag-n8n">n8n</span>
-            <span class="tech-tag tag-ollama">Ollama</span>
-          </div>
-          <p class="term-line cursor-line"><span class="term-prompt">$</span> <span class="cursor">|</span></p>
-        </div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Anuj</div>
+      <p class="footer-desc">Solo AI systems engineer from Bareilly, India. Building autonomous, local-first, zero-cost AI infrastructure since 2024. Available for AI freelance worldwide.</p>
+    </div>
+    <div>
+      <p class="fc-h">Navigate</p>
+      <div class="fc-links">
+        <a href="#home">Home</a>
+        <a href="#bento">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
-    
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator" id="scrollIndicator">
-      <i data-lucide="chevron-down"></i>
-    </div>
-  </header>
-
-  <!-- Profile / About Section -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag"><identity></span>
-        <h2>System Profile</h2>
-      </div>
-
-      <div class="profile-layout">
-        <div class="profile-card">
-          <div class="card-header">
-            <i data-lucide="cpu" class="card-icon"></i>
-            <h3>Core Directives & Expertise</h3>
-          </div>
-          <div class="card-body">
-            <ul class="directives-list">
-              <li>
-                <div class="dir-num">01</div>
-                <div>
-                  <h4>Multi-Agent Orchestration</h4>
-                  <p>Building DAG-based task graphs using LangGraph and CrewAI to solve complex workflows sequentially or in parallel.</p>
-                </div>
-              </li>
-              <li>
-                <div class="dir-num">02</div>
-                <div>
-                  <h4>Model Context Protocol (MCP)</h4>
-                  <p>Built 21 custom MCP servers to plug proprietary system toolchains and local databases directly into AI coding workspaces.</p>
-                </div>
-              </li>
-              <li>
-                <div class="dir-num">03</div>
-                <div>
-                  <h4>Cost-Efficient Routing</h4>
-                  <p>Routing prompts dynamically across 11 LLM API providers on free-tier credits with smart, zero-cost fallback networks.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tech-grid-card">
-          <div class="card-header">
-            <i data-lucide="layers" class="card-icon"></i>
-            <h3>Tech Stack Integration</h3>
-          </div>
-          <div class="tech-categories">
-            <div class="tech-cat">
-              <h4>Orchestration & Frameworks</h4>
-              <div class="tags">
-                <span>LangChain</span>
-                <span>LangGraph</span>
-                <span>CrewAI</span>
-                <span>n8n</span>
-              </div>
-            </div>
-            <div class="tech-cat">
-              <h4>Inference & Storage</h4>
-              <div class="tags">
-                <span>Ollama</span>
-                <span>ChromaDB</span>
-                <span>SQLite</span>
-                <span>Llama.cpp</span>
-              </div>
-            </div>
-            <div class="tech-cat">
-              <h4>Automation & Tools</h4>
-              <div class="tags">
-                <span>Playwright</span>
-                <span>OSINT Tooling</span>
-                <span>Shodan API</span>
-                <span>Whisper STT</span>
-                <span>Kokoro TTS</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div>
+      <p class="fc-h">Portfolio</p>
+      <div class="fc-links">
+        <a href="https://m4st.vercel.app">Main Site</a>
+        <a href="https://mast-luxury.vercel.app">Luxury</a>
+        <a href="https://m4st-premium.vercel.app">Premium</a>
+        <a href="https://mast-glass.vercel.app">Glass</a>
+        <a href="https://mast-brutal.vercel.app">Brutal</a>
       </div>
     </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="section section-dark">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag"><deployed_projects></span>
-        <h2>Projects Showcase</h2>
-      </div>
-
-      <div class="projects-grid">
-        <article class="project-card" data-project="mast">
-          <div class="project-header">
-            <span class="project-num">01</span>
-            <div class="project-links">
-              <a href="https://github.com/m4stanuj" target="_blank" rel="noopener"><i data-lucide="github"></i></a>
-            </div>
-          </div>
-          <div class="project-body">
-            <h3>MAST v1.0</h3>
-            <p class="project-desc">Autonomous AI agent stack integrating 21 MCP servers, 11 free LLM providers, and a 3-tier ChromaDB memory engine. Specially tuned to execute locally on consumer hardware like RTX 2060 Super at zero cost.</p>
-          </div>
-          <div class="project-footer">
-            <span>LangGraph</span>
-            <span>ChromaDB</span>
-            <span>Local LLM</span>
-          </div>
-        </article>
-
-        <article class="project-card" data-project="openwork">
-          <div class="project-header">
-            <span class="project-num">02</span>
-            <div class="project-links">
-              <a href="https://github.com/m4stanuj" target="_blank" rel="noopener"><i data-lucide="github"></i></a>
-            </div>
-          </div>
-          <div class="project-body">
-            <h3>OpenWork</h3>
-            <p class="project-desc">Universal MCP workspace config plugging 16 system-level MCP servers directly into Cursor, VSCode, or Windsurf. Connects custom tools to your IDE in one configuration.</p>
-          </div>
-          <div class="project-footer">
-            <span>MCP Server</span>
-            <span>IDE Integration</span>
-            <span>JSON Config</span>
-          </div>
-        </article>
-
-        <article class="project-card" data-project="leadsniper">
-          <div class="project-header">
-            <span class="project-num">03</span>
-            <div class="project-links">
-              <a href="https://github.com/m4stanuj" target="_blank" rel="noopener"><i data-lucide="github"></i></a>
-            </div>
-          </div>
-          <div class="project-body">
-            <h3>LeadSniper</h3>
-            <p class="project-desc">AI-powered outreach automation client. Extracts target leads from open source sources, scores them based on custom ideal customer profiles (ICP), and prepares personalized emails dynamically.</p>
-          </div>
-          <div class="project-footer">
-            <span>Web Scraping</span>
-            <span>LLM Routing</span>
-            <span>Outreach</span>
-          </div>
-        </article>
-
-        <article class="project-card" data-project="cai-osint">
-          <div class="project-header">
-            <span class="project-num">04</span>
-            <div class="project-links">
-              <a href="https://github.com/m4stanuj" target="_blank" rel="noopener"><i data-lucide="github"></i></a>
-            </div>
-          </div>
-          <div class="project-body">
-            <h3>cai-osint</h3>
-            <p class="project-desc">Authorized OSINT and recon framework orchestrated by AI agents. Automates Nmap target sweeps, Shodan queries, and Nuclei vulnerability checks with guardrails to scan only authorized scopes.</p>
-          </div>
-          <div class="project-footer">
-            <span>OSINT</span>
-            <span>Nmap API</span>
-            <span>Security Automation</span>
-          </div>
-        </article>
-
-        <article class="project-card" data-project="semantic-cache">
-          <div class="project-header">
-            <span class="project-num">05</span>
-            <div class="project-links">
-              <a href="https://github.com/m4stanuj" target="_blank" rel="noopener"><i data-lucide="github"></i></a>
-            </div>
-          </div>
-          <div class="project-body">
-            <h3>Semantic Cache Engine</h3>
-            <p class="project-desc">Vector-similarity caching layer using SQLite and local embedding models. Reduces redundant LLM API queries by 40-60%, dropping latencies and cutting costs.</p>
-          </div>
-          <div class="project-footer">
-            <span>Semantic Cache</span>
-            <span>Embeddings</span>
-            <span>SQLite</span>
-          </div>
-        </article>
+    <div>
+      <p class="fc-h">Connect</p>
+      <div class="fc-links">
+        <a href="https://github.com/m4stanuj" target="_blank">GitHub ↗</a>
+        <a href="https://linkedin.com/in/mast-anuj" target="_blank">LinkedIn ↗</a>
+        <a href="https://x.com/m4stanuj" target="_blank">X / Twitter ↗</a>
+        <a href="mailto:m4stanuj@gmail.com">Email ↗</a>
       </div>
     </div>
-  </section>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Anuj (M4ST) · Bareilly, India · All rights reserved</span>
+    <span>Apple Liquid Glass Design · Zero Frameworks · Pure HTML/CSS/JS</span>
+  </div>
+</footer>
 
-  <!-- Interactive Simulation Section -->
-  <section id="simulation" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag"><interactive_simulation></span>
-        <h2>Live System Flow Simulation</h2>
-        <p class="section-desc">Click a query type to see how the MAST stack processes user requests dynamically and cost-efficiently.</p>
-      </div>
+<script>
+/* REVEAL ON SCROLL */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on') })
+}, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' })
+document.querySelectorAll('.rv').forEach(el => obs.observe(el))
 
-      <div class="sim-layout">
-        <div class="sim-controls">
-          <button class="sim-btn active" data-query="outreach">
-            <i data-lucide="mail"></i> Lead Generation Task
-          </button>
-          <button class="sim-btn" data-query="mcp">
-            <i data-lucide="terminal"></i> Custom MCP Tool Call
-          </button>
-          <button class="sim-btn" data-query="cached">
-            <i data-lucide="zap"></i> Repeated API Query (Cached)
-          </button>
-          <button class="sim-btn" data-query="local">
-            <i data-lucide="hard-drive"></i> Local Fallback Execution
-          </button>
-        </div>
+/* 3D TILT ON BENTO CARDS */
+document.querySelectorAll('.bc').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect()
+    const x = (e.clientX - r.left) / r.width  - 0.5
+    const y = (e.clientY - r.top)  / r.height - 0.5
+    card.style.transform = `perspective(800px) rotateY(${x*6}deg) rotateX(${-y*6}deg) translateY(-4px) scale(1.01)`
+  })
+  card.addEventListener('mouseleave', () => {
+    card.style.transition = 'transform 0.6s cubic-bezier(0.23,1,0.32,1)'
+    card.style.transform = 'perspective(800px) rotateY(0) rotateX(0) translateY(0) scale(1)'
+    setTimeout(() => card.style.transition = '', 600)
+  })
+  card.addEventListener('mouseenter', () => {
+    card.style.transition = 'transform 0.1s ease, box-shadow 0.3s ease'
+  })
+})
 
-        <div class="sim-visual-container">
-          <div class="sim-canvas-box">
-            <svg class="sim-svg-connections" id="svg-connections">
-              <path id="path-input-cache" class="flow-path" d="" />
-              <path id="path-cache-router" class="flow-path" d="" />
-              <path id="path-router-agent" class="flow-path" d="" />
-              <path id="path-agent-mcp" class="flow-path" d="" />
-              <path id="path-agent-db" class="flow-path" d="" />
-            </svg>
-
-            <div class="sim-node" id="node-input" style="top: 50%; left: 8%;">
-              <div class="node-icon"><i data-lucide="user"></i></div>
-              <div class="node-label">User Query</div>
-            </div>
-
-            <div class="sim-node" id="node-cache" style="top: 50%; left: 30%;">
-              <div class="node-icon"><i data-lucide="database"></i></div>
-              <div class="node-label">Semantic Cache</div>
-              <div class="node-status" id="status-cache">IDLE</div>
-            </div>
-
-            <div class="sim-node" id="node-router" style="top: 25%; left: 52%;">
-              <div class="node-icon"><i data-lucide="shuffle"></i></div>
-              <div class="node-label">LLM Router</div>
-              <div class="node-status" id="status-router">IDLE</div>
-            </div>
-
-            <div class="sim-node" id="node-agent" style="top: 65%; left: 52%;">
-              <div class="node-icon"><i data-lucide="brain"></i></div>
-              <div class="node-label">LangGraph Swarm</div>
-              <div class="node-status" id="status-agent">IDLE</div>
-            </div>
-
-            <div class="sim-node" id="node-mcp" style="top: 40%; left: 82%;">
-              <div class="node-icon"><i data-lucide="server"></i></div>
-              <div class="node-label">21 MCP Servers</div>
-              <div class="node-status" id="status-mcp">IDLE</div>
-            </div>
-
-            <div class="sim-node" id="node-db" style="top: 75%; left: 82%;">
-              <div class="node-icon"><i data-lucide="milestone"></i></div>
-              <div class="node-label">ChromaDB Memory</div>
-              <div class="node-status" id="status-db">IDLE</div>
-            </div>
-          </div>
-
-          <div class="sim-console">
-            <div class="console-head">
-              <span class="dot"></span> Log Output
-            </div>
-            <div class="console-body" id="sim-log">
-              <p class="log-line">[SYSTEM] Ready for simulation. Select a task above.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section section-dark">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag"><execute_contact_protocol></span>
-        <h2>Start Communication</h2>
-      </div>
-
-      <div class="contact-layout">
-        <div class="contact-info">
-          <h3>Need to Build Autonomous Workflows?</h3>
-          <p>
-            I specialize in setting up self-hosted, offline agent networks, building custom MCP connections for engineering teams, and optimizing API costs down to absolute zero.
-          </p>
-          <div class="contact-details">
-            <div class="c-detail">
-              <i data-lucide="map-pin"></i>
-              <span>Bareilly, Uttar Pradesh, India</span>
-            </div>
-            <div class="c-detail">
-              <i data-lucide="mail"></i>
-              <span>m4stanuj@gmail.com</span>
-            </div>
-            <div class="c-detail">
-              <i data-lucide="github"></i>
-              <span>github.com/m4stanuj</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-cta-box">
-          <h4>Drop me an email directly</h4>
-          <p>I usually respond within 12 hours. Let's build something robust.</p>
-          <a href="mailto:m4stanuj@gmail.com" class="btn btn-primary cta-large">
-            <i data-lucide="mail"></i> INITIATE COMMS
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-container">
-      <p>&copy; 2026 M4ST. Crafted with speed, precision, and zero-cost local architecture.</p>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
-
-  <!-- Vercel Analytics -->
-  <script defer src="/_vercel/insights/script.js"></script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
+/* GLASS HOVER PARALLAX ORB */
+document.addEventListener('mousemove', e => {
+  const x = (e.clientX / window.innerWidth  - 0.5) * 20
+  const y = (e.clientY / window.innerHeight - 0.5) * 20
+  document.querySelectorAll('.orb').forEach((orb, i) => {
+    const factor = (i + 1) * 0.4
+    orb.style.transform = `translate(${x * factor}px, ${y * factor}px) scale(1)`
+  })
+})
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
-
-

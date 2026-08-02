@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://m4st.vercel.app/sitemap.xml
+
+# deploy-test-214102

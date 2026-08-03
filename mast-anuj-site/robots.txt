@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://m4st.vercel.app/sitemap.xml
-
-# deploy-test-214102
+Sitemap: https://mast-anuj-site.vercel.app/sitemap.xml

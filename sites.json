@@ -1,0 +1,28 @@
+{
+  "network": "M4ST",
+  "owner": "Anuj (M4ST)",
+  "location": "Bareilly, India",
+  "primary": "https://m4stanuj.vercel.app",
+  "updated": "2026-08-13",
+  "sites": [
+    { "name": "m4stanuj", "url": "https://m4stanuj.vercel.app", "status": "live", "tagline": "Primary — full autonomous agent systems portfolio" },
+    { "name": "m4st", "url": "https://m4st.vercel.app", "status": "live", "tagline": "Hub — agents that think for ₹0" },
+    { "name": "mast-anuj", "url": "https://mast-anuj.vercel.app", "status": "live", "tagline": "AI Architect & Systems Builder" },
+    { "name": "mast-brutal", "url": "https://mast-brutal.vercel.app", "status": "live", "tagline": "Brutalist design variant" },
+    { "name": "mast-glass", "url": "https://mast-glass.vercel.app", "status": "live", "tagline": "Glassmorphism design variant" },
+    { "name": "mast-luxury", "url": "https://mast-luxury.vercel.app", "status": "live", "tagline": "Ultra-luxury design variant" },
+    { "name": "m4st-premium", "url": "https://m4st-premium.vercel.app", "status": "live", "tagline": "Premium design variant" },
+    { "name": "mast-arcade", "url": "https://mast-arcade.vercel.app", "status": "live", "tagline": "Arcade design variant" },
+    { "name": "mast-manga", "url": "https://mast-manga.vercel.app", "status": "live", "tagline": "Manga design variant" },
+    { "name": "mast-casefile", "url": "https://mast-casefile.vercel.app", "status": "live", "tagline": "Case-file design variant" },
+    { "name": "mast-agent", "url": "https://mast-agent.vercel.app", "status": "live", "tagline": "Agent command design variant" },
+    { "name": "mast-vhs", "url": "https://mast-vhs.vercel.app", "status": "live", "tagline": "VHS archive design variant" },
+    { "name": "m4st-v1", "url": "https://m4st-v1.vercel.app", "status": "live", "tagline": "V1 design variant" },
+    { "name": "smart-github", "url": "https://smart-github-vercel-app.vercel.app", "status": "live", "tagline": "Smart GitHub + Vercel CI/CD demo" }
+  ],
+  "profiles": {
+    "github": "https://github.com/m4stanuj",
+    "x": "https://x.com/m4stanuj",
+    "linkedin": "https://linkedin.com/in/mast-anuj"
+  }
+}

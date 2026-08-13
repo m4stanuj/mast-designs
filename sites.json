@@ -18,8 +18,7 @@
     { "name": "mast-casefile", "url": "https://mast-casefile.vercel.app", "status": "live", "tagline": "Case-file design variant" },
     { "name": "mast-agent", "url": "https://mast-agent.vercel.app", "status": "live", "tagline": "Agent command design variant" },
     { "name": "mast-vhs", "url": "https://mast-vhs.vercel.app", "status": "live", "tagline": "VHS archive design variant" },
-    { "name": "m4st-v1", "url": "https://m4st-v1.vercel.app", "status": "live", "tagline": "V1 design variant" },
-    { "name": "smart-github", "url": "https://smart-github-vercel-app.vercel.app", "status": "live", "tagline": "Smart GitHub + Vercel CI/CD demo" }
+    { "name": "m4st-v1", "url": "https://m4st-v1.vercel.app", "status": "live", "tagline": "V1 design variant" }
   ],
   "profiles": {
     "github": "https://github.com/m4stanuj",

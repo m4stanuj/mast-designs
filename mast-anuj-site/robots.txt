@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mast-anuj-site.vercel.app/sitemap.xml
+Sitemap: https://mast-anuj.vercel.app/sitemap.xml

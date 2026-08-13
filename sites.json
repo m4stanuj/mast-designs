@@ -14,11 +14,11 @@
     { "name": "mastanuj-royal", "url": "https://mastanuj-royal.vercel.app", "status": "live", "tagline": "Royal design variant" },
     { "name": "mastanuj-elite", "url": "https://mastanuj-elite.vercel.app", "status": "live", "tagline": "Elite design variant" },
     { "name": "mastanuj-pixel", "url": "https://mastanuj-pixel.vercel.app", "status": "live", "tagline": "Pixel design variant" },
-    { "name": "mastanuj-comic", "url": "https://mastanuj-comic.vercel.app", "status": "pending", "tagline": "Comic design variant (deploy blocked - Vercel limit)" },
-    { "name": "mastanuj-dossier", "url": "https://mastanuj-dossier.vercel.app", "status": "pending", "tagline": "Dossier design variant (deploy blocked - Vercel limit)" },
-    { "name": "mastanuj-command", "url": "https://mastanuj-command.vercel.app", "status": "pending", "tagline": "Command design variant (deploy blocked - Vercel limit)" },
-    { "name": "mastanuj-retro", "url": "https://mastanuj-retro.vercel.app", "status": "pending", "tagline": "Retro design variant (deploy blocked - Vercel limit)" },
-    { "name": "mastanuj-v1", "url": "https://mastanuj-v1.vercel.app", "status": "pending", "tagline": "V1 design variant (deploy blocked - Vercel limit)" }
+    { "name": "mastanuj-comic", "url": "https://mastanuj-comic.vercel.app", "status": "live", "tagline": "Comic design variant" },
+    { "name": "mastanuj-dossier", "url": "https://mastanuj-dossier.vercel.app", "status": "live", "tagline": "Dossier design variant" },
+    { "name": "mastanuj-command", "url": "https://mastanuj-command.vercel.app", "status": "live", "tagline": "Command design variant" },
+    { "name": "mastanuj-retro", "url": "https://mastanuj-retro.vercel.app", "status": "live", "tagline": "Retro design variant" },
+    { "name": "mastanuj-v1", "url": "https://mastanuj-v1.vercel.app", "status": "live", "tagline": "V1 design variant" }
   ],
   "profiles": {
     "github": "https://github.com/m4stanuj",

@@ -1,0 +1,369 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M4ST // V1 — Anuj | Autonomous Agent Systems</title>
+<meta name="description" content="M4ST V1 by Anuj — a local-first, zero-cost autonomous agent stack. 21 MCP servers, 11 free LLM providers, ₹0 cloud spend. Built solo from Bareilly, India.">
+<meta name="theme-color" content="#05060a">
+<link rel="canonical" href="https://mastanuj-v1.vercel.app/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2305060a'/%3E%3Ctext x='50' y='70' font-size='58' font-family='monospace' font-weight='bold' fill='%2300f0ff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="M4ST // V1 — Anuj | Autonomous Agent Systems">
+<meta property="og:description" content="Local-first, zero-cost autonomous agents. 21 MCP servers. ₹0 cloud spend. Built solo from Bareilly, India.">
+<meta property="og:url" content="https://mastanuj-v1.vercel.app/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="M4ST // V1 — Anuj | Autonomous Agent Systems">
+<meta name="twitter:description" content="Local-first, zero-cost autonomous agents. 21 MCP servers. ₹0 cloud spend.">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Anuj","alternateName":"M4ST","jobTitle":"Solo AI Systems Architect","url":"https://mastanuj-v1.vercel.app/","address":{"@type":"PostalAddress","addressLocality":"Bareilly","addressRegion":"Uttar Pradesh","addressCountry":"IN"},"sameAs":["https://github.com/m4stanuj","https://linkedin.com/in/m4stanuj","https://x.com/m4stanuj"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05060a;--bg2:#0a0d16;--panel:#0e1220;
+  --fg:#eaf0ff;--muted:#8b94b0;
+  --cyan:#00f0ff;--magenta:#ff2e88;--lime:#c8ff3d;--violet:#8b5cf6;--amber:#ffb020;
+  --line:rgba(140,160,255,.14);--glow:0 0 24px rgba(0,240,255,.25);
+  --r:20px;--maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:'Inter',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+::selection{background:var(--cyan);color:var(--bg)}
+h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-0.03em}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+@media(max-width:640px){.wrap{padding:0 18px}}
+
+/* --- canvas + atmosphere --- */
+#net{position:fixed;inset:0;z-index:0;opacity:.9}
+.glow-bg{position:fixed;inset:-20%;z-index:0;pointer-events:none;filter:blur(80px);opacity:.5}
+.glow-bg span{position:absolute;border-radius:50%}
+.glow-bg span:nth-child(1){width:40vw;height:40vw;background:rgba(0,240,255,.20);top:-8%;left:-6%;animation:drift1 20s ease-in-out infinite}
+.glow-bg span:nth-child(2){width:36vw;height:36vw;background:rgba(255,46,136,.16);top:24%;right:-10%;animation:drift2 26s ease-in-out infinite}
+.glow-bg span:nth-child(3){width:32vw;height:32vw;background:rgba(139,92,246,.18);bottom:-8%;left:24%;animation:drift3 22s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6%,10%) scale(1.18)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-10%,6%) scale(.88)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(7%,-12%) scale(1.15)}}
+.scan{position:fixed;inset:0;z-index:2;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.05) 3px 4px);opacity:.6}
+.grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.05;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%22.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')}
+
+/* --- cursor --- */
+#cursor{position:fixed;width:20px;height:20px;border-radius:50%;border:2px solid var(--cyan);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .18s,border-color .18s;mix-blend-mode:screen}
+#cursor.big{width:54px;height:54px;background:rgba(0,240,255,.15);border-color:var(--magenta)}
+@media(max-width:900px){#cursor{display:none}body{cursor:auto}}
+
+/* --- nav --- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 28px}
+.logo{font-family:'Space Grotesk';font-weight:700;font-size:22px;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+.logo .blk{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--cyan),var(--violet));display:grid;place-items:center;font-size:17px;color:var(--bg);box-shadow:var(--glow)}
+.logo b{color:var(--cyan)}
+.navlinks{display:flex;gap:6px;font-size:13px;font-weight:600;background:rgba(10,13,22,.7);backdrop-filter:blur(14px);padding:6px;border-radius:100px;border:1px solid var(--line)}
+.navlinks a{padding:9px 16px;border-radius:100px;color:var(--muted);transition:all .2s}
+.navlinks a:hover{color:var(--fg);background:rgba(0,240,255,.1)}
+@media(max-width:840px){.navlinks{display:none}}
+.nav-cta{background:linear-gradient(135deg,var(--cyan),var(--violet));color:var(--bg);padding:11px 20px;border-radius:100px;font-size:13px;font-weight:800;transition:transform .15s,box-shadow .15s;box-shadow:0 0 18px rgba(0,240,255,.35)}
+.nav-cta:hover{transform:translateY(-2px)}
+
+/* --- hero --- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:100px;z-index:3}
+.hero-inner{position:relative;z-index:2}
+.status{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(0,240,255,.4);background:rgba(0,240,255,.07);padding:9px 16px;border-radius:100px;margin-bottom:30px;color:var(--cyan)}
+.status .dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime);animation:blink 1.2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.hero h1{font-size:clamp(44px,8.5vw,104px);line-height:.94;max-width:860px}
+.hero h1 .g1{background:linear-gradient(92deg,var(--cyan),var(--violet) 55%,var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .g2{background:linear-gradient(92deg,var(--lime),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .o{-webkit-text-stroke:1.5px rgba(234,240,255,.85);color:transparent}
+.hero .sub{font-size:clamp(15px,1.9vw,19px);max-width:560px;margin-top:26px;line-height:1.65;color:var(--muted)}
+.hero .sub b{color:var(--fg)}
+.term{font-family:'JetBrains Mono';font-size:13px;margin-top:30px;border:1px solid var(--line);border-radius:14px;background:rgba(6,8,14,.85);backdrop-filter:blur(10px);padding:16px 18px;max-width:600px;line-height:1.9;box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.term .pr{color:var(--lime)}
+.term .cm{color:var(--cyan)}
+.term .mag{color:var(--magenta)}
+.term .dim{color:var(--muted)}
+.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{padding:16px 30px;border-radius:100px;font-weight:800;font-size:14.5px;display:inline-flex;align-items:center;gap:9px;transition:all .18s;border:1px solid var(--line)}
+.btn-p{background:linear-gradient(135deg,var(--cyan),var(--violet));color:var(--bg);box-shadow:0 6px 30px rgba(0,240,255,.3)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(0,240,255,.45)}
+.btn-g{background:rgba(10,13,22,.7);color:var(--fg);backdrop-filter:blur(10px)}
+.btn-g:hover{transform:translateY(-3px);border-color:var(--cyan);box-shadow:0 0 24px rgba(0,240,255,.2)}
+.marquee{position:relative;z-index:2;margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:15px 0;overflow:hidden;background:rgba(6,8,14,.6)}
+.mq-track{display:flex;gap:44px;white-space:nowrap;width:max-content;animation:slide 24s linear infinite;font-family:'JetBrains Mono';font-size:13.5px;font-weight:700;letter-spacing:.05em}
+.mq-track span{display:flex;align-items:center;gap:44px;color:var(--muted)}
+.mq-track span::after{content:'✦';color:var(--cyan)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* --- sections --- */
+section{position:relative;z-index:3;padding:120px 0}
+.sec-head{max-width:700px;margin-bottom:58px}
+.tag{font-family:'JetBrains Mono';font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--cyan);border:1px solid rgba(0,240,255,.35);background:rgba(0,240,255,.06);padding:6px 14px;border-radius:8px;margin-bottom:18px;display:inline-block}
+.sec-head h2{font-size:clamp(30px,4.6vw,52px);line-height:1.02}
+.sec-head p{margin-top:16px;font-size:16.5px;line-height:1.65;color:var(--muted)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:start}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr}}
+.about-grid p{font-size:18px;line-height:1.75;margin-bottom:18px;color:#c9d2ea}
+.about-grid p b{color:var(--cyan)}
+.quote{border:1px solid var(--line);border-radius:var(--r);padding:36px;background:linear-gradient(160deg,rgba(139,92,246,.12),rgba(0,240,255,.06));position:relative;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.quote::before{content:'"';position:absolute;top:6px;left:20px;font-family:'Space Grotesk';font-size:84px;color:var(--violet);opacity:.5}
+.quote p{font-family:'Space Grotesk';font-size:22px;line-height:1.4;color:var(--fg)}
+.quote .attr{font-family:'JetBrains Mono';font-size:12px;margin-top:22px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:52px}
+@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{border:1px solid var(--line);border-radius:16px;padding:22px;background:rgba(10,13,22,.6);backdrop-filter:blur(8px);text-align:center;transition:border-color .2s,transform .2s}
+.stat:hover{border-color:var(--cyan);transform:translateY(-4px)}
+.stat .n{font-family:'Space Grotesk';font-size:32px;font-weight:700;color:var(--cyan)}
+.stat .l{font-size:11.5px;color:var(--muted);margin-top:6px;font-family:'JetBrains Mono';text-transform:uppercase;letter-spacing:.06em}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:14px}
+@media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}}
+.bc{border:1px solid var(--line);border-radius:18px;padding:24px;background:rgba(10,13,22,.6);backdrop-filter:blur(8px);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s,border-color .2s,box-shadow .2s}
+.bc:hover{transform:translateY(-4px);border-color:var(--cyan);box-shadow:0 0 30px rgba(0,240,255,.12)}
+.bc .num{font-family:'JetBrains Mono';font-size:11px;color:var(--magenta);font-weight:700}
+.bc h3{font-size:19px;margin-top:10px}
+.bc p{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.55}
+.bc .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.bc .chips span{font-size:10.5px;font-weight:700;font-family:'JetBrains Mono';border:1px solid var(--line);padding:4px 10px;border-radius:100px;color:var(--cyan)}
+.bc.wide{grid-column:span 3;grid-row:span 2;background:linear-gradient(150deg,rgba(0,240,255,.10),rgba(139,92,246,.12));border-color:rgba(0,240,255,.3)}
+.bc.wide h3{font-size:26px}
+.bc.half{grid-column:span 3}
+.bc.third{grid-column:span 2}
+.bc.tall{grid-column:span 3;background:linear-gradient(150deg,rgba(255,46,136,.10),rgba(255,176,32,.08));border-color:rgba(255,46,136,.3)}
+
+/* projects */
+.proj{display:grid;grid-template-columns:64px 1fr auto;gap:22px;align-items:center;padding:28px 30px;border:1px solid var(--line);border-radius:20px;background:rgba(10,13,22,.6);margin-bottom:14px;transition:all .2s}
+.proj:hover{border-color:var(--violet);transform:translateX(6px);box-shadow:-8px 0 0 rgba(139,92,246,.5),0 20px 50px rgba(0,0,0,.4)}
+.proj .pn{font-family:'JetBrains Mono';font-weight:700;font-size:15px;color:var(--cyan)}
+.proj h3{font-size:clamp(19px,2.4vw,25px);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.proj .bd{font-family:'JetBrains Mono';font-size:10px;text-transform:uppercase;padding:4px 11px;border-radius:100px;background:rgba(200,255,61,.12);color:var(--lime);font-weight:700}
+.proj .pd{font-size:14.5px;color:var(--muted);margin-top:7px;max-width:560px;line-height:1.6}
+.proj .tags{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.proj .tags span{font-size:11px;font-weight:700;font-family:'JetBrains Mono';border:1px solid var(--line);padding:5px 11px;border-radius:100px;color:var(--muted)}
+@media(max-width:760px){.proj{grid-template-columns:1fr;gap:10px}.proj .tags{justify-content:flex-start}}
+
+/* timeline */
+.tl{display:flex;flex-direction:column}
+.tl-item{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:26px 0;border-bottom:1px dashed var(--line)}
+.tl-item:last-child{border-bottom:none}
+.tl-item .td{font-family:'Space Grotesk';font-weight:700;font-size:22px;color:var(--violet)}
+.tl-item h3{font-size:20px;margin-bottom:7px}
+.tl-item p{font-size:14.5px;max-width:560px;line-height:1.65;color:var(--muted)}
+
+/* contact */
+.contact-box{background:linear-gradient(150deg,#0c1020,#131a38 60%,#1a1240);border:1px solid var(--line);border-radius:32px;padding:clamp(48px,8vw,100px) clamp(24px,6vw,64px);text-align:center;position:relative;overflow:hidden}
+.contact-box::before{content:'';position:absolute;inset:0;background:radial-gradient(600px 300px at 50% 0%,rgba(0,240,255,.12),transparent)}
+.contact-box h2{font-size:clamp(32px,6vw,64px);line-height:1.02;margin-bottom:18px;position:relative}
+.contact-box p{font-size:17px;color:var(--muted);max-width:520px;margin:0 auto 36px;position:relative}
+.clinks{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.cl{border:1px solid var(--line);background:rgba(10,13,22,.7);padding:14px 26px;border-radius:100px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all .18s}
+.cl:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px);box-shadow:0 0 24px rgba(0,240,255,.2)}
+
+footer{padding:44px 24px;text-align:center;font-family:'JetBrains Mono';font-size:12px;color:var(--muted);border-top:1px solid var(--line);position:relative;z-index:3;background:rgba(5,6,10,.8)}
+footer .net{font-family:'Space Grotesk';font-weight:700;font-size:15px;letter-spacing:.05em;margin-bottom:6px;color:var(--fg)}
+footer .net span{color:var(--cyan)}
+footer .links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:860px;margin:20px auto 22px}
+footer .links a{color:var(--muted);border:1px solid var(--line);padding:5px 13px;border-radius:100px;font-size:11px;transition:all .15s}
+footer .links a:hover{color:var(--cyan);border-color:var(--cyan)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}.mq-track,.glow-bg span,.status .dot{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="net"></canvas>
+<div class="glow-bg"><span></span><span></span><span></span></div>
+<div class="scan"></div>
+<div class="grain"></div>
+<div id="cursor"></div>
+
+<nav aria-label="Main navigation">
+  <a class="logo" href="#top"><span class="blk">M</span><span>M4ST<b>//V1</b></span></a>
+  <div class="navlinks">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#work">Work</a>
+    <a href="#journey">Journey</a>
+  </div>
+  <a href="#contact" class="nav-cta">Hire me →</a>
+</nav>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <span class="status"><span class="dot"></span> Open for freelance AI work · Bareilly, IN</span>
+    <h1>Agents that <span class="g1">think</span>,<br>systems that <span class="g2">ship</span> —<br><span class="o">at ₹0.</span></h1>
+    <p class="sub">Anuj builds <b>M4ST</b> — a local-first, autonomous agent operator stack. <b>21 MCP servers</b>, <b>11 free LLM providers</b>, semantic memory, zero cloud spend. Self-taught. Self-hosted. Shipped, not planned.</p>
+    <div class="term">
+      <div><span class="pr">anuj@m4st</span><span class="dim">:~$</span> <span class="cm">m4st deploy --stack=autonomous --cost=₹0</span></div>
+      <div><span class="mag">▸ 21 MCP servers online</span> <span class="dim">·</span> <span class="mag">memory: chromadb</span> <span class="dim">·</span> <span class="mag">status: shipping</span></div>
+    </div>
+    <div class="hero-actions">
+      <a href="#work" class="btn btn-p">See the systems →</a>
+      <a href="#contact" class="btn btn-g">Start a project</a>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="mq-track">
+      <span>21 MCP SERVERS</span><span>11 FREE LLM PROVIDERS</span><span>₹0 CLOUD COST</span><span>12MS CACHE LATENCY</span><span>40% FEWER CALLS</span><span>LOCAL-FIRST</span>
+      <span>21 MCP SERVERS</span><span>11 FREE LLM PROVIDERS</span><span>₹0 CLOUD COST</span><span>12MS CACHE LATENCY</span><span>40% FEWER CALLS</span><span>LOCAL-FIRST</span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">00 · Origin</span>
+      <h2>No GPU cluster.<br>Just obsession.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I started with <b>zero resources</b> — no funded infra, no premium APIs, no team. Just a laptop and a conviction that intelligent systems shouldn't need a data center.</p>
+        <p>Everything in <b>M4ST</b> is self-taught, self-funded, self-hosted. While others provisioned GPU clusters, I routed across free-tier providers to keep inference at zero cost — without sacrificing reliability.</p>
+        <p>Currently chasing <b>CEH certification</b> while taking on freelance AI/automation work. Jugaad-first: shipped beats planned, always.</p>
+      </div>
+      <div class="quote reveal">
+        <p>Constraints breed creativity. Limited resources forced me to optimize everything. That's not a limitation — that's an edge.</p>
+        <div class="attr">— Anuj, on M4ST</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><div class="n" data-count="21">0</div><div class="l">MCP servers</div></div>
+      <div class="stat reveal"><div class="n" data-count="11">0</div><div class="l">LLM providers</div></div>
+      <div class="stat reveal"><div class="n" data-count="0" data-prefix="₹">0</div><div class="l">Cloud cost / mo</div></div>
+      <div class="stat reveal"><div class="n" data-count="24" data-suffix="×7">0</div><div class="l">Agent scale</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">01 · Arsenal</span>
+      <h2>What I actually build with.</h2>
+      <p>Not tool names on a résumé — a stack that runs in production, offline, on consumer hardware.</p>
+    </div>
+    <div class="bento">
+      <div class="bc wide reveal"><div><span class="num">01</span><h3>Multi-Agent Orchestration</h3><p>Autonomous agent swarms that decompose tasks, collaborate across specialists, and execute — no human in the loop. Built on LangGraph + CrewAI with real inter-agent communication.</p></div><div class="chips"><span>CrewAI</span><span>LangGraph</span><span>AutoGen</span><span>n8n</span></div></div>
+      <div class="bc half reveal"><div><span class="num">02</span><h3>MCP Protocol Engineering</h3><p>21 custom servers bridging LLMs with databases, browsers, and OSINT tooling.</p></div></div>
+      <div class="bc third reveal"><div><span class="num">03</span><h3>Zero-Cost Routing</h3><p>11 free providers, quality-aware, ₹0 inference.</p></div></div>
+      <div class="bc third reveal"><div><span class="num">04</span><h3>Local Inference</h3><p>Ollama + quantized GGUF on consumer hardware.</p></div></div>
+      <div class="bc third reveal"><div><span class="num">05</span><h3>Semantic Memory</h3><p>12ms cache hits, 40% fewer LLM calls.</p></div></div>
+      <div class="bc tall reveal"><div><span class="num">06</span><h3>Offensive & Defensive Security</h3><p>CEH-track OSINT, threat modeling, recon pipelines — applied to real infrastructure audits.</p></div><div class="chips"><span>OSINT</span><span>Shodan</span><span>Recon</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">02 · Shipped</span>
+      <h2>Systems in production,<br>not slideware.</h2>
+    </div>
+    <div class="reveal">
+      <div class="proj"><span class="pn">01</span><div><h3>M4ST Stack <span class="bd">Live</span></h3><p class="pd">The complete autonomous agent operator system — 5 agents, MCP orchestration, semantic caching, zero-cost LLM routing.</p></div><div class="tags"><span>CrewAI</span><span>MCP</span><span>FalkorDB</span></div></div>
+      <div class="proj"><span class="pn">02</span><div><h3>OpenWork Integration <span class="bd">Active</span></h3><p class="pd">Agentic coding workspace wired into GitHub and Vercel MCP for direct build-and-deploy.</p></div><div class="tags"><span>MCP</span><span>GitHub</span></div></div>
+      <div class="proj"><span class="pn">03</span><div><h3>cai-osint <span class="bd">Open Source</span></h3><p class="pd">OSINT framework — automated data gathering, Shodan integration, AI-powered analysis.</p></div><div class="tags"><span>Python</span><span>Shodan</span></div></div>
+      <div class="proj"><span class="pn">04</span><div><h3>Semantic Cache Engine <span class="bd">v2.0</span></h3><p class="pd">Sub-12ms caching over ChromaDB embeddings, cutting LLM calls by 40%.</p></div><div class="tags"><span>ChromaDB</span><span>Python</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">03 · Timeline</span>
+      <h2>How M4ST actually happened.</h2>
+    </div>
+    <div class="tl">
+      <div class="tl-item reveal"><span class="td">2024</span><div><h3>Zero-cost breakthrough</h3><p>Mastered free-tier LLM routing across 11 providers, hitting ₹0 inference cost.</p></div></div>
+      <div class="tl-item reveal"><span class="td">2025</span><div><h3>MCP revolution</h3><p>Built the first custom MCP server, expanded rapidly to 21 — databases, browsers, OSINT.</p></div></div>
+      <div class="tl-item reveal"><span class="td">2026</span><div><h3>M4STCLAW v3</h3><p>First working agent stack — obsession begins, iterating through v5, v6, v7 on nights and weekends.</p></div></div>
+      <div class="tl-item reveal"><span class="td">2026</span><div><h3>M4ST v3.0</h3><p>Corrected full provider stack, added SEPCC proxy and 9Router for smarter multi-provider routing.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <h2>Let's build something<br>that shouldn't be free.</h2>
+      <p>Open to freelance AI/automation work, security consulting, and anything that needs an operator who ships fast.</p>
+      <div class="clinks">
+        <a href="https://github.com/m4stanuj" class="cl" target="_blank">↗ GitHub</a>
+        <a href="https://linkedin.com/in/m4stanuj" class="cl" target="_blank">↗ LinkedIn</a>
+        <a href="https://x.com/m4stanuj" class="cl" target="_blank">↗ X / Twitter</a>
+        <a href="mailto:m4stanuj@gmail.com" class="cl" target="_blank">✉ Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0D0B14;color:#FFFCF7;padding:44px 24px 36px;text-align:center;font-family:'JetBrains Mono',monospace;border-top:3px solid #0D0B14;margin-top:60px">
+  <div style="max-width:1240px;margin:0 auto">
+    <p style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.04em;margin-bottom:6px">M4ST <span style="color:#CFFF3D">NETWORK</span></p>
+    <p style="font-size:11px;color:#8B2FF2;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:22px">14 autonomous agent interfaces</p>
+    <nav aria-label="M4ST variants" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:860px;margin:0 auto 24px">
+      <a href="https://m4stanuj.vercel.app" style="color:#C8F731;text-decoration:none;border:1.5px solid #C8F731;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">m4stanuj</a>
+      <a href="https://mast-anuj.vercel.app" style="color:#8B2FF2;text-decoration:none;border:1.5px solid #8B2FF2;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mast-anuj</a>
+      <a href="https://mast-anuj-site.vercel.app" style="color:#00E5FF;text-decoration:none;border:1.5px solid #00E5FF;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mast-anuj-site</a>
+      <a href="https://m4st.vercel.app" style="color:#FF2A6D;text-decoration:none;border:1.5px solid #FF2A6D;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">m4st</a>
+      <a href="https://mastanuj-royal.vercel.app" style="color:#C9A84C;text-decoration:none;border:1.5px solid #C9A84C;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-royal</a>
+      <a href="https://mastanuj-elite.vercel.app" style="color:#7C3AED;text-decoration:none;border:1.5px solid #7C3AED;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-elite</a>
+      <a href="https://mastanuj-prism.vercel.app" style="color:#FF6B9D;text-decoration:none;border:1.5px solid #FF6B9D;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-prism</a>
+      <a href="https://mastanuj-pixel.vercel.app" style="color:#39FF14;text-decoration:none;border:1.5px solid #39FF14;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-pixel</a>
+      <a href="https://mastanuj-v1.vercel.app" style="color:#0D0B14;background:#FFB020;text-decoration:none;border:1.5px solid #FFB020;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;transition:all .15s">mastanuj-v1</a>
+      <a href="https://mastanuj-retro.vercel.app" style="color:#FF2D95;text-decoration:none;border:1.5px solid #FF2D95;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-retro</a>
+      <a href="https://mastanuj-command.vercel.app" style="color:#00FFAA;text-decoration:none;border:1.5px solid #00FFAA;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-command</a>
+      <a href="https://mastanuj-dossier.vercel.app" style="color:#F2B705;text-decoration:none;border:1.5px solid #F2B705;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-dossier</a>
+      <a href="https://mastanuj-comic.vercel.app" style="color:#FF1E3C;text-decoration:none;border:1.5px solid #FF1E3C;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-comic</a>
+      <a href="https://mastanuj-core.vercel.app" style="color:#FFDD00;text-decoration:none;border:1.5px solid #FFDD00;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-core</a>
+    </nav>
+    <p style="margin:0;font-size:11px;opacity:0.6">c 2026 M4ST - Built by Anuj, Bareilly, India. Zero-cost, always.</p>
+  </div>
+</footer>
+
+<script>
+/* custom cursor */
+(function(){const c=document.getElementById('cursor');let x=0,y=0,tx=0,ty=0;
+window.addEventListener('mousemove',e=>{x=e.clientX;y=e.clientY});
+document.querySelectorAll('a,button,.proj,.bc,.stat,.cl').forEach(el=>{el.addEventListener('mouseenter',()=>c.classList.add('big'));el.addEventListener('mouseleave',()=>c.classList.remove('big'))});
+(function loop(){tx+=(x-tx)*.18;ty+=(y-ty)*.18;c.style.left=tx+'px';c.style.top=ty+'px';requestAnimationFrame(loop)})()})();
+
+/* particle network canvas */
+(function(){const cv=document.getElementById('net'),ctx=cv.getContext('2d');let W,H,pts=[];
+const COLORS=['0,240,255','139,92,246','255,46,136','200,255,61'];
+function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight;init()}
+function init(){const n=Math.min(90,Math.floor(W*H/22000));pts=[];
+for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.55,vy:(Math.random()-.5)*.55,r:Math.random()*2+1,c:COLORS[i%COLORS.length]});}
+let mx=null,my=null;window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+function tick(){ctx.clearRect(0,0,W,H);
+for(const p of pts){p.x+=p.vx;p.y+=p.vy;
+if(mx!==null){const dx=p.x-mx,dy=p.y-my,d=Math.hypot(dx,dy);if(d<160&&d>0){p.x+=dx/d*1.1;p.y+=dy/d*1.1}}
+if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba('+p.c+',.75)';ctx.fill();}
+for(let i=0;i<pts.length;i++){for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba('+a.c+','+(1-d/130)*.28+')';ctx.lineWidth=1;ctx.stroke();}}}
+requestAnimationFrame(tick)}
+window.addEventListener('resize',resize);resize();tick();})();
+
+/* scroll reveal */
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* counters */
+const co=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,t=+el.dataset.count,p=el.dataset.prefix||'',s=el.dataset.suffix||'',d=1200,st=performance.now();
+(function up(n){const k=Math.min(1,(performance.now()-st)/d);el.textContent=p+Math.round(t*(0.5-Math.cos(Math.PI*k)/2))+(k<1?(''+s):'');if(k<1)requestAnimationFrame(()=>up());})(0);
+co.unobserve(el)})},{threshold:.4});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+</script>
+</body>
+</html>

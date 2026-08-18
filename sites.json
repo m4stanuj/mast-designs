@@ -4,7 +4,7 @@
   "location": "Bareilly, India",
   "primary": "https://m4stanuj.vercel.app",
   "primaries": ["https://m4stanuj.vercel.app", "https://m4st.vercel.app", "https://mast-anuj.vercel.app"],
-  "updated": "2026-08-14",
+  "updated": "2026-08-18",
   "sites": [
     { "name": "m4stanuj", "url": "https://m4stanuj.vercel.app", "status": "live", "primary": true, "tagline": "Primary - full autonomous agent systems portfolio" },
     { "name": "m4st", "url": "https://m4st.vercel.app", "status": "live", "primary": true, "tagline": "Primary - hub, synthwave, agents that think for ₹0" },

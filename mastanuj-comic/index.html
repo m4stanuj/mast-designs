@@ -1,0 +1,434 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M4ST // Anuj - Comic One</title>
+<meta name="description" content="Anuj builds M4ST — autonomous agent infrastructure, told like a manga arc. Bareilly, India.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="canonical" href="https://mastanuj-comic.vercel.app/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230B0B0C'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial Black,sans-serif' fill='%23FF1E3C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="M4ST // Anuj — Chapter One">
+<meta property="og:description" content="One guy. Zero budget. Full swarm. Anuj builds M4ST — autonomous agent infrastructure — solo, out of Bareilly, India.">
+<meta property="og:url" content="https://mastanuj-comic.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="M4ST // Anuj — Chapter One">
+<meta name="twitter:description" content="One guy. Zero budget. Full swarm. Solo-built autonomous agent infrastructure out of Bareilly, India.">
+<meta property="og:image" content="https://mastanuj-comic.vercel.app/og-manga.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://mastanuj-comic.vercel.app/og-manga.svg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person",
+"webSite": {
+  "@type": "WebSite",
+  "name": "M4ST — MANGA",
+  "url": "https://mastanuj-comic.vercel.app",
+  "description": "Autonomous agent systems portfolio by Anuj — M4ST stack, zero-cost AI inference.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Anuj",
+    "url": "https://m4stanuj.vercel.app"
+  }
+},
+"potentialAction": {
+  "@type": "SearchAction",
+  "target": "https://mastanuj-comic.vercel.app/search?q={search_term_string}",
+  "query-input": "required name=search_term_string"
+},"name":"Anuj","alternateName":"M4ST","jobTitle":"Solo Systems Architect","url":"https://mastanuj-comic.vercel.app/","address":{"@type":"PostalAddress","addressLocality":"Bareilly","addressRegion":"Uttar Pradesh","addressCountry":"IN"},"sameAs":["https://github.com/m4stanuj","https://linkedin.com/in/mast-anuj","https://x.com/m4stanuj"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bungee&family=Noto+Sans:wght@400;500;600;700;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0B0C; --paper:#F7F5F0; --red:#FF1E3C; --blue:#1C5CFF; --panel:#141414;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper); color:var(--ink); font-family:'Noto Sans',sans-serif;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:1200px; margin:0 auto; padding:0 26px;}
+@media(max-width:640px){.wrap{padding:0 16px;}}
+.impact{font-family:'Anton',sans-serif; letter-spacing:0.01em;}
+.bungee{font-family:'Bungee',sans-serif;}
+.mono{font-family:'JetBrains Mono',monospace;}
+
+/* screentone halftone texture */
+.halftone{position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.05;
+  background-image:radial-gradient(#000 1px, transparent 1.4px);
+  background-size:6px 6px;
+}
+header,section,footer{position:relative; z-index:2;}
+
+/* NAV — chapter header */
+nav{position:sticky; top:0; z-index:100; background:var(--ink); color:var(--paper); border-bottom:4px solid var(--red);}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 26px; max-width:1200px; margin:0 auto;}
+.brand{font-family:'Bungee'; font-size:18px; display:flex; align-items:center; gap:8px;}
+.brand .box{background:var(--red); padding:3px 8px; font-size:13px;}
+.navlinks{display:flex; gap:4px; font-family:'Anton'; font-size:14px; letter-spacing:0.03em;}
+.navlinks a{padding:8px 14px; border:2px solid transparent;}
+.navlinks a:hover{border-color:var(--red); color:var(--red);}
+@media(max-width:760px){.navlinks{display:none;}}
+.nav-cta{font-family:'Anton'; font-size:14px; background:var(--red); color:var(--ink); padding:9px 16px; letter-spacing:0.03em;}
+
+/* HERO — splash panel */
+.hero{padding:0;}
+.splash{position:relative; border-bottom:5px solid var(--ink); padding:70px 0 60px; overflow:hidden;}
+.speedlines{position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:repeating-conic-gradient(from 0deg, rgba(0,0,0,0.05) 0deg 2deg, transparent 2deg 10deg);
+  opacity:0.5; mask-image:radial-gradient(circle at 82% 20%, black, transparent 60%);
+}
+.splash-inner{position:relative; z-index:1;}
+.chapter-tag{font-family:'JetBrains Mono'; font-size:12px; font-weight:700; letter-spacing:0.08em; background:var(--ink); color:var(--paper); padding:6px 14px; display:inline-block; margin-bottom:22px; transform:skew(-8deg);}
+.hero h1{font-family:'Anton'; font-size:clamp(42px,10vw,128px); line-height:0.88; text-transform:uppercase;}
+.hero h1 .r{color:var(--red);}
+.hero h1 .out{-webkit-text-stroke:2px var(--ink); color:transparent;}
+.hero-sub{font-size:clamp(15px,1.8vw,19px); max-width:540px; margin-top:24px; line-height:1.65; font-weight:500;}
+.hero-sub b{background:var(--red); color:var(--paper); padding:0 5px;}
+.hero-actions{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+.btn{font-family:'Anton'; font-size:16px; letter-spacing:0.02em; padding:15px 28px; border:3px solid var(--ink); display:inline-flex; align-items:center; gap:8px; transition:transform .15s;}
+.btn-fill{background:var(--ink); color:var(--paper);}
+.btn-fill:hover{transform:translate(-3px,-3px); box-shadow:5px 5px 0 var(--red);}
+.btn-out:hover{transform:translate(-3px,-3px); box-shadow:5px 5px 0 var(--ink);}
+
+.burst-badge{position:absolute; top:60px; right:30px; width:130px; height:130px; display:none; align-items:center; justify-content:center; text-align:center;}
+@media(min-width:900px){.burst-badge{display:flex;}}
+.burst-badge svg{position:absolute; inset:0; width:100%; height:100%; animation:spin 14s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.burst-badge span{position:relative; font-family:'Bungee'; font-size:13px; line-height:1.2; color:var(--ink);}
+
+/* SECTION shared */
+section{padding:90px 0;}
+.chapter-mark{display:inline-flex; align-items:center; gap:10px; font-family:'Bungee'; font-size:13px; background:var(--paper); border:3px solid var(--ink); padding:8px 16px; margin-bottom:22px; transform:rotate(-1deg);}
+.sec-head{position:relative;}
+.sec-head h2{font-family:'Anton'; font-size:clamp(28px,5vw,52px); text-transform:uppercase; line-height:0.95; max-width:760px;}
+.sec-head p{margin-top:14px; max-width:560px; font-size:15px; color:#3a3a3a; font-weight:500;}
+
+/* SFX burst */
+.sfx-burst{position:absolute; top:-8px; right:0; font-family:'Bungee'; font-size:clamp(22px,4vw,38px); color:var(--red); -webkit-text-stroke:1.5px var(--ink); pointer-events:none; opacity:0; transform:scale(0.3) rotate(-14deg); transition:opacity .2s ease, transform .4s cubic-bezier(.34,1.8,.64,1); z-index:3;}
+.sfx-burst.in{opacity:1; transform:scale(1) rotate(-8deg);}
+@media(max-width:640px){.sfx-burst{position:static; display:inline-block; margin:10px 0 0;}}
+
+/* ink splatter (click fx) */
+.ink-splat{position:fixed; width:14px; height:14px; border-radius:50%; background:var(--ink); pointer-events:none; z-index:9999; transform:translate(-50%,-50%) scale(1); animation:splatpop .55s ease-out forwards;}
+@keyframes splatpop{
+  0%{transform:translate(-50%,-50%) scale(0.4); opacity:0.9;}
+  60%{transform:translate(-50%,-50%) scale(2.6); opacity:0.5;}
+  100%{transform:translate(-50%,-50%) scale(3.6); opacity:0;}
+}
+@media (prefers-reduced-motion: reduce){ .ink-splat{display:none;} }
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .55s ease, transform .55s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+
+/* ABOUT — dialogue panel */
+.panel-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:26px; align-items:stretch;}
+@media(max-width:900px){.panel-grid{grid-template-columns:1fr;}}
+.speech-panel{border:4px solid var(--ink); background:#fff; padding:32px; position:relative; box-shadow:10px 10px 0 var(--ink);}
+.speech-panel p{font-size:16.5px; line-height:1.75; margin-bottom:16px;}
+.speech-panel b{color:var(--red);}
+.mono-panel{border:4px solid var(--ink); background:var(--ink); color:var(--paper); padding:28px; box-shadow:10px 10px 0 var(--red); display:flex; flex-direction:column; justify-content:center;}
+.mono-panel .line{font-family:'JetBrains Mono'; font-size:13px; padding:8px 0; border-bottom:1px dashed rgba(255,255,255,0.2); display:flex; justify-content:space-between; gap:12px;}
+.mono-panel .line:last-child{border-bottom:none;}
+.mono-panel .k{color:#8f8f8f;}
+
+/* SKILLS — stat block / power levels */
+.stats-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+@media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.stats-grid{grid-template-columns:1fr;}}
+.power-card{border:3px solid var(--ink); background:#fff; padding:22px; position:relative;}
+.power-card:hover{box-shadow:6px 6px 0 var(--blue);}
+.power-card .no{font-family:'Bungee'; font-size:12px; color:var(--red);}
+.power-card h3{font-family:'Anton'; font-size:21px; margin:8px 0 10px; text-transform:uppercase;}
+.power-card p{font-size:13.5px; color:#3a3a3a; margin-bottom:14px;}
+.bar-outer{height:8px; background:#e5e2d8; border:2px solid var(--ink);}
+.bar-inner{height:100%; background:var(--red);}
+
+/* PROJECTS — episode list */
+.ep-list{display:flex; flex-direction:column; gap:16px;}
+.ep-row{display:grid; grid-template-columns:100px 1fr auto; gap:20px; align-items:center; border:3px solid var(--ink); background:#fff; padding:24px; position:relative;}
+.ep-row:hover{box-shadow:8px 8px 0 var(--ink);}
+.ep-row .epnum{font-family:'Anton'; font-size:15px; background:var(--ink); color:var(--paper); padding:8px 10px; text-align:center;}
+.ep-row .epnum span{display:block; font-size:22px;}
+.ep-row h3{font-family:'Anton'; font-size:23px; text-transform:uppercase; display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
+.ep-row .epdesc{font-size:14px; margin-top:6px; max-width:480px; color:#3a3a3a;}
+.airing{font-family:'JetBrains Mono'; font-size:10.5px; text-transform:uppercase; padding:4px 10px; background:var(--red); color:var(--paper); font-weight:700;}
+.ep-tags{display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end;}
+.ep-tags span{font-size:10.5px; font-weight:700; font-family:'JetBrains Mono'; border:1.5px solid var(--ink); padding:3px 9px;}
+@media(max-width:700px){.ep-row{grid-template-columns:1fr; gap:10px;} .ep-tags{justify-content:flex-start;}}
+
+/* TIMELINE — arc progression */
+.arc{display:flex; flex-direction:column; gap:0;}
+.arc-item{display:grid; grid-template-columns:110px 1fr; gap:22px; padding:26px 0; border-bottom:3px dashed var(--ink);}
+.arc-item:last-child{border-bottom:none;}
+.arc-item .arcyr{font-family:'Anton'; font-size:26px; color:var(--red);}
+.arc-item h3{font-family:'Anton'; font-size:20px; text-transform:uppercase; margin-bottom:6px;}
+.arc-item p{font-size:14.5px; color:#3a3a3a; max-width:540px; line-height:1.6;}
+
+/* CONTACT — final panel */
+.final-panel{border:5px solid var(--ink); background:var(--ink); color:var(--paper); padding:clamp(36px,7vw,80px); text-align:center; position:relative; overflow:hidden;}
+.final-panel::before{content:''; position:absolute; inset:0; background:repeating-conic-gradient(from 0deg, rgba(255,30,60,0.06) 0deg 3deg, transparent 3deg 12deg); pointer-events:none;}
+.final-panel h2{font-family:'Anton'; font-size:clamp(32px,7vw,68px); text-transform:uppercase; line-height:0.92; position:relative;}
+.final-panel p{margin:20px auto 34px; max-width:460px; font-size:15px; color:#cfcfcf; font-weight:500; position:relative;}
+.chan-list{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; position:relative;}
+.chan{font-family:'Anton'; font-size:15px; letter-spacing:0.02em; background:var(--paper); color:var(--ink); padding:13px 24px; border:3px solid var(--paper); transition:all .15s;}
+.chan:hover{background:var(--red); border-color:var(--red); color:var(--paper); transform:translateY(-3px);}
+
+footer{padding:36px 0; text-align:center; font-family:'JetBrains Mono'; font-size:11.5px; color:#6a6a6a;}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{transition:none; opacity:1; transform:none;}
+  .burst-badge svg{animation:none;}
+}
+
+/* accessibility: visible focus + skip link */
+a:focus-visible, button:focus-visible{outline:3px solid var(--blue); outline-offset:3px;}
+.skip-link{position:absolute; left:-999px; top:auto; z-index:200; background:var(--paper); color:var(--ink); padding:12px 20px; font-family:'JetBrains Mono'; font-size:13px; font-weight:700; border:3px solid var(--ink);}
+.skip-link:focus{left:16px; top:16px;}
+
+/* mobile menu */
+.menu-btn{display:none; flex-direction:column; gap:5px; background:none; border:none; padding:8px; cursor:pointer;}
+.menu-btn span{display:block; width:24px; height:3px; background:var(--paper); transition:transform .2s, opacity .2s;}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+@media(max-width:760px){.menu-btn{display:flex;}}
+.mobile-menu{position:fixed; inset:0 0 0 auto; width:min(78vw,320px); background:var(--ink); color:var(--paper); z-index:150; transform:translateX(100%); transition:transform .3s ease; padding:90px 28px 28px; display:flex; flex-direction:column; gap:6px;}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu a{font-family:'Anton'; font-size:22px; text-transform:uppercase; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.15);}
+.menu-overlay{position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:140; opacity:0; pointer-events:none; transition:opacity .3s ease;}
+.menu-overlay.open{opacity:1; pointer-events:auto;}
+</style>
+<link rel="me" href="https://github.com/m4stanuj">
+<link rel="me" href="https://x.com/m4stanuj">
+<link rel="me" href="https://linkedin.com/in/mast-anuj">
+  <meta name="robots" content="index, follow">
+</head>
+<body>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--cyan);color:var(--bg);padding:8px 16px;z-index:1000;font-family:var(--mono);font-size:14px;transition:top .3s" onfocus="this.style.top=0" onblur="this.style.top=-40px">Skip to content</a>
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="halftone"></div>
+
+<nav role="banner" aria-label="Main navigation">
+  <div class="nav-inner">
+    <div class="brand"><span class="box">M4ST</span>CH. 01</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#skills">Stats</a>
+      <a href="#work">Episodes</a>
+      <a href="#arc">Arc</a>
+    </div>
+    <a href="#contact" class="nav-cta" style="margin-right:0;">Contact</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="menu-overlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#skills">Stats</a>
+  <a href="#work">Episodes</a>
+  <a href="#arc">Arc</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<section class="hero" id="main">
+  <div class="splash">
+    <div class="speedlines"></div>
+    <div class="wrap splash-inner">
+      <div class="burst-badge">
+        <svg viewBox="0 0 100 100"><polygon points="50,2 61,35 95,35 68,55 78,88 50,68 22,88 32,55 5,35 39,35" fill="none" stroke="#FF1E3C" stroke-width="2"/></svg>
+        <span>ZERO<br>YEN<br>JUTSU</span>
+      </div>
+      <span class="chapter-tag">CH. 01 — THE OPERATOR</span>
+      <h1>ONE GUY.<br><span class="r">ZERO</span> BUDGET.<br><span class="out">FULL SWARM.</span></h1>
+      <p class="hero-sub">Anuj runs M4ST solo out of <b>Bareilly, India</b> — a squad of AI agents built with no funding, no team, and no cloud bill, trained to plan, patch, and ship on their own.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-fill">Read the episodes →</a>
+        <a href="#contact" class="btn btn-out">Hire me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter-mark">◆ Character intro</span><span class="sfx-burst">ORIGIN!</span>
+      <h2>The origin panel.</h2>
+      <p>Every arc needs a starting point. Here's his.</p>
+    </div>
+    <div class="panel-grid">
+      <div class="speech-panel reveal">
+        <p>No mentor arc, no funding montage — just a laptop and the stubborn idea that a smart system shouldn't need a data center behind it.</p>
+        <p>Every piece of M4ST got <b>built the hard way</b>: self-taught, self-funded, self-hosted. While everyone else rented GPUs, he stitched together eleven free-tier providers into one routing chain and kept inference sitting at zero.</p>
+        <p>Currently on a side-quest toward a <b>CEH certification</b>, taking freelance AI and automation work on the side. Jugaad rule: shipped beats planned, every single time.</p>
+      </div>
+      <div class="mono-panel reveal">
+        <div class="line"><span class="k">class</span><span>Solo Systems Architect</span></div>
+        <div class="line"><span class="k">location</span><span>Bareilly, UP, IN</span></div>
+        <div class="line"><span class="k">signature move</span><span>Zero-cost routing</span></div>
+        <div class="line"><span class="k">weakness</span><span>Can't stop iterating</span></div>
+        <div class="line"><span class="k">current arc</span><span>M4ST v3.0</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter-mark">◆ Stat sheet</span><span class="sfx-burst">POWER UP!</span>
+      <h2>Power levels.</h2>
+      <p>What actually goes into a build like this.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="power-card reveal"><span class="no">01</span><h3>Agent Orchestration</h3><p>Swarms that split work and delegate — nobody's watching the loop.</p><div class="bar-outer"><div class="bar-inner" style="width:95%;"></div></div></div>
+      <div class="power-card reveal"><span class="no">02</span><h3>MCP Engineering</h3><p>21 custom protocol bridges linking models to real tools.</p><div class="bar-outer"><div class="bar-inner" style="width:90%;"></div></div></div>
+      <div class="power-card reveal"><span class="no">03</span><h3>Zero-Cost Routing</h3><p>11 free providers, one failover chain, ₹0 spend.</p><div class="bar-outer"><div class="bar-inner" style="width:98%;"></div></div></div>
+      <div class="power-card reveal"><span class="no">04</span><h3>Local Inference</h3><p>Quantized models running on a consumer GPU, not a rented one.</p><div class="bar-outer"><div class="bar-inner" style="width:85%;"></div></div></div>
+      <div class="power-card reveal"><span class="no">05</span><h3>Semantic Memory</h3><p>12ms cache hits, 40% fewer repeat calls.</p><div class="bar-outer"><div class="bar-inner" style="width:88%;"></div></div></div>
+      <div class="power-card reveal"><span class="no">06</span><h3>Security & OSINT</h3><p>CEH-track recon work, applied to real audits with real sign-off.</p><div class="bar-outer"><div class="bar-inner" style="width:82%;"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter-mark">◆ Now airing</span><span class="sfx-burst">BOOM!</span>
+      <h2>Episode guide.</h2>
+      <p>Live builds, not a pitch deck.</p>
+    </div>
+    <div class="ep-list">
+      <div class="ep-row reveal">
+        <span class="epnum">EP<span>01</span></span>
+        <div><h3>M4ST Stack</h3><p class="epdesc">The full operator system — five agents, MCP orchestration, semantic caching, zero-cost routing, all running together.</p></div>
+        <div class="ep-tags"><span>CrewAI</span><span>MCP</span><span>FalkorDB</span></div>
+      </div>
+      <div class="ep-row reveal">
+        <span class="epnum">EP<span>02</span></span>
+        <div><h3>OpenWork</h3><p class="epdesc">A coding workspace wired straight into GitHub and Vercel — a merge lands, a deploy follows, no one has to push the button.</p></div>
+        <div class="ep-tags"><span>MCP</span><span>GitHub</span></div>
+      </div>
+      <div class="ep-row reveal">
+        <span class="epnum">EP<span>03</span></span>
+        <div><h3>cai-osint</h3><p class="epdesc">An open-source recon framework — Shodan data in, reasoned analysis out, no manual digging.</p></div>
+        <div class="ep-tags"><span>Python</span><span>Shodan</span></div>
+      </div>
+      <div class="ep-row reveal">
+        <span class="epnum">EP<span>04</span></span>
+        <div><h3>Semantic Cache Engine</h3><p class="epdesc">Sub-12ms lookups over embedded memory. The same question never gets asked twice.</p></div>
+        <div class="ep-tags"><span>ChromaDB</span><span>Python</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="arc">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter-mark">◆ Story so far</span><span class="sfx-burst">TO BE CONTINUED...</span>
+      <h2>The arc.</h2>
+      <p>How the build actually escalated, in order.</p>
+    </div>
+    <div class="arc">
+      <div class="arc-item reveal"><span class="arcyr">2024</span><div><h3>Zero-cost breakthrough</h3><p>Free-tier routing across 11 providers finally held under real traffic — the ₹0 bet started paying off.</p></div></div>
+      <div class="arc-item reveal"><span class="arcyr">2025</span><div><h3>MCP awakening</h3><p>First custom protocol server shipped, then multiplied to 21 — databases, browsers, recon, all wired in.</p></div></div>
+      <div class="arc-item reveal"><span class="arcyr">2026</span><div><h3>The swarm powers up</h3><p>M4STCLAW's first working multi-agent build went live, then kept getting rebuilt through v5, v6, v7.</p></div></div>
+      <div class="arc-item reveal"><span class="arcyr">NOW</span><div><h3>Still leveling</h3><p>Full provider stack corrected, smarter routing added — the arc isn't finished, it's just the current chapter.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="final-panel reveal">
+      <h2>Next episode:<br>you and me.</h2>
+      <p>Open to freelance AI and automation work, security consulting, and anything that needs someone who ships instead of stalling.</p>
+      <div class="chan-list">
+        <a href="mailto:m4stanuj@gmail.com" class="chan">EMAIL</a>
+        <a href="https://github.com/m4stanuj" class="chan" target="_blank">GITHUB</a>
+        <a href="https://linkedin.com/in/mast-anuj" class="chan" target="_blank">LINKEDIN</a>
+        <a href="https://x.com/m4stanuj" class="chan" target="_blank">X</a>
+<a href="https://mastanuj-comic.vercel.app/" class="chan" target="_blank">mastanuj-comic.vercel.app</a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:0.12});
+document.querySelectorAll('.reveal, .sfx-burst').forEach(el=>io.observe(el));
+
+// ink-splatter click fx
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.addEventListener('click', (e)=>{
+    const dot = document.createElement('span');
+    dot.className = 'ink-splat';
+    dot.style.left = e.clientX + 'px';
+    dot.style.top = e.clientY + 'px';
+    document.body.appendChild(dot);
+    dot.addEventListener('animationend', ()=> dot.remove());
+  });
+})();
+
+// mobile menu
+(function(){
+  const btn = document.querySelector('.menu-btn');
+  const menu = document.querySelector('.mobile-menu');
+  const overlay = document.querySelector('.menu-overlay');
+  function close(){ menu.classList.remove('open'); overlay.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  function open(){ menu.classList.add('open'); overlay.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  btn.addEventListener('click', ()=> btn.getAttribute('aria-expanded')==='true' ? close() : open());
+  overlay.addEventListener('click', close);
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click', close));
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+})();
+</script>
+
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+
+
+
+<!-- M4ST Network Footer -->
+<footer style="background:#0D0B14;color:#FFFCF7;padding:44px 24px 36px;text-align:center;font-family:'JetBrains Mono',monospace;border-top:3px solid #0D0B14;margin-top:60px">
+  <div style="max-width:1240px;margin:0 auto">
+    <p style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.04em;margin-bottom:6px">M4ST <span style="color:#CFFF3D">NETWORK</span></p>
+    <p style="font-size:11px;color:#8B2FF2;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:22px">14 autonomous agent interfaces</p>
+    <nav aria-label="M4ST variants" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:860px;margin:0 auto 24px">
+      <a href="https://m4stanuj.vercel.app" style="color:#C8F731;text-decoration:none;border:1.5px solid #C8F731;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">m4stanuj</a>
+      <a href="https://mast-anuj.vercel.app" style="color:#8B2FF2;text-decoration:none;border:1.5px solid #8B2FF2;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mast-anuj</a>
+      <a href="https://mast-anuj-site.vercel.app" style="color:#00E5FF;text-decoration:none;border:1.5px solid #00E5FF;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mast-anuj-site</a>
+      <a href="https://m4st.vercel.app" style="color:#FF2A6D;text-decoration:none;border:1.5px solid #FF2A6D;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">m4st</a>
+      <a href="https://mastanuj-royal.vercel.app" style="color:#C9A84C;text-decoration:none;border:1.5px solid #C9A84C;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-royal</a>
+      <a href="https://mastanuj-elite.vercel.app" style="color:#7C3AED;text-decoration:none;border:1.5px solid #7C3AED;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-elite</a>
+      <a href="https://mastanuj-prism.vercel.app" style="color:#FF6B9D;text-decoration:none;border:1.5px solid #FF6B9D;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-prism</a>
+      <a href="https://mastanuj-pixel.vercel.app" style="color:#39FF14;text-decoration:none;border:1.5px solid #39FF14;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-pixel</a>
+      <a href="https://mastanuj-v1.vercel.app" style="color:#FFB020;text-decoration:none;border:1.5px solid #FFB020;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-v1</a>
+      <a href="https://mastanuj-retro.vercel.app" style="color:#FF2D95;text-decoration:none;border:1.5px solid #FF2D95;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-retro</a>
+      <a href="https://mastanuj-command.vercel.app" style="color:#00FFAA;text-decoration:none;border:1.5px solid #00FFAA;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-command</a>
+      <a href="https://mastanuj-dossier.vercel.app" style="color:#F2B705;text-decoration:none;border:1.5px solid #F2B705;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-dossier</a>
+      <a href="https://mastanuj-comic.vercel.app" style="color:#0D0B14;background:#FF1E3C;text-decoration:none;border:1.5px solid #FF1E3C;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;transition:all .15s">mastanuj-comic</a>
+      <a href="https://mastanuj-core.vercel.app" style="color:#FFDD00;text-decoration:none;border:1.5px solid #FFDD00;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-core</a>
+    </nav>
+    <p style="margin:0;font-size:11px;opacity:0.6">c 2026 M4ST - Built by Anuj, Bareilly, India. Zero-cost, always.</p>
+  </div>
+</footer>
+</body>
+</html>

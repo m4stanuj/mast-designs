@@ -1,0 +1,1078 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M4ST // PRISM</title>
+<meta name="description" content="Anuj builds M4ST autonomous agent systems from Bareilly, India. Glassmorphism / Holographic portfolio — frosted-glass UI meets futuristic design.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="M4ST, autonomous agents, AI, agent systems, glassmorphism, holographic portfolio, Bareilly, India, full-stack developer, machine learning">
+<meta name="theme-color" content="#0A0A14">
+<meta name="color-scheme" content="dark">
+<meta name="application-name" content="M4ST GLASS">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="M4ST GLASS">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="canonical" href="https://mastanuj-prism.vercel.app">
+
+<meta property="og:title" content="M4ST // GLASS">
+<meta property="og:description" content="Anuj builds M4ST autonomous agent systems from Bareilly, India. Glassmorphism / Holographic portfolio.">
+<meta property="og:image" content="https://mastanuj-prism.vercel.app/og-glass.svg">
+<meta property="og:url" content="https://mastanuj-prism.vercel.app">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="M4ST // GLASS">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="M4ST // GLASS">
+<meta name="twitter:description" content="Anuj builds M4ST autonomous agent systems from Bareilly, India. Glassmorphism / Holographic portfolio.">
+<meta name="twitter:image" content="https://mastanuj-prism.vercel.app/og-glass.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+"webSite": {
+  "@type": "WebSite",
+  "name": "M4ST — GLASS MORPHISM",
+  "url": "https://mastanuj-prism.vercel.app",
+  "description": "Autonomous agent systems portfolio by Anuj — M4ST stack, zero-cost AI inference.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Anuj",
+    "url": "https://m4stanuj.vercel.app"
+  }
+},
+"potentialAction": {
+  "@type": "SearchAction",
+  "target": "https://mastanuj-prism.vercel.app/search?q={search_term_string}",
+  "query-input": "required name=search_term_string"
+},
+      "name": "Anuj",
+      "alternateName": "M4ST",
+      "jobTitle": "Autonomous Agent Systems Architect",
+      "url": "https://mastanuj-prism.vercel.app",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bareilly",
+        "addressCountry": "IN"
+      },
+      "knowsAbout": [
+        "Autonomous Agent Systems",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Full-Stack Development",
+        "System Architecture"
+      ],
+      "sameAs": [
+"https://github.com/m4stanuj",
+  "https://linkedin.com/in/mast-anuj",
+  "https://x.com/m4stanuj"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "name": "M4ST // GLASS",
+      "url": "https://mastanuj-prism.vercel.app",
+      "description": "Glassmorphism / Holographic portfolio of Anuj — autonomous agent systems architect from Bareilly, India."
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--ease-smooth:cubic-bezier(.4,0,.2,1)}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{
+  font-family:Inter,sans-serif;
+  background:#0A0A14;
+  color:#e0e0f0;
+  min-height:100vh;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+
+:focus-visible{
+  outline:2px solid #00e5ff;
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+.skip-link{
+  position:absolute;
+  top:-100%;
+  left:1rem;
+  padding:.75rem 1.5rem;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:.5rem;
+  color:#fff;
+  z-index:1000;
+  font-size:.875rem;
+  transition:top .25s var(--ease-smooth);
+}
+.skip-link:focus{top:1rem}
+
+.scroll-progress{
+  position:fixed;top:0;left:0;
+  width:0;height:3px;
+  background:linear-gradient(90deg,#00e5ff,#a855f7);
+  z-index:999;
+  transition:width .1s linear;
+}
+
+#particle-canvas{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+}
+
+.glass{
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:1rem;
+}
+.glass-strong{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:1rem;
+}
+
+.holo{background:linear-gradient(135deg,#00e5ff,#a855f7,#ff6b9d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.holo-border{border-image:linear-gradient(135deg,#00e5ff40,#a855f740,#ff6b9d40)1}
+
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:1}
+
+nav[aria-label="Main navigation"]{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  padding:.75rem 0;
+  background:rgba(10,10,20,.7);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1100px;margin:0 auto;padding:0 1.5rem;
+}
+.nav-logo{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.35rem;font-weight:700;
+  letter-spacing:-.02em;
+}
+.nav-logo span{color:#00e5ff}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{
+  font-size:.875rem;font-weight:500;
+  color:rgba(255,255,255,.6);
+  transition:color .3s var(--ease-smooth);
+  position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;
+  width:0;height:2px;
+  background:linear-gradient(90deg,#00e5ff,#a855f7);
+  transition:width .3s var(--ease-smooth);
+}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.mobile-toggle span{
+  display:block;width:24px;height:2px;
+  background:#e0e0f0;border-radius:2px;
+  transition:all .3s var(--ease-smooth);
+}
+
+section{padding:6rem 0;position:relative}
+.section-label{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:.75rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.25em;
+  color:rgba(255,255,255,.3);
+  margin-bottom:1rem;
+}
+.section-title{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:2.5rem;font-weight:700;
+  margin-bottom:3rem;
+  letter-spacing:-.03em;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding-top:5rem;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;
+}
+.hero-badge{
+  display:inline-block;
+  font-size:.75rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.2em;
+  padding:.4rem 1rem;
+  border-radius:100px;
+  background:rgba(0,229,255,.1);
+  border:1px solid rgba(0,229,255,.25);
+  color:#00e5ff;
+  margin-bottom:1.5rem;
+}
+.hero h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:4rem;font-weight:800;
+  line-height:1.1;
+  letter-spacing:-.04em;
+  margin-bottom:1.5rem;
+}
+.hero h1 .holo{display:block;margin-top:.15rem}
+.hero p{
+  font-size:1.1rem;
+  color:rgba(255,255,255,.55);
+  max-width:480px;
+  margin-bottom:2.5rem;
+  line-height:1.7;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.75rem 2rem;
+  border-radius:.6rem;
+  font-size:.875rem;font-weight:600;
+  cursor:pointer;transition:all .3s var(--ease-smooth);
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(12px);
+  color:#fff;
+}
+.btn:hover{
+  background:rgba(255,255,255,.12);
+  border-color:rgba(0,229,255,.4);
+  box-shadow:0 0 30px rgba(0,229,255,.08);
+}
+.btn-primary{
+  background:linear-gradient(135deg,rgba(0,229,255,.2),rgba(168,85,247,.2));
+  border-color:rgba(0,229,255,.3);
+}
+.btn-primary:hover{
+  background:linear-gradient(135deg,rgba(0,229,255,.3),rgba(168,85,247,.3));
+  box-shadow:0 0 40px rgba(0,229,255,.15);
+}
+.hero-card{
+  position:relative;
+  padding:3rem;
+  transform:perspective(1000px) rotateY(-3deg) rotateX(2deg);
+  will-change:transform;
+  transition:transform .6s var(--ease-smooth);
+}
+.hero-card:hover{transform:perspective(1000px) rotateY(0deg) rotateX(0deg)}
+.hero-card-glow{
+  position:absolute;inset:-1px;
+  border-radius:1rem;
+  background:linear-gradient(135deg,#00e5ff30,#a855f730,#ff6b9d30);
+  filter:blur(20px);
+  z-index:-1;
+  opacity:.6;
+  transition:opacity .5s var(--ease-smooth);
+}
+.hero-card:hover .hero-card-glow{opacity:1}
+.hero-card-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+  margin-top:2rem;
+  padding-top:2rem;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.hero-stat-value{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.75rem;font-weight:700;
+}
+.hero-stat-label{
+  font-size:.75rem;color:rgba(255,255,255,.4);
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.code-quote{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.875rem;
+  color:rgba(255,255,255,.5);
+  padding:1rem 1.25rem;
+  margin-bottom:2rem;
+  border-left:2px solid rgba(0,229,255,.3);
+  background:rgba(0,0,0,.2);
+  border-radius:0 .5rem .5rem 0;
+}
+.code-quote span{color:#00e5ff}
+
+.about-content{
+  max-width:720px;
+}
+.about-text{
+  font-size:1.05rem;
+  color:rgba(255,255,255,.6);
+  line-height:1.8;
+  margin-bottom:2rem;
+}
+.about-highlights{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.highlight-card{
+  padding:1.5rem;
+  text-align:center;
+  will-change:transform;
+  transition:transform .3s var(--ease-smooth),box-shadow .3s var(--ease-smooth);
+}
+.highlight-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 40px rgba(0,229,255,.06);
+}
+.highlight-icon{
+  font-size:1.75rem;margin-bottom:.5rem;
+}
+.highlight-card h4{
+  font-size:.9rem;font-weight:600;margin-bottom:.25rem;
+}
+.highlight-card p{
+  font-size:.8rem;color:rgba(255,255,255,.4);
+}
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;
+}
+.skill-card{
+  padding:1.5rem;
+  will-change:transform;
+  transition:transform .35s var(--ease-smooth),box-shadow .35s var(--ease-smooth);
+  cursor:default;
+  position:relative;
+  overflow:hidden;
+}
+.skill-card::before{
+  content:'';
+  position:absolute;top:0;left:0;
+  width:100%;height:2px;
+  background:linear-gradient(90deg,transparent,#00e5ff60,transparent);
+  opacity:0;transition:opacity .4s var(--ease-smooth);
+}
+.skill-card:hover::before{opacity:1}
+.skill-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 48px rgba(0,0,0,.3);
+}
+.skill-icon{font-size:2rem;margin-bottom:.75rem}
+.skill-card h4{font-size:1rem;font-weight:600;margin-bottom:.35rem}
+.skill-card p{font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.5}
+.skill-bar{
+  margin-top:1rem;
+  height:3px;
+  background:rgba(255,255,255,.06);
+  border-radius:4px;
+  overflow:hidden;
+}
+.skill-bar-fill{
+  height:100%;
+  border-radius:4px;
+  background:linear-gradient(90deg,#00e5ff,#a855f7);
+  width:0;
+  transition:width 1s var(--ease-smooth);
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.5rem;
+}
+.project-card{
+  padding:2rem;
+  position:relative;
+  will-change:transform;
+  transition:transform .35s var(--ease-smooth),box-shadow .35s var(--ease-smooth);
+  overflow:hidden;
+}
+.project-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 48px rgba(0,0,0,.3);
+}
+.project-tags{
+  display:flex;gap:.5rem;flex-wrap:wrap;
+  margin-bottom:1rem;
+}
+.project-tag{
+  font-size:.7rem;font-weight:500;
+  padding:.2rem .7rem;
+  border-radius:100px;
+  background:rgba(0,229,255,.08);
+  border:1px solid rgba(0,229,255,.15);
+  color:#00e5ff;
+}
+.project-card h3{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.25rem;font-weight:600;
+  margin-bottom:.5rem;
+}
+.project-card p{
+  font-size:.875rem;
+  color:rgba(255,255,255,.5);
+  line-height:1.6;
+  margin-bottom:1.5rem;
+}
+.project-link{
+  font-size:.8rem;font-weight:600;
+  color:#a855f7;
+  display:inline-flex;align-items:center;gap:.4rem;
+  transition:gap .3s var(--ease-smooth);
+}
+.project-link:hover{gap:.7rem}
+
+.timeline{
+  position:relative;
+  padding-left:2.5rem;
+}
+.timeline::before{
+  content:'';
+  position:absolute;left:.5rem;top:0;bottom:0;
+  width:1px;
+  background:linear-gradient(180deg,#00e5ff40,#a855f740,transparent);
+}
+.timeline-item{
+  position:relative;
+  margin-bottom:2.5rem;
+  padding:1.5rem 2rem;
+  will-change:transform;
+  transition:transform .35s var(--ease-smooth),box-shadow .35s var(--ease-smooth);
+}
+.timeline-item:hover{
+  transform:translateX(4px);
+  box-shadow:0 8px 32px rgba(0,0,0,.2);
+}
+.timeline-item::before{
+  content:'';
+  position:absolute;left:-2rem;top:2.15rem;
+  width:10px;height:10px;
+  border-radius:50%;
+  background:#0A0A14;
+  border:2px solid #00e5ff;
+  box-shadow:0 0 16px rgba(0,229,255,.3);
+}
+.timeline-date{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.75rem;
+  color:#00e5ff;
+  margin-bottom:.35rem;
+}
+.timeline-item h3{font-size:1rem;font-weight:600;margin-bottom:.3rem}
+.timeline-item p{font-size:.85rem;color:rgba(255,255,255,.5)}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:start;
+}
+.contact-text{
+  font-size:1.05rem;
+  color:rgba(255,255,255,.55);
+  line-height:1.8;
+  margin-bottom:2rem;
+}
+.social-links{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+.social-link{
+  display:flex;align-items:center;justify-content:center;
+  width:3rem;height:3rem;
+  border-radius:.75rem;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  font-size:1.25rem;
+  transition:all .3s var(--ease-smooth);
+}
+.social-link:hover{
+  background:rgba(0,229,255,.1);
+  border-color:rgba(0,229,255,.3);
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,229,255,.08);
+}
+.contact-card{
+  padding:2rem;
+}
+.contact-card h4{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.1rem;font-weight:600;
+  margin-bottom:1rem;
+}
+.contact-item{
+  display:flex;align-items:center;gap:.75rem;
+  padding:.75rem 0;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  font-size:.9rem;
+  color:rgba(255,255,255,.5);
+  transition:color .3s var(--ease-smooth);
+}
+.contact-item:hover{color:#fff}
+.contact-item:last-child{border-bottom:none}
+.contact-item .label{color:rgba(255,255,255,.3);min-width:70px;font-size:.8rem}
+
+footer{
+  padding:2rem 0;
+  border-top:1px solid rgba(255,255,255,.04);
+  text-align:center;
+  font-size:.8rem;
+  color:rgba(255,255,255,.25);
+}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease-smooth),transform .7s var(--ease-smooth)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  .hero-card{transform:none}
+  .hero-card:hover{transform:none}
+  .skill-bar-fill{width:0!important}
+}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero h1{font-size:3rem}
+  .hero-card{transform:none}
+  .hero-card:hover{transform:none}
+  .about-highlights{grid-template-columns:repeat(3,1fr)}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+  .projects-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .section-title{font-size:2rem}
+}
+@media(max-width:640px){
+  .nav-links{
+    position:fixed;top:0;right:-100%;
+    width:75%;height:100vh;
+    flex-direction:column;
+    justify-content:center;
+    background:rgba(10,10,20,.95);
+    backdrop-filter:blur(30px);
+    border-left:1px solid rgba(255,255,255,.06);
+    transition:right .4s var(--ease-smooth);
+    gap:2.5rem;
+  }
+  .nav-links.open{right:0}
+  .nav-links a{font-size:1.1rem}
+  .mobile-toggle{display:flex}
+  .mobile-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .mobile-toggle.open span:nth-child(2){opacity:0}
+  .mobile-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .hero h1{font-size:2.25rem}
+  .hero-card{padding:1.75rem}
+  .hero-card-stats{grid-template-columns:repeat(3,1fr);gap:1rem}
+  .hero-stat-value{font-size:1.25rem}
+  .about-highlights{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+  section{padding:4rem 0}
+}
+</style>
+<link rel="me" href="https://github.com/m4stanuj">
+<link rel="me" href="https://x.com/m4stanuj">
+<link rel="me" href="https://linkedin.com/in/mast-anuj">
+</head>
+<body>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--cyan);color:var(--bg);padding:8px 16px;z-index:1000;font-family:var(--mono);font-size:14px;transition:top .3s" onfocus="this.style.top=0" onblur="this.style.top=-40px">Skip to content</a>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+<canvas id="particle-canvas" role="presentation" aria-label="Interactive visualization"></canvas>
+
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="M4ST Glass homepage">M4ST <span>//</span> GLASS</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main id="main">
+  <section class="hero" id="hero" aria-label="Hero introduction">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge reveal">Autonomous Agent Systems</div>
+          <h1 class="reveal reveal-delay-1">
+            Building the
+            <span class="holo">Future of AI</span>
+          </h1>
+          <div class="code-quote reveal reveal-delay-2">
+            <span>$</span> ./m4st --deploy autonomous-agent --location bareilly.in
+          </div>
+          <p class="reveal reveal-delay-2">
+            I'm <strong>Anuj</strong> — architect of <strong>M4ST</strong>, building autonomous agent systems 
+            from Bareilly, India. I craft intelligent agents that perceive, reason, and act.
+          </p>
+          <div class="hero-actions reveal reveal-delay-3">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero-card glass-strong reveal reveal-delay-2" aria-label="System status overview">
+          <div class="hero-card-glow"></div>
+          <div class="code-quote" style="margin-bottom:0;border-left-color:#a855f7">
+            <span style="color:#a855f7">system</span> status: operational<br>
+            <span style="color:#00e5ff">agent</span> count: 4 active<br>
+            <span style="color:#ff6b9d">uptime</span>: 99.97%<br>
+            <span style="color:rgba(255,255,255,.3)">region</span>: bareilly.in
+          </div>
+          <div class="hero-card-stats" role="list">
+            <div role="listitem"><div class="hero-stat-value holo">7+</div><div class="hero-stat-label">Years Build</div></div>
+            <div role="listitem"><div class="hero-stat-value holo">50+</div><div class="hero-stat-label">Projects</div></div>
+            <div role="listitem"><div class="hero-stat-value holo">21</div><div class="hero-stat-label">MCP Servers</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" role="region" aria-labelledby="about-heading">
+    <div class="container">
+      <span class="section-label reveal">// 001</span>
+      <h2 id="about-heading" class="section-title reveal">About <span class="holo">M4ST</span></h2>
+      <div class="about-content">
+        <p class="about-text reveal">
+          Based in <strong>Bareilly, India</strong>, I architect autonomous agent systems under the 
+          <strong class="holo">M4ST</strong> moniker — a studio focused on building AI agents that don't 
+          just respond, but <em>act</em>. From perception pipelines to decision layers to tool-use 
+          orchestration, every system is designed for real-world autonomy.
+        </p>
+        <p class="about-text reveal reveal-delay-1">
+          My work spans the full stack of agentic AI: multimodal models, recursive reasoning loops, 
+          memory architectures, and secure sandboxed execution. I believe the next paradigm isn't 
+          bigger models — it's better agents.
+        </p>
+        <div class="about-highlights" role="list">
+          <div class="highlight-card glass reveal reveal-delay-2" role="listitem">
+            <div class="highlight-icon" aria-hidden="true">🧠</div>
+            <h4>Agent Architecture</h4>
+            <p>Multi-agent orchestration & reasoning</p>
+          </div>
+          <div class="highlight-card glass reveal reveal-delay-3" role="listitem">
+            <div class="highlight-icon" aria-hidden="true">⚡</div>
+            <h4>Full-Stack AI</h4>
+            <p>Models to deployment pipelines</p>
+          </div>
+          <div class="highlight-card glass reveal reveal-delay-4" role="listitem">
+            <div class="highlight-icon" aria-hidden="true">🔒</div>
+            <h4>Secure by Design</h4>
+            <p>Sandboxed tool-use & data isolation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" role="region" aria-labelledby="skills-heading">
+    <div class="container">
+      <span class="section-label reveal">// 002</span>
+      <h2 id="skills-heading" class="section-title reveal"><span class="holo">Skills</span> & Expertise</h2>
+      <div class="skills-grid" role="list">
+        <div class="skill-card glass reveal" role="listitem">
+          <div class="skill-icon" aria-hidden="true">🤖</div>
+          <h4>Autonomous Agents</h4>
+          <p>Multi-agent systems, tool-use orchestration, recursive reasoning loops, memory architectures</p>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-card glass reveal reveal-delay-1" role="listitem">
+          <div class="skill-icon" aria-hidden="true">🧠</div>
+          <h4>AI / ML</h4>
+          <p>LLM fine-tuning, RAG pipelines, embedding models, multimodal perception, RLHF</p>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-card glass reveal reveal-delay-2" role="listitem">
+          <div class="skill-icon" aria-hidden="true">⚙️</div>
+          <h4>System Architecture</h4>
+          <p>Distributed systems, microservices, event-driven architectures, message queues</p>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div>
+        </div>
+        <div class="skill-card glass reveal reveal-delay-1" role="listitem">
+          <div class="skill-icon" aria-hidden="true">🌐</div>
+          <h4>Full-Stack Dev</h4>
+          <p>TypeScript, React, Node.js, Python, Go, Rust, scalable API design, real-time systems</p>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-card glass reveal reveal-delay-2" role="listitem">
+          <div class="skill-icon" aria-hidden="true">🔐</div>
+          <h4>Security & Sandboxing</h4>
+          <p>Container isolation, capability-based security, audit logging, prompt injection defense</p>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="82"></div></div>
+        </div>
+        <div class="skill-card glass reveal reveal-delay-3" role="listitem">
+          <div class="skill-icon" aria-hidden="true">📊</div>
+          <h4>Data & Infra</h4>
+          <p>Vector databases, Kubernetes, CI/CD, observability, infrastructure-as-code, edge deployment</p>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" role="region" aria-labelledby="projects-heading">
+    <div class="container">
+      <span class="section-label reveal">// 003</span>
+      <h2 id="projects-heading" class="section-title reveal">Featured <span class="holo">Projects</span></h2>
+      <div class="projects-grid" role="list">
+        <div class="project-card glass reveal" role="listitem">
+          <div class="project-tags">
+            <span class="project-tag">Agent</span>
+            <span class="project-tag">Orchestration</span>
+          </div>
+          <h3>M4ST Core</h3>
+          <p>Autonomous multi-agent orchestration framework with dynamic tool discovery, recursive planning, and sandboxed execution environments.</p>
+          <a href="https://github.com/m4stanuj/MAST" target="_blank" rel="noopener" class="project-link" aria-label="View M4ST Core project">View Project →</a>
+        </div>
+        <div class="project-card glass reveal reveal-delay-1" role="listitem">
+          <div class="project-tags">
+            <span class="project-tag">RAG</span>
+            <span class="project-tag">Knowledge</span>
+          </div>
+          <h3>Athena Memory</h3>
+          <p>Long-term memory architecture for agents using hybrid vector/graph retrieval with automatic knowledge consolidation and episodic recall.</p>
+          <a href="https://github.com/m4stanuj/semantic-cache-engine" target="_blank" rel="noopener" class="project-link" aria-label="View Athena Memory project">View Project →</a>
+        </div>
+        <div class="project-card glass reveal reveal-delay-2" role="listitem">
+          <div class="project-tags">
+            <span class="project-tag">Vision</span>
+            <span class="project-tag">Multimodal</span>
+          </div>
+          <h3>OmniSight</h3>
+          <p>Multimodal perception layer enabling agents to process and reason over images, video streams, audio, and structured documents in real time.</p>
+          <a href="https://github.com/m4stanuj/cai-osint" target="_blank" rel="noopener" class="project-link" aria-label="View OmniSight project">View Project →</a>
+        </div>
+        <div class="project-card glass reveal reveal-delay-3" role="listitem">
+          <div class="project-tags">
+            <span class="project-tag">Security</span>
+            <span class="project-tag">Infrastructure</span>
+          </div>
+          <h3>Vault Agent</h3>
+          <p>Capability-based security sandbox for agent tool execution with granular permissions, audit trails, and real-time threat monitoring.</p>
+          <a href="https://github.com/m4stanuj/M4STCLAW" target="_blank" rel="noopener" class="project-link" aria-label="View Vault Agent project">View Project →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline" role="region" aria-labelledby="timeline-heading">
+    <div class="container">
+      <span class="section-label reveal">// 004</span>
+      <h2 id="timeline-heading" class="section-title reveal">Development <span class="holo">Timeline</span></h2>
+      <div class="timeline" role="list">
+        <div class="timeline-item glass reveal" role="listitem">
+          <div class="timeline-date">2026 — Present</div>
+          <h3>M4ST Platform Launch</h3>
+          <p>Released the M4ST autonomous agent platform with multi-agent orchestration, memory systems, and sandboxed tool-use. Open-source agent SDK in active development.</p>
+        </div>
+        <div class="timeline-item glass reveal reveal-delay-1" role="listitem">
+          <div class="timeline-date">2024 — 2025</div>
+          <h3>Agent Systems Research</h3>
+          <p>Deep research into recursive reasoning, tool-use planning, and memory-augmented LLM architectures. Built Athena Memory and OmniSight perception layer.</p>
+        </div>
+        <div class="timeline-item glass reveal reveal-delay-2" role="listitem">
+          <div class="timeline-date">2022 — 2024</div>
+          <h3>AI Infrastructure & Full-Stack</h3>
+          <p>Designed and deployed large-scale AI infrastructure pipelines. Built real-time data processing systems and secure execution environments for AI workloads.</p>
+        </div>
+        <div class="timeline-item glass reveal reveal-delay-3" role="listitem">
+          <div class="timeline-date">2019 — 2022</div>
+          <h3>Foundations</h3>
+          <p>Started building in Bareilly. Full-stack development, distributed systems, and the first experiments with LLM-based agents that would become M4ST.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" role="region" aria-labelledby="contact-heading">
+    <div class="container">
+      <span class="section-label reveal">// 005</span>
+      <h2 id="contact-heading" class="section-title reveal">Get in <span class="holo">Touch</span></h2>
+      <div class="contact-grid">
+        <div>
+          <p class="contact-text reveal">
+            Building the future of autonomous agents from <strong>Bareilly, India</strong>. 
+            Whether you want to collaborate, invest, or deploy M4ST agents — 
+            let's talk.
+          </p>
+          <div class="social-links reveal reveal-delay-1" role="list" aria-label="Social media links">
+            <a href="https://github.com/m4stanuj" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub" title="GitHub" role="listitem">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://x.com/m4stanuj" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter / X" title="Twitter / X" role="listitem">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16zM4 20l6.768 -6.768M17.232 6.232L20 4"></path></svg>
+            </a>
+            <a href="https://linkedin.com/in/mast-anuj" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn" title="LinkedIn" role="listitem">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+</a>
+          </div>
+        </div>
+        <div class="contact-card glass reveal reveal-delay-1">
+          <h4>Contact Info</h4>
+          <div class="contact-item">
+            <span class="label">Email</span>
+            <a href="mailto:m4stanuj@gmail.com" class="contact-link">m4stanuj@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="label">Location</span>
+            <span>Bareilly, India</span>
+          </div>
+          <div class="contact-item">
+            <span class="label">Timezone</span>
+            <span>IST (UTC +5:30)</span>
+          </div>
+          <div class="contact-item">
+            <span class="label">Status</span>
+            <span style="display:flex;align-items:center;gap:.4rem"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#00e5ff;box-shadow:0 0 8px #00e5ff"></span>Building agents</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 M4ST — Anuj. Built with glass & agents.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bar=document.getElementById('scrollProgress');
+  if(bar){
+    window.addEventListener('scroll',function(){
+      var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+      var scrollHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+      var pct=scrollHeight>0?Math.min(scrollTop/scrollHeight*100,100):0;
+      bar.style.width=pct+'%';
+      bar.setAttribute('aria-valuenow',Math.round(pct));
+    },{passive:true});
+  }
+})();
+
+(function(){
+  var canvas = document.getElementById('particle-canvas');
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var w, h;
+  var mouse = {x:null,y:null};
+
+  function resize(){
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize',resize);
+  resize();
+
+  var COUNT = 120;
+  var COLORS = ['rgba(0,229,255,', 'rgba(168,85,247,', 'rgba(255,107,157,'];
+  var animId;
+
+  for(var i=0;i<COUNT;i++){
+    particles.push({
+      x:Math.random()*w,
+      y:Math.random()*h,
+      r:Math.random()*2+0.5,
+      dx:(Math.random()-0.5)*0.35,
+      dy:(Math.random()-0.5)*0.35,
+      col:COLORS[Math.floor(Math.random()*COLORS.length)]
+    });
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    for(var p=0;p<particles.length;p++){
+      var pt=particles[p];
+      pt.x+=pt.dx;
+      pt.y+=pt.dy;
+      if(pt.x<0)pt.x=w;
+      if(pt.x>w)pt.x=0;
+      if(pt.y<0)pt.y=h;
+      if(pt.y>h)pt.y=0;
+      ctx.beginPath();
+      ctx.arc(pt.x,pt.y,pt.r,0,Math.PI*2);
+      ctx.fillStyle=pt.col+(0.3+Math.sin(Date.now()*0.001+pt.x*0.01)*0.15)+')';
+      ctx.fill();
+    }
+    for(var i=0;i<particles.length;i++){
+      for(var j=i+1;j<particles.length;j++){
+        var dx=particles[i].x-particles[j].x;
+        var dy=particles[i].y-particles[j].y;
+        var dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<140){
+          var alpha=(1-dist/140)*0.15;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x,particles[i].y);
+          ctx.lineTo(particles[j].x,particles[j].y);
+          ctx.strokeStyle='rgba(255,255,255,'+alpha+')';
+          ctx.stroke();
+        }
+      }
+    }
+    if(mouse.x!==null){
+      for(var i=0;i<particles.length;i++){
+        var dx=particles[i].x-mouse.x;
+        var dy=particles[i].y-mouse.y;
+        var dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<160){
+          var alpha=(1-dist/160)*0.08;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x,particles[i].y);
+          ctx.lineTo(mouse.x,mouse.y);
+          ctx.strokeStyle='rgba(0,229,255,'+alpha+')';
+          ctx.stroke();
+        }
+      }
+    }
+    animId=requestAnimationFrame(draw);
+  }
+  draw();
+
+  canvas.addEventListener('mousemove',function(e){
+    mouse.x=e.clientX;
+    mouse.y=e.clientY;
+  });
+  canvas.addEventListener('mouseleave',function(){
+    mouse.x=null;
+    mouse.y=null;
+  });
+  canvas.addEventListener('touchmove',function(e){
+    mouse.x=e.touches[0].clientX;
+    mouse.y=e.touches[0].clientY;
+  },{passive:true});
+  canvas.addEventListener('touchend',function(){
+    mouse.x=null;
+    mouse.y=null;
+  });
+})();
+
+(function(){
+  var toggle=document.getElementById('mobileToggle');
+  var links=document.getElementById('navLinks');
+  if(toggle&&links){
+    toggle.addEventListener('click',function(){
+      var open=links.classList.toggle('open');
+      toggle.classList.toggle('open');
+      toggle.setAttribute('aria-expanded',open);
+      if(open){
+        setTimeout(function(){links.querySelector('a').focus();},100);
+      }
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+})();
+
+(function(){
+  var reveals=document.querySelectorAll('.reveal');
+  var observer=new IntersectionObserver(function(entries){
+    for(var e=0;e<entries.length;e++){
+      if(entries[e].isIntersecting){
+        entries[e].target.classList.add('visible');
+      }
+    }
+  },{threshold:0.12});
+  for(var r=0;r<reveals.length;r++)observer.observe(reveals[r]);
+})();
+
+(function(){
+  var bars=document.querySelectorAll('.skill-bar-fill');
+  var obs=new IntersectionObserver(function(entries){
+    for(var e=0;e<entries.length;e++){
+      if(entries[e].isIntersecting){
+        var w=entries[e].target.getAttribute('data-width');
+        if(w)entries[e].target.style.width=w+'%';
+        obs.unobserve(entries[e].target);
+      }
+    }
+  },{threshold:0.5});
+  for(var b=0;b<bars.length;b++)obs.observe(bars[b]);
+})();
+</script>
+
+
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+
+
+
+<!-- M4ST Network Footer -->
+<footer style="background:#0D0B14;color:#FFFCF7;padding:44px 24px 36px;text-align:center;font-family:'JetBrains Mono',monospace;border-top:3px solid #0D0B14;margin-top:60px">
+  <div style="max-width:1240px;margin:0 auto">
+    <p style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.04em;margin-bottom:6px">M4ST <span style="color:#CFFF3D">NETWORK</span></p>
+    <p style="font-size:11px;color:#8B2FF2;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:22px">14 autonomous agent interfaces</p>
+    <nav aria-label="M4ST variants" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:860px;margin:0 auto 24px">
+      <a href="https://m4stanuj.vercel.app" style="color:#C8F731;text-decoration:none;border:1.5px solid #C8F731;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">m4stanuj</a>
+      <a href="https://mast-anuj.vercel.app" style="color:#8B2FF2;text-decoration:none;border:1.5px solid #8B2FF2;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mast-anuj</a>
+      <a href="https://mast-anuj-site.vercel.app" style="color:#00E5FF;text-decoration:none;border:1.5px solid #00E5FF;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mast-anuj-site</a>
+      <a href="https://m4st.vercel.app" style="color:#FF2A6D;text-decoration:none;border:1.5px solid #FF2A6D;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">m4st</a>
+      <a href="https://mastanuj-royal.vercel.app" style="color:#C9A84C;text-decoration:none;border:1.5px solid #C9A84C;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-royal</a>
+      <a href="https://mastanuj-elite.vercel.app" style="color:#7C3AED;text-decoration:none;border:1.5px solid #7C3AED;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-elite</a>
+      <a href="https://mastanuj-prism.vercel.app" style="color:#0D0B14;background:#FF6B9D;text-decoration:none;border:1.5px solid #FF6B9D;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;transition:all .15s">mastanuj-prism</a>
+      <a href="https://mastanuj-pixel.vercel.app" style="color:#39FF14;text-decoration:none;border:1.5px solid #39FF14;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-pixel</a>
+      <a href="https://mastanuj-v1.vercel.app" style="color:#FFB020;text-decoration:none;border:1.5px solid #FFB020;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-v1</a>
+      <a href="https://mastanuj-retro.vercel.app" style="color:#FF2D95;text-decoration:none;border:1.5px solid #FF2D95;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-retro</a>
+      <a href="https://mastanuj-command.vercel.app" style="color:#00FFAA;text-decoration:none;border:1.5px solid #00FFAA;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-command</a>
+      <a href="https://mastanuj-dossier.vercel.app" style="color:#F2B705;text-decoration:none;border:1.5px solid #F2B705;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-dossier</a>
+      <a href="https://mastanuj-comic.vercel.app" style="color:#FF1E3C;text-decoration:none;border:1.5px solid #FF1E3C;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-comic</a>
+      <a href="https://mastanuj-core.vercel.app" style="color:#FFDD00;text-decoration:none;border:1.5px solid #FFDD00;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-core</a>
+    </nav>
+    <p style="margin:0;font-size:11px;opacity:0.6">© 2026 M4ST — Built by Anuj, Bareilly, India. Zero-cost, always.</p>
+  </div>
+</footer>
+</body>
+</html>
+

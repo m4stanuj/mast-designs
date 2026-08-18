@@ -23,10 +23,12 @@ All design variant portfolios for M4ST (Anuj) — one repo, multiple Vercel proj
 
 ## Variant folders
 
-Each folder is a self-contained single-page HTML design:
+Each folder is a self-contained single-page HTML design, synced to the live network:
 
+- `m4stanuj/` — main portfolio.
 - `m4st-synthwave/` — the flagship hub: animated neon sun, perspective grid floor, starfield, boot screen, live terminal log, scrollspy + side rail, count-up stats, per-site network cards, hero typing effect.
-- `mast-anuj-site/` — personal site variant.
+- `mast-anuj-site/` — personal site variant (serves both `mast-anuj.vercel.app` and `mast-anuj-site.vercel.app`).
+- `mastanuj-core/`, `mastanuj-prism/`, `mastanuj-royal/`, `mastanuj-elite/`, `mastanuj-pixel/`, `mastanuj-comic/`, `mastanuj-dossier/`, `mastanuj-command/`, `mastanuj-retro/`, `mastanuj-v1/` — design variants.
 - Legacy folders (`mast-agent`, `mast-arcade`, `mast-brutal`, `mast-casefile`, `mast-glass`, `mast-luxury`, `mast-manga`, `mast-vhs`, `m4st-v1`, `m4st-premium`) — archived, no longer deployed.
 
 ## Tooling

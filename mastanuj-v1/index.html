@@ -1,22 +1,24 @@
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M4ST // V1 — Anuj | Autonomous Agent Systems</title>
-<meta name="description" content="M4ST V1 by Anuj — a local-first, zero-cost autonomous agent stack. 21 MCP servers, 11 free LLM providers, ₹0 cloud spend. Built solo from Bareilly, India.">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>M4ST // V1 â€” Anuj | Autonomous Agent Systems</title>
+<meta name="description" content="M4ST V1 by Anuj â€” a local-first, zero-cost autonomous agent stack. 21 MCP servers, 11 free LLM providers, â‚¹0 cloud spend. Built solo from Bareilly, India.">
 <meta name="theme-color" content="#05060a">
 <link rel="canonical" href="https://mastanuj-v1.vercel.app/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2305060a'/%3E%3Ctext x='50' y='70' font-size='58' font-family='monospace' font-weight='bold' fill='%2300f0ff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
-<meta property="og:title" content="M4ST // V1 — Anuj | Autonomous Agent Systems">
-<meta property="og:description" content="Local-first, zero-cost autonomous agents. 21 MCP servers. ₹0 cloud spend. Built solo from Bareilly, India.">
+<meta property="og:title" content="M4ST // V1 â€” Anuj | Autonomous Agent Systems">
+<meta property="og:description" content="Local-first, zero-cost autonomous agents. 21 MCP servers. â‚¹0 cloud spend. Built solo from Bareilly, India.">
 <meta property="og:url" content="https://mastanuj-v1.vercel.app/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="M4ST // V1 — Anuj | Autonomous Agent Systems">
-<meta name="twitter:description" content="Local-first, zero-cost autonomous agents. 21 MCP servers. ₹0 cloud spend.">
+<meta name="twitter:title" content="M4ST // V1 â€” Anuj | Autonomous Agent Systems">
+<meta name="twitter:description" content="Local-first, zero-cost autonomous agents. 21 MCP servers. â‚¹0 cloud spend.">
 <meta name="robots" content="index, follow">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Anuj","alternateName":"M4ST","jobTitle":"Solo AI Systems Architect","url":"https://mastanuj-v1.vercel.app/","address":{"@type":"PostalAddress","addressLocality":"Bareilly","addressRegion":"Uttar Pradesh","addressCountry":"IN"},"sameAs":["https://github.com/m4stanuj","https://linkedin.com/in/m4stanuj","https://x.com/m4stanuj"]}
+{"@context":"https://schema.org","@type":"Person","name":"Anuj","alternateName":"M4ST","jobTitle":"Solo AI Systems Architect","url":"https://mastanuj-v1.vercel.app/","address":{"@type":"PostalAddress","addressLocality":"Bareilly","addressRegion":"Uttar Pradesh","addressCountry":"IN"},"sameAs":["https://github.com/m4stanuj","https://linkedin.com/in/mast-anuj","https://x.com/m4stanuj"]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,8 +59,8 @@ a{color:inherit;text-decoration:none}
 #cursor.big{width:54px;height:54px;background:rgba(0,240,255,.15);border-color:var(--magenta)}
 @media(max-width:900px){#cursor{display:none}body{cursor:auto}}
 
-/* --- nav --- */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 28px}
+/* --- nav - FIXED: only target main nav, not footer nav --- */
+body > nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 28px}
 .logo{font-family:'Space Grotesk';font-weight:700;font-size:22px;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
 .logo .blk{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--cyan),var(--violet));display:grid;place-items:center;font-size:17px;color:var(--bg);box-shadow:var(--glow)}
 .logo b{color:var(--cyan)}
@@ -95,7 +97,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .marquee{position:relative;z-index:2;margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:15px 0;overflow:hidden;background:rgba(6,8,14,.6)}
 .mq-track{display:flex;gap:44px;white-space:nowrap;width:max-content;animation:slide 24s linear infinite;font-family:'JetBrains Mono';font-size:13.5px;font-weight:700;letter-spacing:.05em}
 .mq-track span{display:flex;align-items:center;gap:44px;color:var(--muted)}
-.mq-track span::after{content:'✦';color:var(--cyan)}
+.mq-track span::after{content:'âœ¦';color:var(--cyan)}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* --- sections --- */
@@ -167,7 +169,7 @@ section{position:relative;z-index:3;padding:120px 0}
 
 footer{padding:44px 24px;text-align:center;font-family:'JetBrains Mono';font-size:12px;color:var(--muted);border-top:1px solid var(--line);position:relative;z-index:3;background:rgba(5,6,10,.8)}
 footer .net{font-family:'Space Grotesk';font-weight:700;font-size:15px;letter-spacing:.05em;margin-bottom:6px;color:var(--fg)}
-footer .net span{color:var(--cyan)}
+footer .net span{color:var(--cyan);}
 footer .links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:860px;margin:20px auto 22px}
 footer .links a{color:var(--muted);border:1px solid var(--line);padding:5px 13px;border-radius:100px;font-size:11px;transition:all .15s}
 footer .links a:hover{color:var(--cyan);border-color:var(--cyan)}
@@ -193,27 +195,27 @@ footer .links a:hover{color:var(--cyan);border-color:var(--cyan)}
     <a href="#work">Work</a>
     <a href="#journey">Journey</a>
   </div>
-  <a href="#contact" class="nav-cta">Hire me →</a>
+  <a href="#contact" class="nav-cta">Hire me â†’</a>
 </nav>
 
 <section class="hero" id="top">
   <div class="wrap hero-inner">
-    <span class="status"><span class="dot"></span> Open for freelance AI work · Bareilly, IN</span>
-    <h1>Agents that <span class="g1">think</span>,<br>systems that <span class="g2">ship</span> —<br><span class="o">at ₹0.</span></h1>
-    <p class="sub">Anuj builds <b>M4ST</b> — a local-first, autonomous agent operator stack. <b>21 MCP servers</b>, <b>11 free LLM providers</b>, semantic memory, zero cloud spend. Self-taught. Self-hosted. Shipped, not planned.</p>
+    <span class="status"><span class="dot"></span> Open for freelance AI work Â· Bareilly, IN</span>
+    <h1>Agents that <span class="g1">think</span>,<br>systems that <span class="g2">ship</span> â€”<br><span class="o">at â‚¹0.</span></h1>
+    <p class="sub">Anuj builds <b>M4ST</b> â€” a local-first, autonomous agent operator stack. <b>21 MCP servers</b>, <b>11 free LLM providers</b>, semantic memory, zero cloud spend. Self-taught. Self-hosted. Shipped, not planned.</p>
     <div class="term">
-      <div><span class="pr">anuj@m4st</span><span class="dim">:~$</span> <span class="cm">m4st deploy --stack=autonomous --cost=₹0</span></div>
-      <div><span class="mag">▸ 21 MCP servers online</span> <span class="dim">·</span> <span class="mag">memory: chromadb</span> <span class="dim">·</span> <span class="mag">status: shipping</span></div>
+      <div><span class="pr">anuj@m4st</span><span class="dim">:~$</span> <span class="cm">m4st deploy --stack=autonomous --cost=â‚¹0</span></div>
+      <div><span class="mag">â–¸ 21 MCP servers online</span> <span class="dim">Â·</span> <span class="mag">memory: chromadb</span> <span class="dim">Â·</span> <span class="mag">status: shipping</span></div>
     </div>
     <div class="hero-actions">
-      <a href="#work" class="btn btn-p">See the systems →</a>
+      <a href="#work" class="btn btn-p">See the systems â†’</a>
       <a href="#contact" class="btn btn-g">Start a project</a>
     </div>
   </div>
   <div class="marquee" aria-hidden="true">
     <div class="mq-track">
-      <span>21 MCP SERVERS</span><span>11 FREE LLM PROVIDERS</span><span>₹0 CLOUD COST</span><span>12MS CACHE LATENCY</span><span>40% FEWER CALLS</span><span>LOCAL-FIRST</span>
-      <span>21 MCP SERVERS</span><span>11 FREE LLM PROVIDERS</span><span>₹0 CLOUD COST</span><span>12MS CACHE LATENCY</span><span>40% FEWER CALLS</span><span>LOCAL-FIRST</span>
+      <span>21 MCP SERVERS</span><span>11 FREE LLM PROVIDERS</span><span>â‚¹0 CLOUD COST</span><span>12MS CACHE LATENCY</span><span>40% FEWER CALLS</span><span>LOCAL-FIRST</span>
+      <span>21 MCP SERVERS</span><span>11 FREE LLM PROVIDERS</span><span>â‚¹0 CLOUD COST</span><span>12MS CACHE LATENCY</span><span>40% FEWER CALLS</span><span>LOCAL-FIRST</span>
     </div>
   </div>
 </section>
@@ -221,25 +223,25 @@ footer .links a:hover{color:var(--cyan);border-color:var(--cyan)}
 <section id="about">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="tag">00 · Origin</span>
+      <span class="tag">00 Â· Origin</span>
       <h2>No GPU cluster.<br>Just obsession.</h2>
     </div>
     <div class="about-grid">
       <div class="reveal">
-        <p>I started with <b>zero resources</b> — no funded infra, no premium APIs, no team. Just a laptop and a conviction that intelligent systems shouldn't need a data center.</p>
-        <p>Everything in <b>M4ST</b> is self-taught, self-funded, self-hosted. While others provisioned GPU clusters, I routed across free-tier providers to keep inference at zero cost — without sacrificing reliability.</p>
+        <p>I started with <b>zero resources</b> â€” no funded infra, no premium APIs, no team. Just a laptop and a conviction that intelligent systems shouldn't need a data center.</p>
+        <p>Everything in <b>M4ST</b> is self-taught, self-funded, self-hosted. While others provisioned GPU clusters, I routed across free-tier providers to keep inference at zero cost â€” without sacrificing reliability.</p>
         <p>Currently chasing <b>CEH certification</b> while taking on freelance AI/automation work. Jugaad-first: shipped beats planned, always.</p>
       </div>
       <div class="quote reveal">
-        <p>Constraints breed creativity. Limited resources forced me to optimize everything. That's not a limitation — that's an edge.</p>
-        <div class="attr">— Anuj, on M4ST</div>
+        <p>Constraints breed creativity. Limited resources forced me to optimize everything. That's not a limitation â€” that's an edge.</p>
+        <div class="attr">â€” Anuj, on M4ST</div>
       </div>
     </div>
     <div class="stats">
       <div class="stat reveal"><div class="n" data-count="21">0</div><div class="l">MCP servers</div></div>
       <div class="stat reveal"><div class="n" data-count="11">0</div><div class="l">LLM providers</div></div>
-      <div class="stat reveal"><div class="n" data-count="0" data-prefix="₹">0</div><div class="l">Cloud cost / mo</div></div>
-      <div class="stat reveal"><div class="n" data-count="24" data-suffix="×7">0</div><div class="l">Agent scale</div></div>
+      <div class="stat reveal"><div class="n" data-count="0" data-prefix="â‚¹">0</div><div class="l">Cloud cost / mo</div></div>
+      <div class="stat reveal"><div class="n" data-count="24" data-suffix="Ã—7">0</div><div class="l">Agent scale</div></div>
     </div>
   </div>
 </section>
@@ -247,17 +249,17 @@ footer .links a:hover{color:var(--cyan);border-color:var(--cyan)}
 <section id="skills">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="tag">01 · Arsenal</span>
+      <span class="tag">01 Â· Arsenal</span>
       <h2>What I actually build with.</h2>
-      <p>Not tool names on a résumé — a stack that runs in production, offline, on consumer hardware.</p>
+      <p>Not tool names on a rÃ©sumÃ© â€” a stack that runs in production, offline, on consumer hardware.</p>
     </div>
     <div class="bento">
-      <div class="bc wide reveal"><div><span class="num">01</span><h3>Multi-Agent Orchestration</h3><p>Autonomous agent swarms that decompose tasks, collaborate across specialists, and execute — no human in the loop. Built on LangGraph + CrewAI with real inter-agent communication.</p></div><div class="chips"><span>CrewAI</span><span>LangGraph</span><span>AutoGen</span><span>n8n</span></div></div>
+      <div class="bc wide reveal"><div><span class="num">01</span><h3>Multi-Agent Orchestration</h3><p>Autonomous agent swarms that decompose tasks, collaborate across specialists, and execute â€” no human in the loop. Built on LangGraph + CrewAI with real inter-agent communication.</p></div><div class="chips"><span>CrewAI</span><span>LangGraph</span><span>AutoGen</span><span>n8n</span></div></div>
       <div class="bc half reveal"><div><span class="num">02</span><h3>MCP Protocol Engineering</h3><p>21 custom servers bridging LLMs with databases, browsers, and OSINT tooling.</p></div></div>
-      <div class="bc third reveal"><div><span class="num">03</span><h3>Zero-Cost Routing</h3><p>11 free providers, quality-aware, ₹0 inference.</p></div></div>
+      <div class="bc third reveal"><div><span class="num">03</span><h3>Zero-Cost Routing</h3><p>11 free providers, quality-aware, â‚¹0 inference.</p></div></div>
       <div class="bc third reveal"><div><span class="num">04</span><h3>Local Inference</h3><p>Ollama + quantized GGUF on consumer hardware.</p></div></div>
       <div class="bc third reveal"><div><span class="num">05</span><h3>Semantic Memory</h3><p>12ms cache hits, 40% fewer LLM calls.</p></div></div>
-      <div class="bc tall reveal"><div><span class="num">06</span><h3>Offensive & Defensive Security</h3><p>CEH-track OSINT, threat modeling, recon pipelines — applied to real infrastructure audits.</p></div><div class="chips"><span>OSINT</span><span>Shodan</span><span>Recon</span></div></div>
+      <div class="bc tall reveal"><div><span class="num">06</span><h3>Offensive & Defensive Security</h3><p>CEH-track OSINT, threat modeling, recon pipelines â€” applied to real infrastructure audits.</p></div><div class="chips"><span>OSINT</span><span>Shodan</span><span>Recon</span></div></div>
     </div>
   </div>
 </section>
@@ -265,13 +267,13 @@ footer .links a:hover{color:var(--cyan);border-color:var(--cyan)}
 <section id="work">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="tag">02 · Shipped</span>
+      <span class="tag">02 Â· Shipped</span>
       <h2>Systems in production,<br>not slideware.</h2>
     </div>
     <div class="reveal">
-      <div class="proj"><span class="pn">01</span><div><h3>M4ST Stack <span class="bd">Live</span></h3><p class="pd">The complete autonomous agent operator system — 5 agents, MCP orchestration, semantic caching, zero-cost LLM routing.</p></div><div class="tags"><span>CrewAI</span><span>MCP</span><span>FalkorDB</span></div></div>
+      <div class="proj"><span class="pn">01</span><div><h3>M4ST Stack <span class="bd">Live</span></h3><p class="pd">The complete autonomous agent operator system â€” 5 agents, MCP orchestration, semantic caching, zero-cost LLM routing.</p></div><div class="tags"><span>CrewAI</span><span>MCP</span><span>FalkorDB</span></div></div>
       <div class="proj"><span class="pn">02</span><div><h3>OpenWork Integration <span class="bd">Active</span></h3><p class="pd">Agentic coding workspace wired into GitHub and Vercel MCP for direct build-and-deploy.</p></div><div class="tags"><span>MCP</span><span>GitHub</span></div></div>
-      <div class="proj"><span class="pn">03</span><div><h3>cai-osint <span class="bd">Open Source</span></h3><p class="pd">OSINT framework — automated data gathering, Shodan integration, AI-powered analysis.</p></div><div class="tags"><span>Python</span><span>Shodan</span></div></div>
+      <div class="proj"><span class="pn">03</span><div><h3>cai-osint <span class="bd">Open Source</span></h3><p class="pd">OSINT framework â€” automated data gathering, Shodan integration, AI-powered analysis.</p></div><div class="tags"><span>Python</span><span>Shodan</span></div></div>
       <div class="proj"><span class="pn">04</span><div><h3>Semantic Cache Engine <span class="bd">v2.0</span></h3><p class="pd">Sub-12ms caching over ChromaDB embeddings, cutting LLM calls by 40%.</p></div><div class="tags"><span>ChromaDB</span><span>Python</span></div></div>
     </div>
   </div>
@@ -280,13 +282,13 @@ footer .links a:hover{color:var(--cyan);border-color:var(--cyan)}
 <section id="journey">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="tag">03 · Timeline</span>
+      <span class="tag">03 Â· Timeline</span>
       <h2>How M4ST actually happened.</h2>
     </div>
     <div class="tl">
-      <div class="tl-item reveal"><span class="td">2024</span><div><h3>Zero-cost breakthrough</h3><p>Mastered free-tier LLM routing across 11 providers, hitting ₹0 inference cost.</p></div></div>
-      <div class="tl-item reveal"><span class="td">2025</span><div><h3>MCP revolution</h3><p>Built the first custom MCP server, expanded rapidly to 21 — databases, browsers, OSINT.</p></div></div>
-      <div class="tl-item reveal"><span class="td">2026</span><div><h3>M4STCLAW v3</h3><p>First working agent stack — obsession begins, iterating through v5, v6, v7 on nights and weekends.</p></div></div>
+      <div class="tl-item reveal"><span class="td">2024</span><div><h3>Zero-cost breakthrough</h3><p>Mastered free-tier LLM routing across 11 providers, hitting â‚¹0 inference cost.</p></div></div>
+      <div class="tl-item reveal"><span class="td">2025</span><div><h3>MCP revolution</h3><p>Built the first custom MCP server, expanded rapidly to 21 â€” databases, browsers, OSINT.</p></div></div>
+      <div class="tl-item reveal"><span class="td">2026</span><div><h3>M4STCLAW v3</h3><p>First working agent stack â€” obsession begins, iterating through v5, v6, v7 on nights and weekends.</p></div></div>
       <div class="tl-item reveal"><span class="td">2026</span><div><h3>M4ST v3.0</h3><p>Corrected full provider stack, added SEPCC proxy and 9Router for smarter multi-provider routing.</p></div></div>
     </div>
   </div>
@@ -298,10 +300,10 @@ footer .links a:hover{color:var(--cyan);border-color:var(--cyan)}
       <h2>Let's build something<br>that shouldn't be free.</h2>
       <p>Open to freelance AI/automation work, security consulting, and anything that needs an operator who ships fast.</p>
       <div class="clinks">
-        <a href="https://github.com/m4stanuj" class="cl" target="_blank">↗ GitHub</a>
-        <a href="https://linkedin.com/in/m4stanuj" class="cl" target="_blank">↗ LinkedIn</a>
-        <a href="https://x.com/m4stanuj" class="cl" target="_blank">↗ X / Twitter</a>
-        <a href="mailto:m4stanuj@gmail.com" class="cl" target="_blank">✉ Email</a>
+        <a href="https://github.com/m4stanuj" class="cl" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/m4stanuj" class="cl" target="_blank">LinkedIn</a>
+        <a href="https://x.com/m4stanuj" class="cl" target="_blank">X / Twitter</a>
+        <a href="mailto:m4stanuj@gmail.com" class="cl" target="_blank">Email</a>
       </div>
     </div>
   </div>

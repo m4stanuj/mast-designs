@@ -1,0 +1,553 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/Person">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="M4ST, Anuj, case file, autonomous agents, detection, security, Bareilly, AI">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>DOSSIER: M4ST - Anuj</title>
+<meta name="description" content="Case file on Anuj — solo builder of M4ST, autonomous agent infrastructure, out of Bareilly, India.">
+<meta name="theme-color" content="#141210">
+<link rel="canonical" href="https://mastanuj-dossier.vercel.app/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23EFEAD9'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' fill='%23D62828' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CASE FILE: M4ST — Anuj">
+<meta property="og:description" content="Solo builder. Zero budget. Full swarm. The case file on Anuj, who built M4ST autonomous agent infrastructure out of Bareilly, India.">
+<meta property="og:url" content="https://mastanuj-dossier.vercel.app/">
+<meta property="og:site_name" content="M4ST Case File">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CASE FILE: M4ST — Anuj">
+<meta name="twitter:description" content="Solo builder. Zero budget. Full swarm. Case file on M4ST's autonomous agent infrastructure.">
+<meta property="og:image" content="https://mastanuj-dossier.vercel.app/og-casefile.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://mastanuj-dossier.vercel.app/og-casefile.svg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person",
+"webSite": {
+  "@type": "WebSite",
+  "name": "M4ST — CASE FILE",
+  "url": "https://mastanuj-dossier.vercel.app",
+  "description": "Autonomous agent systems portfolio by Anuj — M4ST stack, zero-cost AI inference.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Anuj",
+    "url": "https://m4stanuj.vercel.app"
+  }
+},
+"potentialAction": {
+  "@type": "SearchAction",
+  "target": "https://mastanuj-dossier.vercel.app/search?q={search_term_string}",
+  "query-input": "required name=search_term_string"
+},"name":"Anuj","alternateName":"M4ST","jobTitle":"Solo Systems Architect","url":"https://mastanuj-dossier.vercel.app/","address":{"@type":"PostalAddress","addressLocality":"Bareilly","addressRegion":"Uttar Pradesh","addressCountry":"IN"},"sameAs":["https://github.com/m4stanuj","https://linkedin.com/in/mast-anuj","https://x.com/m4stanuj"],"knowsAbout":["Autonomous agent infrastructure","Offensive security","OSINT","Agent swarms","MCP protocol servers","Free-tier AI routing","Local inference","Semantic caching","Penetration testing","Vulnerability assessment"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=Work+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EFEAD9; --ink:#141210; --mustard:#F2B705; --red:#D62828; --olive:#4A5320;
+  --card:#FBF8EE; --tape:rgba(255,247,214,0.85);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper); color:var(--ink); font-family:'Work Sans',sans-serif;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(20,18,16,0.05) 1px, transparent 1px);
+  background-size:16px 16px;
+}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:1200px; margin:0 auto; padding:0 28px;}
+@media(max-width:640px){.wrap{padding:0 18px;}}
+.display{font-family:'Bebas Neue',sans-serif; letter-spacing:0.01em;}
+.marker{font-family:'Permanent Marker',cursive;}
+.mono{font-family:'JetBrains Mono',monospace;}
+
+/* stamp / tape utilities */
+.stamp{display:inline-block; border:3px solid var(--red); color:var(--red); font-family:'Bebas Neue'; font-size:13px; letter-spacing:0.12em; padding:5px 14px; transform:rotate(-6deg); border-radius:4px;}
+.tape{position:absolute; background:var(--tape); box-shadow:0 2px 6px rgba(0,0,0,0.15);}
+
+/* scroll progress bar */
+.progress-bar{position:fixed; top:0; left:0; width:0%; height:4px; background:var(--red); z-index:200; transition:width 50ms linear; will-change:width;}
+@media (prefers-reduced-motion: reduce){.progress-bar{display:none;}}
+
+/* NAV */
+nav{position:sticky; top:0; z-index:100; background:var(--paper); border-bottom:4px solid var(--ink); padding:16px 0;}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; gap:16px;}
+.brand{font-family:'Bebas Neue'; font-size:26px; letter-spacing:0.03em; display:flex; align-items:center; gap:10px;}
+.brand .box{background:var(--ink); color:var(--paper); padding:2px 8px; font-size:16px;}
+.navlinks{display:flex; gap:6px; font-family:'Bebas Neue'; font-size:15px; letter-spacing:0.05em;}
+.navlinks a{padding:8px 14px; border:2px solid transparent;}
+.navlinks a:hover{border-color:var(--ink); transform:rotate(-1deg);}
+@media(max-width:760px){.navlinks{display:none;}}
+.nav-cta{font-family:'Bebas Neue'; font-size:15px; letter-spacing:0.05em; background:var(--red); color:var(--paper); padding:9px 18px; transform:rotate(-2deg);}
+
+/* HERO — case file cover */
+.hero{padding:80px 0 60px; position:relative;}
+.case-cover{border:4px solid var(--ink); background:var(--card); padding:clamp(24px,5vw,56px); position:relative; box-shadow:14px 14px 0 var(--ink);}
+.case-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:30px;}
+.case-id{font-family:'JetBrains Mono'; font-size:12px; letter-spacing:0.06em; color:#5a5750;}
+.case-id .caret{display:inline-block; width:7px; height:13px; background:var(--red); margin-left:2px; vertical-align:middle; animation:caretblink 0.9s steps(1) infinite;}
+@keyframes caretblink{50%{opacity:0;}}
+@media (prefers-reduced-motion: reduce){.case-id .caret{animation:none;}}
+.kinetic{font-family:'Bebas Neue'; font-size:clamp(48px,11vw,150px); line-height:0.86; letter-spacing:0.01em;}
+.kinetic .ln{display:block; transition:letter-spacing .5s cubic-bezier(0.4,0,0.2,1);}
+.kinetic .red{color:var(--red);}
+.kinetic .outline{-webkit-text-stroke:2.5px var(--ink); color:transparent;}
+.hero-sub{font-size:clamp(15px,1.8vw,19px); max-width:620px; margin-top:22px; line-height:1.65; font-weight:500;}
+.hero-sub b{background:var(--mustard); padding:0 4px;}
+.hero-actions{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+.btn{font-family:'Bebas Neue'; font-size:16px; letter-spacing:0.05em; padding:14px 28px; border:3px solid var(--ink); display:inline-block; transition:transform .15s cubic-bezier(0.4,0,0.2,1);}
+.btn-fill{background:var(--ink); color:var(--paper);}
+.btn-fill:hover{transform:translate(-3px,-3px); box-shadow:5px 5px 0 var(--red);}
+.btn-out:hover{transform:translate(-3px,-3px); box-shadow:5px 5px 0 var(--ink);}
+
+/* photo-corner mugshot-ish tag cluster */
+.tag-cluster{position:absolute; top:24px; right:24px; display:flex; flex-direction:column; gap:8px; align-items:flex-end;}
+@media(max-width:700px){.tag-cluster{position:static; margin-top:20px; flex-direction:row; flex-wrap:wrap;}}
+.tagline{font-family:'Permanent Marker'; font-size:13px; color:var(--olive); transform:rotate(-3deg);}
+
+/* SECTION shared */
+section{padding:90px 0;}
+.sec-tab{display:inline-flex; align-items:center; gap:10px; font-family:'Bebas Neue'; font-size:14px; letter-spacing:0.08em; background:var(--ink); color:var(--paper); padding:7px 16px; transform:rotate(-1.5deg); margin-bottom:22px;}
+.sec-head h2{font-family:'Bebas Neue'; font-size:clamp(30px,5.5vw,58px); line-height:0.95; max-width:760px;}
+.sec-head p{margin-top:14px; max-width:560px; font-size:15px; color:#4a463d; font-weight:500;}
+.reveal{opacity:0; transform:translateY(28px) rotate(0.5deg); transition:opacity .6s cubic-bezier(0.4,0,0.2,1), transform .6s cubic-bezier(0.4,0,0.2,1); will-change:transform,opacity;}
+.reveal.in{opacity:1; transform:translateY(0) rotate(0deg);}
+
+/* ABOUT — subject profile dossier */
+.dossier{display:grid; grid-template-columns:1.05fr 0.95fr; gap:36px; align-items:start;}
+@media(max-width:900px){.dossier{grid-template-columns:1fr;}}
+.dossier-card{border:3px solid var(--ink); background:var(--card); padding:32px; position:relative;}
+.dossier-card p{font-size:16.5px; line-height:1.75; margin-bottom:16px;}
+.dossier-card .redact{background:var(--ink); color:var(--ink); padding:0 6px; border-radius:2px; cursor:pointer; border:none; font:inherit; vertical-align:baseline; display:inline; transition:background .2s cubic-bezier(0.4,0,0.2,1);}
+.dossier-card .redact:hover{background:var(--red);}
+.dossier-card .redact.revealed{background:transparent; color:var(--olive); font-family:'Permanent Marker'; text-decoration:underline wavy var(--red);}
+.field{display:flex; justify-content:space-between; border-bottom:1.5px dashed #b8b39f; padding:10px 0; font-family:'JetBrains Mono'; font-size:12.5px;}
+.field .k{color:#7a7565; text-transform:uppercase; letter-spacing:0.05em;}
+.field .v{font-weight:700;}
+.polaroid{background:#fff; border:1px solid #ddd7c4; padding:14px 14px 26px; transform:rotate(3deg); box-shadow:0 10px 24px rgba(0,0,0,0.18);}
+.polaroid .swatch{height:150px; background:linear-gradient(135deg,var(--mustard),var(--red)); margin-bottom:14px;}
+.polaroid .cap{font-family:'Permanent Marker'; font-size:14px; text-align:center; color:#333;}
+
+/* EVIDENCE LOCKER (skills) */
+.locker{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+@media(max-width:900px){.locker{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.locker{grid-template-columns:1fr;}}
+.evidence{border:3px solid var(--ink); background:var(--card); padding:22px; position:relative; transition:transform .2s cubic-bezier(0.4,0,0.2,1); will-change:transform;}
+.evidence:nth-child(odd){transform:rotate(-1.2deg);}
+.evidence:nth-child(even){transform:rotate(1deg);}
+.evidence:hover{transform:rotate(0deg) translateY(-4px); box-shadow:6px 6px 0 var(--red);}
+.evidence .num{font-family:'JetBrains Mono'; font-size:11.5px; color:var(--red); font-weight:700;}
+.evidence h3{font-family:'Bebas Neue'; font-size:22px; margin:8px 0 8px; letter-spacing:0.02em;}
+.evidence p{font-size:13.5px; color:#4a463d; line-height:1.55;}
+
+/* OPEN CASES (projects) */
+.case-list{display:flex; flex-direction:column; gap:16px;}
+.case-row{display:grid; grid-template-columns:90px 1fr auto; gap:20px; align-items:center; border:3px solid var(--ink); background:var(--card); padding:24px; position:relative;}
+.case-row:nth-child(even){background:#F5EFDB;}
+.case-row:hover{box-shadow:8px 8px 0 var(--mustard);}
+.case-row .cnum{font-family:'Bebas Neue'; font-size:34px; color:var(--red);}
+.case-row h3{font-family:'Bebas Neue'; font-size:24px; letter-spacing:0.02em; display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
+.case-row .cdesc{font-size:14px; margin-top:6px; max-width:480px; color:#4a463d;}
+.status{font-family:'JetBrains Mono'; font-size:10.5px; text-transform:uppercase; padding:4px 10px; border:2px solid var(--olive); color:var(--olive); font-weight:700;}
+.case-tags{display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end;}
+.case-tags span{font-size:10.5px; font-weight:700; font-family:'JetBrains Mono'; border:1.5px solid var(--ink); padding:3px 9px;}
+@media(max-width:700px){.case-row{grid-template-columns:1fr; gap:8px;} .case-tags{justify-content:flex-start;}}
+
+/* CASE TIMELINE — red-string board */
+.board{position:relative; padding:30px 0;}
+#string-canvas{position:absolute; inset:0; pointer-events:none; z-index:0;}
+.nodes{position:relative; z-index:1; display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+@media(max-width:900px){.nodes{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.nodes{grid-template-columns:1fr;}}
+.pin-card{background:var(--card); border:3px solid var(--ink); padding:20px; position:relative; transform:rotate(-1.5deg); cursor:grab; touch-action:none; user-select:none; transition:box-shadow .15s cubic-bezier(0.4,0,0.2,1); will-change:transform;}
+.pin-card:nth-child(even){transform:rotate(1.5deg);}
+.pin-card.dragging{cursor:grabbing; box-shadow:8px 10px 0 rgba(0,0,0,0.25); z-index:5;}
+.pin-card::before{content:'●'; position:absolute; top:-14px; left:50%; transform:translateX(-50%); color:var(--red); font-size:22px; text-shadow:0 2px 3px rgba(0,0,0,0.3);}
+.pin-card .yr{font-family:'Bebas Neue'; font-size:30px; color:var(--red);}
+.pin-card h3{font-family:'Bebas Neue'; font-size:19px; margin:6px 0 6px;}
+.pin-card p{font-size:12.5px; color:#4a463d; line-height:1.5;}
+
+/* CONTACT — request access */
+.access-box{border:4px solid var(--ink); background:var(--ink); color:var(--paper); padding:clamp(36px,7vw,80px); text-align:center; position:relative;}
+.access-box h2{font-family:'Bebas Neue'; font-size:clamp(32px,7vw,72px); line-height:0.92;}
+.access-box p{margin:20px auto 34px; max-width:460px; font-size:15px; color:#d8d3c2; font-weight:500;}
+.chan-list{display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
+.chan{font-family:'Bebas Neue'; font-size:15px; letter-spacing:0.04em; background:var(--paper); color:var(--ink); padding:13px 24px; border:3px solid var(--paper); transition:all .15s cubic-bezier(0.4,0,0.2,1);}
+.chan:hover{background:var(--mustard); border-color:var(--mustard); transform:translateY(-3px);}
+
+footer{padding:40px 0; text-align:center; font-family:'JetBrains Mono'; font-size:11.5px; color:#7a7565;}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+  .reveal{transition:none; opacity:1; transform:none;}
+  .case-id .caret{animation:none;}
+}
+
+/* accessibility: visible focus + skip link */
+a:focus-visible, button:focus-visible{outline:3px solid var(--red); outline-offset:3px; border-radius:2px;}
+.skip-link{position:absolute; left:-999px; top:auto; z-index:200; background:var(--card); color:var(--ink); padding:12px 20px; font-family:'JetBrains Mono'; font-size:13px; font-weight:700; border:3px solid var(--ink);}
+.skip-link:focus{left:16px; top:16px;}
+
+/* mobile menu */
+.menu-btn{display:none; flex-direction:column; gap:5px; background:none; border:none; padding:8px; cursor:pointer;}
+.menu-btn span{display:block; width:24px; height:3px; background:var(--ink); transition:transform .2s cubic-bezier(0.4,0,0.2,1), opacity .2s cubic-bezier(0.4,0,0.2,1);}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+@media(max-width:760px){.menu-btn{display:flex;}}
+.mobile-menu{position:fixed; inset:0 0 0 auto; width:min(78vw,320px); background:var(--ink); color:var(--paper); z-index:150; transform:translateX(100%); transition:transform .3s cubic-bezier(0.4,0,0.2,1); padding:90px 28px 28px; display:flex; flex-direction:column; gap:6px;}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu a{font-family:'Bebas Neue'; font-size:24px; letter-spacing:0.03em; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.15);}
+.menu-overlay{position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:140; opacity:0; pointer-events:none; transition:opacity .3s cubic-bezier(0.4,0,0.2,1);}
+.menu-overlay.open{opacity:1; pointer-events:auto;}
+</style>
+<link rel="me" href="https://github.com/m4stanuj">
+<link rel="me" href="https://x.com/m4stanuj">
+<link rel="me" href="https://linkedin.com/in/mast-anuj">
+</head>
+<body itemscope itemtype="https://schema.org/Person">
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--cyan);color:var(--bg);padding:8px 16px;z-index:1000;font-family:var(--mono);font-size:14px;transition:top .3s" onfocus="this.style.top=0" onblur="this.style.top=-40px">Skip to content</a>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div class="progress-bar" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100"></div>
+
+<nav role="banner" aria-label="Main navigation">
+  <div class="wrap nav-inner">
+    <div class="brand" itemprop="name"><span class="box">M4ST</span>CASE FILE</div>
+    <div class="navlinks">
+      <a href="#profile" aria-current="page">Profile</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#cases">Cases</a>
+      <a href="#board">Board</a>
+    </div>
+    <a href="#access" class="nav-cta">Request access</a>
+    <button class="menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="menu-overlay"></div>
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="#profile">Profile</a>
+  <a href="#evidence">Evidence</a>
+  <a href="#cases">Cases</a>
+  <a href="#board">Board</a>
+  <a href="#access">Request access</a>
+</div>
+
+<section class="hero" id="main">
+  <div class="wrap">
+    <div class="case-cover">
+      <div class="tag-cluster">
+        <span class="stamp">ACTIVE FILE</span>
+        <span class="tagline">— handle with caution —</span>
+      </div>
+      <div class="case-top">
+        <div class="case-id" id="caseId" data-text="FILE NO. 0X4A5F // OPENED 2024 // STATUS: ONGOING"></div>
+      </div>
+      <h1 class="kinetic">
+        <span class="ln">SOLO BUILDER.</span>
+        <span class="ln"><span class="red">ZERO</span> BUDGET.</span>
+        <span class="ln outline">FULL SWARM.</span>
+      </h1>
+      <p class="hero-sub">This is the file on Anuj — a one-man agent-ops unit running out of <b>Bareilly, India</b>, who taught a laptop to behave like a security team, a dev team, and a research desk at once. No cloud bill. No co-founder. Just a plan that kept escalating.</p>
+      <div class="hero-actions">
+        <a href="#cases" class="btn btn-fill">Open the case files →</a>
+        <a href="#access" class="btn btn-out">Request access</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="profile">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tab">Exhibit A</span>
+      <h2>Subject profile.</h2>
+      <p>What the file actually says about how this got built — and why it didn't stop.</p>
+    </div>
+    <div class="dossier">
+      <div class="dossier-card reveal">
+        <p>No investor deck. No hiring plan. Just a working theory: if a system needs a data center to be smart, it isn't smart — it's expensive. So the build started backwards, stripping every dependency that cost money until only the free tier remained.</p>
+        <p>Eleven providers got stitched into one failover chain so the inference bill stayed at zero while everything else scaled up around it. Every agent, every cache layer, every recon script runs on hardware that fits under a desk.</p>
+        <p>The security instinct came first, the automation came to feed it — <button type="button" class="redact" data-reveal="a friend's startup" aria-label="Click to reveal redacted text">▓▓▓▓▓▓▓▓▓▓</button> audits turned into full assessment pipelines, and the pipelines turned into the whole M4ST stack.</p>
+        <div class="field"><span class="k">Base of operations</span><span class="v">Bareilly, UP</span></div>
+        <div class="field"><span class="k">Known method</span><span class="v">Jugaad-first, ship over plan</span></div>
+        <div class="field"><span class="k">Primary discipline</span><span class="v">Autonomous agent infra</span></div>
+        <div class="field"><span class="k">Secondary discipline</span><span class="v">Offensive security / OSINT</span></div>
+      </div>
+      <div class="polaroid reveal">
+        <div class="swatch"></div>
+        <div class="cap">"built it because nobody would fund it"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="evidence">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tab">Exhibit B</span>
+      <h2>Evidence locker.</h2>
+      <p>What's actually in the toolkit, catalogued.</p>
+    </div>
+    <div class="locker">
+      <div class="evidence reveal"><span class="num">ITEM 01</span><h3>Agent Swarms</h3><p>Multiple autonomous agents that split work and check each other's output — nobody's babysitting the loop.</p></div>
+      <div class="evidence reveal"><span class="num">ITEM 02</span><h3>MCP Bridges</h3><p>21 custom protocol servers connecting models to databases, browsers, and recon tools directly.</p></div>
+      <div class="evidence reveal"><span class="num">ITEM 03</span><h3>Free-Tier Routing</h3><p>An 11-provider failover chain that keeps inference running at zero rupees, quietly, all the time.</p></div>
+      <div class="evidence reveal"><span class="num">ITEM 04</span><h3>Local Inference Rig</h3><p>Quantized models running on consumer-grade hardware — no rented GPU in the loop.</p></div>
+      <div class="evidence reveal"><span class="num">ITEM 05</span><h3>Semantic Cache</h3><p>A vector-similarity cache that intercepts repeat questions before they ever hit an API.</p></div>
+      <div class="evidence reveal"><span class="num">ITEM 06</span><h3>Recon & OSINT</h3><p>CEH-track investigative tooling, used on real infrastructure with real authorization letters.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tab">Exhibit C</span>
+      <h2>Open cases.</h2>
+      <p>Systems that are actually running, not just proposed.</p>
+    </div>
+    <div class="case-list">
+      <div class="case-row reveal">
+        <span class="cnum">01</span>
+        <div><h3>M4ST Stack <span class="status">Running</span></h3><p class="cdesc">The full operator system — five agents working a shared objective, orchestrated over MCP, caching what they've already learned.</p></div>
+        <div class="case-tags"><span>CrewAI</span><span>MCP</span><span>FalkorDB</span></div>
+      </div>
+      <div class="case-row reveal">
+        <span class="cnum">02</span>
+        <div><h3>OpenWork <span class="status">Wired In</span></h3><p class="cdesc">The coding workspace that talks straight to GitHub and Vercel — a build lands, and it ships without a manual step.</p></div>
+        <div class="case-tags"><span>MCP</span><span>GitHub</span></div>
+      </div>
+      <div class="case-row reveal">
+        <span class="cnum">03</span>
+        <div><h3>cai-osint <span class="status">Field Tested</span></h3><p class="cdesc">A recon framework that pulls from Shodan and reasons over the results instead of dumping raw noise.</p></div>
+        <div class="case-tags"><span>Python</span><span>Shodan</span></div>
+      </div>
+      <div class="case-row reveal">
+        <span class="cnum">04</span>
+        <div><h3>Semantic Cache Engine <span class="status">v2.0</span></h3><p class="cdesc">Sub-12ms lookups over embedded memory — the same question never costs twice.</p></div>
+        <div class="case-tags"><span>ChromaDB</span><span>Python</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="board">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tab">Exhibit D</span>
+      <h2>The board.</h2>
+      <p>How one guy's laptop turned into this — pinned in order.</p>
+    </div>
+    <div class="board">
+      <canvas id="string-canvas" aria-label="Interactive visualization"></canvas>
+      <div class="nodes">
+        <div class="pin-card reveal" tabindex="0" aria-label="Draggable timeline card: 2024 — Broke even at ₹0"><span class="yr">2024</span><h3>Broke even at ₹0</h3><p>Free-tier routing across 11 providers finally held under real load — the zero-cost bet paid off.</p></div>
+        <div class="pin-card reveal" tabindex="0" aria-label="Draggable timeline card: 2025 — MCP took over"><span class="yr">2025</span><h3>MCP took over</h3><p>First custom protocol server went live, then multiplied to 21 — the stack stopped being a script.</p></div>
+        <div class="pin-card reveal" tabindex="0" aria-label="Draggable timeline card: 2026 — The swarm went live"><span class="yr">2026</span><h3>The swarm went live</h3><p>M4STCLAW's first working multi-agent build shipped, then kept iterating through nights and weekends.</p></div>
+        <div class="pin-card reveal" tabindex="0" aria-label="Draggable timeline card: NOW — Still running"><span class="yr">NOW</span><h3>Still running</h3><p>Full provider stack corrected, smarter routing added — the file stays open because the build never really stops.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="access">
+  <div class="wrap">
+    <div class="access-box reveal">
+      <h2>Got something<br>worth escalating?</h2>
+      <p>Open to freelance AI and automation work, security consulting, and anything that needs someone who ships instead of stalling on a roadmap.</p>
+      <div class="chan-list">
+        <a href="mailto:m4stanuj@gmail.com" class="chan">EMAIL</a>
+        <a href="https://github.com/m4stanuj" class="chan" target="_blank">GITHUB</a>
+        <a href="https://linkedin.com/in/mast-anuj" class="chan" target="_blank">LINKEDIN</a>
+        <a href="https://x.com/m4stanuj" class="chan" target="_blank">X</a>
+<a href="https://mastanuj-dossier.vercel.app/" class="chan" target="_blank">mastanuj-dossier.vercel.app</a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// scroll progress bar + nav aria-current
+(function(){
+  const bar = document.querySelector('.progress-bar');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.navlinks a');
+  function onScroll(){
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    if(bar) bar.style.width = pct + '%';
+    let currentId = '';
+    sections.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+      if(top <= 200) currentId = sec.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      const href = a.getAttribute('href').replace('#','');
+      a.setAttribute('aria-current', href === currentId ? 'page' : 'false');
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+// mobile menu
+(function(){
+  const btn = document.querySelector('.menu-btn');
+  const menu = document.querySelector('.mobile-menu');
+  const overlay = document.querySelector('.menu-overlay');
+  function close(){ menu.classList.remove('open'); overlay.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','Open navigation menu'); }
+  function open(){ menu.classList.add('open'); overlay.classList.add('open'); btn.setAttribute('aria-expanded','true'); btn.setAttribute('aria-label','Close navigation menu'); }
+  btn.addEventListener('click', ()=> btn.getAttribute('aria-expanded')==='true' ? close() : open());
+  overlay.addEventListener('click', close);
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click', close));
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+})();
+
+// typewriter on the case-id
+(function(){
+  const el = document.getElementById('caseId');
+  if(!el) return;
+  const text = el.getAttribute('data-text');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent = text; return; }
+  const caret = document.createElement('span');
+  caret.className = 'caret';
+  let i = 0;
+  function type(){
+    el.textContent = text.slice(0, i);
+    el.appendChild(caret);
+    i++;
+    if(i <= text.length){ setTimeout(type, 18 + Math.random()*35); }
+  }
+  type();
+})();
+
+// click-to-reveal redacted text
+document.querySelectorAll('.redact').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const revealed = btn.classList.contains('revealed');
+    if(revealed){
+      btn.textContent = '▓▓▓▓▓▓▓▓▓▓';
+      btn.classList.remove('revealed');
+      btn.setAttribute('aria-label','Click to reveal redacted text');
+    } else {
+      btn.textContent = btn.getAttribute('data-reveal');
+      btn.classList.add('revealed');
+      btn.setAttribute('aria-label','Click to redact text');
+    }
+  });
+});
+
+// draggable pin-cards on the string board
+(function(){
+  document.querySelectorAll('.pin-card').forEach(card=>{
+    let ox=0, oy=0, sx=0, sy=0, dragging=false;
+    const idx = Array.from(card.parentElement.children).indexOf(card);
+    const baseRotate = idx % 2 === 1 ? 1.5 : -1.5;
+    card.addEventListener('pointerdown', (e)=>{
+      dragging = true;
+      card.classList.add('dragging');
+      card.setPointerCapture(e.pointerId);
+      sx = e.clientX; sy = e.clientY;
+    });
+    card.addEventListener('pointermove', (e)=>{
+      if(!dragging) return;
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      card.style.transform = `translate(${ox+dx}px, ${oy+dy}px) rotate(${baseRotate}deg)`;
+      window.dispatchEvent(new Event('pincard-drag'));
+    });
+    function end(e){
+      if(!dragging) return;
+      dragging = false;
+      card.classList.remove('dragging');
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      ox += dx; oy += dy;
+    }
+    card.addEventListener('pointerup', end);
+    card.addEventListener('pointercancel', end);
+  });
+})();
+
+// red string connecting the board's pin cards
+(function(){
+  const canvas = document.getElementById('string-canvas');
+  const board = canvas.closest('.board');
+  const ctx = canvas.getContext('2d');
+  function draw(){
+    const rect = board.getBoundingClientRect();
+    canvas.width = rect.width; canvas.height = rect.height;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    const cards = board.querySelectorAll('.pin-card');
+    const pts = Array.from(cards).map(c=>{
+      const r = c.getBoundingClientRect();
+      return { x: r.left - rect.left + r.width/2, y: r.top - rect.top + 14 };
+    });
+    ctx.strokeStyle = 'rgba(214,40,40,0.55)';
+    ctx.lineWidth = 1.5;
+    for(let i=0;i<pts.length-1;i++){
+      ctx.beginPath();
+      ctx.moveTo(pts[i].x, pts[i].y);
+      const midY = Math.min(pts[i].y, pts[i+1].y) - 24;
+      ctx.quadraticCurveTo((pts[i].x+pts[i+1].x)/2, midY, pts[i+1].x, pts[i+1].y);
+      ctx.stroke();
+    }
+  }
+  draw();
+  window.addEventListener('resize', draw);
+  window.addEventListener('load', draw);
+  window.addEventListener('pincard-drag', draw);
+  setTimeout(draw, 400);
+})();
+</script>
+
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+
+
+
+<!-- M4ST Network Footer -->
+<footer style="background:#0D0B14;color:#FFFCF7;padding:44px 24px 36px;text-align:center;font-family:'JetBrains Mono',monospace;border-top:3px solid #0D0B14;margin-top:60px">
+  <div style="max-width:1240px;margin:0 auto">
+    <p style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.04em;margin-bottom:6px">M4ST <span style="color:#CFFF3D">NETWORK</span></p>
+    <p style="font-size:11px;color:#8B2FF2;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:22px">14 autonomous agent interfaces</p>
+    <nav aria-label="M4ST variants" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:860px;margin:0 auto 24px">
+      <a href="https://m4stanuj.vercel.app" style="color:#C8F731;text-decoration:none;border:1.5px solid #C8F731;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">m4stanuj</a>
+      <a href="https://mast-anuj.vercel.app" style="color:#8B2FF2;text-decoration:none;border:1.5px solid #8B2FF2;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mast-anuj</a>
+      <a href="https://mast-anuj-site.vercel.app" style="color:#00E5FF;text-decoration:none;border:1.5px solid #00E5FF;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mast-anuj-site</a>
+      <a href="https://m4st.vercel.app" style="color:#FF2A6D;text-decoration:none;border:1.5px solid #FF2A6D;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">m4st</a>
+      <a href="https://mastanuj-royal.vercel.app" style="color:#C9A84C;text-decoration:none;border:1.5px solid #C9A84C;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-royal</a>
+      <a href="https://mastanuj-elite.vercel.app" style="color:#7C3AED;text-decoration:none;border:1.5px solid #7C3AED;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-elite</a>
+      <a href="https://mastanuj-prism.vercel.app" style="color:#FF6B9D;text-decoration:none;border:1.5px solid #FF6B9D;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-prism</a>
+      <a href="https://mastanuj-pixel.vercel.app" style="color:#39FF14;text-decoration:none;border:1.5px solid #39FF14;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-pixel</a>
+      <a href="https://mastanuj-v1.vercel.app" style="color:#FFB020;text-decoration:none;border:1.5px solid #FFB020;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-v1</a>
+      <a href="https://mastanuj-retro.vercel.app" style="color:#FF2D95;text-decoration:none;border:1.5px solid #FF2D95;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-retro</a>
+      <a href="https://mastanuj-command.vercel.app" style="color:#00FFAA;text-decoration:none;border:1.5px solid #00FFAA;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-command</a>
+      <a href="https://mastanuj-dossier.vercel.app" style="color:#0D0B14;background:#F2B705;text-decoration:none;border:1.5px solid #F2B705;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;transition:all .15s">mastanuj-dossier</a>
+      <a href="https://mastanuj-comic.vercel.app" style="color:#FF1E3C;text-decoration:none;border:1.5px solid #FF1E3C;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-comic</a>
+      <a href="https://mastanuj-core.vercel.app" style="color:#FFDD00;text-decoration:none;border:1.5px solid #FFDD00;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-core</a>
+    </nav>
+    <p style="margin:0;font-size:11px;opacity:0.6">c 2026 M4ST - Built by Anuj, Bareilly, India. Zero-cost, always.</p>
+  </div>
+</footer>
+</body>
+</html>

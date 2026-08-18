@@ -1,6 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
-Sitemap: https://m4st-v1.vercel.app/sitemap.xml
 
-# M4ST - Anuj's AI Agent Systems Portfolio
-# https://m4st.vercel.app
+Sitemap: https://mastanuj-v1.vercel.app/sitemap.xml

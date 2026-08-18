@@ -1,6 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
-Sitemap: https://mast-glass.vercel.app/sitemap.xml
 
-# M4ST - Anuj's AI Agent Systems Portfolio
-# https://m4st.vercel.app
+Sitemap: https://mastanuj-prism.vercel.app/sitemap.xml

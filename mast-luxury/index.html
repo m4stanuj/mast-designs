@@ -1,28 +1,46 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANUJ — Ultra-Luxury AI Systems Architect | M4ST</title>
+<title>ANUJ - Royal AI Systems Architect | M4ST</title>
 <meta name="description" content="Anuj (M4ST) — Ultra-premium autonomous AI agent systems. 21 MCP servers, local-first, zero-cost. Open for exclusive AI engagements worldwide.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://mast-luxury.vercel.app/">
+<link rel="canonical" href="https://mastanuj-royal.vercel.app/">
 <meta property="og:title" content="ANUJ — Luxury AI Systems Architect">
 <meta property="og:description" content="Ultra-premium autonomous AI agent systems by Anuj (M4ST). Local-first, zero-cost, 21 MCP servers.">
-<meta property="og:image" content="https://m4st.vercel.app/og-m4st.png">
+<meta property="og:image" content="https://mastanuj-royal.vercel.app/og-m4st.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://mast-luxury.vercel.app/">
+<meta property="og:url" content="https://mastanuj-royal.vercel.app/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@m4stanuj">
-<meta name="twitter:image" content="https://m4st.vercel.app/og-m4st.png">
+<meta name="twitter:image" content="https://mastanuj-royal.vercel.app/og-m4st.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23050507'/><text y='.9em' font-size='75' x='12' fill='%23c9a84c' font-family='serif' font-weight='bold'>A</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Anuj","alternateName":"M4ST","jobTitle":"AI Systems Engineer & Luxury Architect","url":"https://mast-luxury.vercel.app/","email":"m4stanuj@gmail.com","image":"https://m4st.vercel.app/og-m4st.png","sameAs":["https://github.com/m4stanuj","https://linkedin.com/in/mast-anuj","https://x.com/m4stanuj"],"knowsAbout":["Multi-Agent Systems","MCP Protocol","CrewAI","LangGraph","AI Orchestration","Semantic Memory","Cybersecurity","OSINT","Python","LangChain"],"offers":{"@type":"Offer","itemOffered":{"@type":"Service","name":"Premium AI Agent Systems Development"},"availability":"https://schema.org/InStock","areaServed":"Worldwide"}}
+{"@context":"https://schema.org","@type":"Person",
+"webSite": {
+  "@type": "WebSite",
+  "name": "M4ST — LUXURY",
+  "url": "https://mastanuj-royal.vercel.app",
+  "description": "Autonomous agent systems portfolio by Anuj — M4ST stack, zero-cost AI inference.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Anuj",
+    "url": "https://m4stanuj.vercel.app"
+  }
+},
+"potentialAction": {
+  "@type": "SearchAction",
+  "target": "https://mastanuj-royal.vercel.app/search?q={search_term_string}",
+  "query-input": "required name=search_term_string"
+},"name":"Anuj","alternateName":"M4ST","jobTitle":"AI Systems Engineer & Luxury Architect","url":"https://mastanuj-royal.vercel.app/","email":"m4stanuj@gmail.com","image":"https://m4st.vercel.app/og-m4st.png","sameAs":["https://github.com/m4stanuj","https://linkedin.com/in/mast-anuj","https://x.com/m4stanuj"],"knowsAbout":["Multi-Agent Systems","MCP Protocol","CrewAI","LangGraph","AI Orchestration","Semantic Memory","Cybersecurity","OSINT","Python","LangChain"],"offers":{"@type":"Offer","itemOffered":{"@type":"Service","name":"Premium AI Agent Systems Development"},"availability":"https://schema.org/InStock","areaServed":"Worldwide"}}
 </script>
 <style>
 /* =========================================
@@ -82,7 +100,7 @@ body::after{
 /* =========================================
    NAVIGATION
    ========================================= */
-nav{
+nav[role=banner]{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;justify-content:space-between;align-items:center;
   padding:1.5rem 5rem;
@@ -1073,11 +1091,15 @@ footer{
   nav{padding:1rem 1.5rem}
 }
 </style>
+<link rel="me" href="https://github.com/m4stanuj">
+<link rel="me" href="https://x.com/m4stanuj">
+<link rel="me" href="https://linkedin.com/in/mast-anuj">
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--cyan);color:var(--bg);padding:8px 16px;z-index:1000;font-family:var(--mono);font-size:14px;transition:top .3s" onfocus="this.style.top=0" onblur="this.style.top=-40px">Skip to content</a>
 
 <!-- NAV -->
-<nav id="mainNav">
+<nav role="banner" aria-label="Main navigation" id="mainNav">
   <a href="#" class="nav-logo">ANUJ</a>
   <ul class="nav-center">
     <li><a href="#about">About</a></li>
@@ -1094,7 +1116,7 @@ footer{
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <canvas id="heroCanvas"></canvas>
+  <canvas id="heroCanvas" aria-label="Interactive visualization"></canvas>
   <div class="hero-glow"></div>
   <div class="rings-wrap">
     <div class="ring ring-1"></div>
@@ -1314,7 +1336,7 @@ footer{
             <span class="ptag">Ollama</span>
           </div>
         </div>
-        <div class="project-arrow">→</div>
+        <a class="project-arrow" href="https://github.com/m4stanuj/MAST" target="_blank" rel="noopener" aria-label="Open project repo">→</a>
       </div>
       <div class="project-item reveal">
         <div class="project-num-big">02</div>
@@ -1329,7 +1351,7 @@ footer{
             <span class="ptag">Data Fusion</span>
           </div>
         </div>
-        <div class="project-arrow">→</div>
+        <a class="project-arrow" href="https://github.com/m4stanuj/cai-osint" target="_blank" rel="noopener" aria-label="Open project repo">→</a>
       </div>
       <div class="project-item reveal">
         <div class="project-num-big">03</div>
@@ -1344,7 +1366,7 @@ footer{
             <span class="ptag">Vector DB</span>
           </div>
         </div>
-        <div class="project-arrow">→</div>
+        <a class="project-arrow" href="https://github.com/m4stanuj/semantic-cache-engine" target="_blank" rel="noopener" aria-label="Open project repo">→</a>
       </div>
       <div class="project-item reveal">
         <div class="project-num-big">04</div>
@@ -1359,7 +1381,7 @@ footer{
             <span class="ptag">Automation</span>
           </div>
         </div>
-        <div class="project-arrow">→</div>
+        <a class="project-arrow" href="https://github.com/m4stanuj/smart-github-vercel-app" target="_blank" rel="noopener" aria-label="Open project repo">→</a>
       </div>
       <div class="project-item reveal">
         <div class="project-num-big">05</div>
@@ -1374,7 +1396,7 @@ footer{
             <span class="ptag">FastAPI</span>
           </div>
         </div>
-        <div class="project-arrow">→</div>
+        <a class="project-arrow" href="https://github.com/m4stanuj/MAST" target="_blank" rel="noopener" aria-label="Open project repo">→</a>
       </div>
     </div>
   </div>
@@ -1564,7 +1586,17 @@ footer{
     <div class="avail-dot"></div>
     Currently accepting new engagements · Worldwide
   </div>
-</section>
+
+    <div class="contact-form" style="margin-top:28px;max-width:520px">
+  <form action="https://formspree.io/f/m4stanuj" method="POST">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <input type="text" name="name" placeholder="Your name" required style="padding:12px 14px;border:1px solid var(--line, rgba(255,255,255,.15));border-radius:8px;background:var(--glass, rgba(255,255,255,.05));color:var(--text, var(--white, #fff));font-family:inherit;font-size:15px">
+      <input type="email" name="email" placeholder="Your email" required style="padding:12px 14px;border:1px solid var(--line, rgba(255,255,255,.15));border-radius:8px;background:var(--glass, rgba(255,255,255,.05));color:var(--text, var(--white, #fff));font-family:inherit;font-size:15px">
+      <textarea name="message" placeholder="Tell me about your project..." required rows="4" style="padding:12px 14px;border:1px solid var(--line, rgba(255,255,255,.15));border-radius:8px;background:var(--glass, rgba(255,255,255,.05));color:var(--text, var(--white, #fff));font-family:inherit;font-size:15px;resize:vertical"></textarea>
+      <button type="submit" style="padding:13px 20px;border:none;border-radius:8px;background:var(--acc, var(--cyan, #00f0ff));color:#000;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer">Send Message</button>
+    </div>
+  </form>
+</div></section>
 
 <!-- FOOTER -->
 <footer>
@@ -1588,10 +1620,10 @@ footer{
         <h4>Portfolio</h4>
         <ul>
           <li><a href="https://m4st.vercel.app">Main Portfolio</a></li>
-          <li><a href="https://mast-agent.vercel.app">Agent Command</a></li>
-          <li><a href="https://mast-glass.vercel.app">Glass Design</a></li>
-          <li><a href="https://mast-brutal.vercel.app">Brutal Design</a></li>
-          <li><a href="https://mast-arcade.vercel.app">Arcade Design</a></li>
+          <li><a href="https://mastanuj-command.vercel.app">Agent Command</a></li>
+          <li><a href="https://mastanuj-prism.vercel.app">Glass Design</a></li>
+          <li><a href="https://mastanuj-core.vercel.app">Brutal Design</a></li>
+          <li><a href="https://mastanuj-retro.vercel.app">Arcade Design</a></li>
         </ul>
       </div>
     </div>
@@ -1745,36 +1777,38 @@ document.querySelectorAll('[data-count]').forEach(el => metricObs.observe(el))
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
-<!-- M4ST Cross-Links Footer -->
-<footer class="m4st-cross-links" style="background:#0D0B14;color:#FFFCF7;padding:32px 0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;border-top:2px solid #0D0B14;margin-top:60px">
-  <div style="max-width:1240px;margin:0 auto;padding:0 32px">
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin-bottom:16px">
-      <a href="https://m4st.vercel.app/" style="color:#CFFF3D;text-decoration:none">M4ST</a>
-      <span style="color:#0D0B14">|</span>
-      <a href="https://mast-anuj-site.vercel.app/" style="color:#FFFCF7;text-decoration:none">Anuj Site</a>
-      <span style="color:#0D0B14">|</span>
-      <a href="https://mast-luxury.vercel.app/" style="color:#FFFCF7;text-decoration:none">Luxury</a>
-      <span style="color:#0D0B14">|</span>
-      <a href="https://m4st-premium.vercel.app/" style="color:#FFFCF7;text-decoration:none">Premium</a>
-      <span style="color:#0D0B14">|</span>
-      <a href="https://m4st-v1.vercel.app/" style="color:#FFFCF7;text-decoration:none">V1</a>
-      <span style="color:#0D0B14">|</span>
-      <a href="https://mast-glass.vercel.app/" style="color:#FFFCF7;text-decoration:none">Glass</a>
-      <span style="color:#0D0B14">|</span>
-      <a href="https://mast-brutal.vercel.app/" style="color:#FFFCF7;text-decoration:none">Brutal</a>
-      <span style="color:#0D0B14">|</span>
-      <a href="https://mast-vhs.vercel.app/" style="color:#FFFCF7;text-decoration:none">VHS</a>
-      <span style="color:#0D0B14">|</span>
-      <a href="https://mast-manga.vercel.app/" style="color:#FFFCF7;text-decoration:none">Manga</a>
-      <span style="color:#0D0B14">|</span>
-      <a href="https://mast-casefile.vercel.app/" style="color:#FFFCF7;text-decoration:none">Casefile</a>
-      <span style="color:#0D0B14">|</span>
-      <a href="https://mast-arcade.vercel.app/" style="color:#FFFCF7;text-decoration:none">Arcade</a>
-      <span style="color:#0D0B14">|</span>
-      <a href="https://mast-agent.vercel.app/" style="color:#FFFCF7;text-decoration:none">Agent</a>
-    </div>
-    <p style="margin:0;opacity:0.6">© 2026 M4ST — Built by Anuj, Bareilly, India. Zero-cost, always.</p>
+
+<!-- M4ST Network Footer -->
+<footer style="background:#0D0B14;color:#FFFCF7;padding:44px 24px 36px;text-align:center;font-family:'JetBrains Mono',monospace;border-top:3px solid #0D0B14;margin-top:60px">
+  <div style="max-width:1240px;margin:0 auto">
+    <p style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.04em;margin-bottom:6px">M4ST <span style="color:#CFFF3D">NETWORK</span></p>
+    <p style="font-size:11px;color:#8B2FF2;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:22px">14 autonomous agent interfaces</p>
+    <nav aria-label="M4ST variants" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:860px;margin:0 auto 24px">
+      <a href="https://m4stanuj.vercel.app" style="color:#C8F731;text-decoration:none;border:1.5px solid #C8F731;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">m4stanuj</a>
+      <a href="https://mast-anuj.vercel.app" style="color:#8B2FF2;text-decoration:none;border:1.5px solid #8B2FF2;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mast-anuj</a>
+      <a href="https://mast-anuj-site.vercel.app" style="color:#00E5FF;text-decoration:none;border:1.5px solid #00E5FF;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mast-anuj-site</a>
+      <a href="https://m4st.vercel.app" style="color:#FF2A6D;text-decoration:none;border:1.5px solid #FF2A6D;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">m4st</a>
+      <a href="https://mastanuj-royal.vercel.app" style="color:#0D0B14;background:#C9A84C;text-decoration:none;border:1.5px solid #C9A84C;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;transition:all .15s">mastanuj-royal</a>
+      <a href="https://mastanuj-elite.vercel.app" style="color:#7C3AED;text-decoration:none;border:1.5px solid #7C3AED;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-elite</a>
+      <a href="https://mastanuj-prism.vercel.app" style="color:#FF6B9D;text-decoration:none;border:1.5px solid #FF6B9D;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-prism</a>
+      <a href="https://mastanuj-pixel.vercel.app" style="color:#39FF14;text-decoration:none;border:1.5px solid #39FF14;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-pixel</a>
+      <a href="https://mastanuj-v1.vercel.app" style="color:#FFB020;text-decoration:none;border:1.5px solid #FFB020;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-v1</a>
+      <a href="https://mastanuj-retro.vercel.app" style="color:#FF2D95;text-decoration:none;border:1.5px solid #FF2D95;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-retro</a>
+      <a href="https://mastanuj-command.vercel.app" style="color:#00FFAA;text-decoration:none;border:1.5px solid #00FFAA;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-command</a>
+      <a href="https://mastanuj-dossier.vercel.app" style="color:#F2B705;text-decoration:none;border:1.5px solid #F2B705;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-dossier</a>
+      <a href="https://mastanuj-comic.vercel.app" style="color:#FF1E3C;text-decoration:none;border:1.5px solid #FF1E3C;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-comic</a>
+      <a href="https://mastanuj-core.vercel.app" style="color:#FFDD00;text-decoration:none;border:1.5px solid #FFDD00;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;transition:all .15s">mastanuj-core</a>
+    </nav>
+    <p style="margin:0;font-size:11px;opacity:0.6">© 2026 M4ST — Built by Anuj, Bareilly, India. Zero-cost, always.</p>
   </div>
+<section aria-label="Track record" style="padding:48px 20px 8px;text-align:center;font-family:var(--font, inherit)">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:36px;max-width:860px;margin:0 auto">
+    <div><div style="font-size:34px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,var(--acc,#00f0ff),var(--acc2,#ff2d95));-webkit-background-clip:text;background-clip:text;color:transparent">21M+</div><div style="font-size:12px;opacity:.7;letter-spacing:2px;text-transform:uppercase">tokens processed</div></div>
+    <div><div style="font-size:34px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,var(--acc,#00f0ff),var(--acc2,#ff2d95));-webkit-background-clip:text;background-clip:text;color:transparent">12+</div><div style="font-size:12px;opacity:.7;letter-spacing:2px;text-transform:uppercase">autonomous agents</div></div>
+    <div><div style="font-size:34px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,var(--acc,#00f0ff),var(--acc2,#ff2d95));-webkit-background-clip:text;background-clip:text;color:transparent">14</div><div style="font-size:12px;opacity:.7;letter-spacing:2px;text-transform:uppercase">live portfolios</div></div>
+    <div><div style="font-size:34px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,var(--acc,#00f0ff),var(--acc2,#ff2d95));-webkit-background-clip:text;background-clip:text;color:transparent">100%</div><div style="font-size:12px;opacity:.7;letter-spacing:2px;text-transform:uppercase">open source</div></div>
+  </div>
+</section>
 </footer>
 </body>
 </html>

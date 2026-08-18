@@ -15,13 +15,13 @@
 <meta property="og:description" content="Anuj building M4ST autonomous agent systems from Bareilly.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mastanuj-retro.vercel.app">
-<meta property="og:image" content="https://mastanuj-retro.vercel.app/og-vhs.svg">
+<meta property="og:image" content="https://mastanuj-retro.vercel.app/og-vhs.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="M4ST // VHS ARCHIVE">
 <meta name="twitter:description" content="Anuj building M4ST autonomous agent systems from Bareilly.">
-<meta name="twitter:image" content="https://mastanuj-retro.vercel.app/og-vhs.svg">
+<meta name="twitter:image" content="https://mastanuj-retro.vercel.app/og-vhs.png">
 <link rel="canonical" href="https://mastanuj-retro.vercel.app">
 <script type="application/ld+json">
 {
@@ -163,8 +163,7 @@ a:focus-visible { outline: 2px solid #ff2d95; outline-offset: 3px; border-radius
   position: relative; z-index: 2;
 }
 
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+body > nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50;
   background: rgba(18,6,26,.85); backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,45,149,.2);
   padding: .8rem 0;
@@ -438,6 +437,7 @@ footer {
 <link rel="me" href="https://github.com/m4stanuj">
 <link rel="me" href="https://x.com/m4stanuj">
 <link rel="me" href="https://linkedin.com/in/mast-anuj">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2312061A'/%3E%3Ctext x='50' y='70' font-size='60' font-family='monospace' font-weight='bold' fill='%23FF2D95' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--cyan);color:var(--bg);padding:8px 16px;z-index:1000;font-family:var(--mono);font-size:14px;transition:top .3s" onfocus="this.style.top=0" onblur="this.style.top=-40px">Skip to content</a>
@@ -597,17 +597,20 @@ footer {
           <a href="https://x.com/m4stanuj" target="_blank" rel="noopener noreferrer">&#x1F426; X</a>
 <a href="https://linkedin.com/in/mast-anuj" target="_blank" rel="noopener noreferrer">&#x1F4E1; LinkedIn</a>
         </div>
-        <div class="social-links" style="margin-top:14px">
-          <a href="https://github.com/m4stanuj/M4STCLAW" target="_blank" rel="noopener noreferrer">M4STCLAW</a>
-          <a href="https://github.com/m4stanuj/mast-designs" target="_blank" rel="noopener noreferrer">mast-designs</a>
-          <a href="https://github.com/m4stanuj/cai-osint" target="_blank" rel="noopener noreferrer">cai-osint</a>
-          <a href="https://github.com/m4stanuj/semantic-cache-engine" target="_blank" rel="noopener noreferrer">semantic-cache</a>
-          <a href="https://github.com/m4stanuj/mast-llm-router" target="_blank" rel="noopener noreferrer">mast-llm-router</a>
-          <a href="https://github.com/m4stanuj/MAST" target="_blank" rel="noopener noreferrer">MAST</a>
-        </div>
+        
       </div>
     </div>
-  </section>
+  
+    <div class="contact-form" style="margin-top:28px;max-width:520px">
+  <form action="https://formspree.io/f/m4stanuj" method="POST">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <input type="text" name="name" placeholder="Your name" required style="padding:12px 14px;border:1px solid var(--line, rgba(255,255,255,.15));border-radius:8px;background:var(--glass, rgba(255,255,255,.05));color:var(--text, var(--white, #fff));font-family:inherit;font-size:15px">
+      <input type="email" name="email" placeholder="Your email" required style="padding:12px 14px;border:1px solid var(--line, rgba(255,255,255,.15));border-radius:8px;background:var(--glass, rgba(255,255,255,.05));color:var(--text, var(--white, #fff));font-family:inherit;font-size:15px">
+      <textarea name="message" placeholder="Tell me about your project..." required rows="4" style="padding:12px 14px;border:1px solid var(--line, rgba(255,255,255,.15));border-radius:8px;background:var(--glass, rgba(255,255,255,.05));color:var(--text, var(--white, #fff));font-family:inherit;font-size:15px;resize:vertical"></textarea>
+      <button type="submit" style="padding:13px 20px;border:none;border-radius:8px;background:var(--acc, var(--cyan, #00f0ff));color:#000;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer">Send Message</button>
+    </div>
+  </form>
+</div></section>
 </main>
 
 
@@ -787,7 +790,14 @@ footer {
     </nav>
     <p style="margin:0;font-size:11px;opacity:0.6">c 2026 M4ST - Built by Anuj, Bareilly, India. Zero-cost, always.</p>
   </div>
+<section aria-label="Track record" style="padding:48px 20px 8px;text-align:center;font-family:var(--font, inherit)">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:36px;max-width:860px;margin:0 auto">
+    <div><div style="font-size:34px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,var(--acc,#00f0ff),var(--acc2,#ff2d95));-webkit-background-clip:text;background-clip:text;color:transparent">21M+</div><div style="font-size:12px;opacity:.7;letter-spacing:2px;text-transform:uppercase">tokens processed</div></div>
+    <div><div style="font-size:34px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,var(--acc,#00f0ff),var(--acc2,#ff2d95));-webkit-background-clip:text;background-clip:text;color:transparent">12+</div><div style="font-size:12px;opacity:.7;letter-spacing:2px;text-transform:uppercase">autonomous agents</div></div>
+    <div><div style="font-size:34px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,var(--acc,#00f0ff),var(--acc2,#ff2d95));-webkit-background-clip:text;background-clip:text;color:transparent">14</div><div style="font-size:12px;opacity:.7;letter-spacing:2px;text-transform:uppercase">live portfolios</div></div>
+    <div><div style="font-size:34px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,var(--acc,#00f0ff),var(--acc2,#ff2d95));-webkit-background-clip:text;background-clip:text;color:transparent">100%</div><div style="font-size:12px;opacity:.7;letter-spacing:2px;text-transform:uppercase">open source</div></div>
+  </div>
+</section>
 </footer>
 </body>
 </html>
-

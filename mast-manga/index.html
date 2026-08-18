@@ -17,10 +17,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="M4ST // Anuj — Chapter One">
 <meta name="twitter:description" content="One guy. Zero budget. Full swarm. Solo-built autonomous agent infrastructure out of Bareilly, India.">
-<meta property="og:image" content="https://mastanuj-comic.vercel.app/og-manga.svg">
+<meta property="og:image" content="https://mastanuj-comic.vercel.app/og-manga.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://mastanuj-comic.vercel.app/og-manga.svg">
+<meta name="twitter:image" content="https://mastanuj-comic.vercel.app/og-manga.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person",
 "webSite": {
@@ -310,22 +310,22 @@ a:focus-visible, button:focus-visible{outline:3px solid var(--blue); outline-off
     <div class="ep-list">
       <div class="ep-row reveal">
         <span class="epnum">EP<span>01</span></span>
-        <div><h3>M4ST Stack</h3><p class="epdesc">The full operator system — five agents, MCP orchestration, semantic caching, zero-cost routing, all running together.</p></div>
+        <div><h3><a href="https://github.com/m4stanuj/MAST" target="_blank" rel="noopener" style="text-decoration:underline">M4ST Stack</a></h3><p class="epdesc">The full operator system — five agents, MCP orchestration, semantic caching, zero-cost routing, all running together.</p></div>
         <div class="ep-tags"><span>CrewAI</span><span>MCP</span><span>FalkorDB</span></div>
       </div>
       <div class="ep-row reveal">
         <span class="epnum">EP<span>02</span></span>
-        <div><h3>OpenWork</h3><p class="epdesc">A coding workspace wired straight into GitHub and Vercel — a merge lands, a deploy follows, no one has to push the button.</p></div>
+        <div><h3><a href="https://github.com/m4stanuj/openwork" target="_blank" rel="noopener" style="text-decoration:underline">OpenWork</a></h3><p class="epdesc">A coding workspace wired straight into GitHub and Vercel — a merge lands, a deploy follows, no one has to push the button.</p></div>
         <div class="ep-tags"><span>MCP</span><span>GitHub</span></div>
       </div>
       <div class="ep-row reveal">
         <span class="epnum">EP<span>03</span></span>
-        <div><h3>cai-osint</h3><p class="epdesc">An open-source recon framework — Shodan data in, reasoned analysis out, no manual digging.</p></div>
+        <div><h3><a href="https://github.com/m4stanuj/cai-osint" target="_blank" rel="noopener" style="text-decoration:underline">cai-osint</a></h3><p class="epdesc">An open-source recon framework — Shodan data in, reasoned analysis out, no manual digging.</p></div>
         <div class="ep-tags"><span>Python</span><span>Shodan</span></div>
       </div>
       <div class="ep-row reveal">
         <span class="epnum">EP<span>04</span></span>
-        <div><h3>Semantic Cache Engine</h3><p class="epdesc">Sub-12ms lookups over embedded memory. The same question never gets asked twice.</p></div>
+        <div><h3><a href="https://github.com/m4stanuj/semantic-cache-engine" target="_blank" rel="noopener" style="text-decoration:underline">Semantic Cache Engine</a></h3><p class="epdesc">Sub-12ms lookups over embedded memory. The same question never gets asked twice.</p></div>
         <div class="ep-tags"><span>ChromaDB</span><span>Python</span></div>
       </div>
     </div>
@@ -360,17 +360,20 @@ a:focus-visible, button:focus-visible{outline:3px solid var(--blue); outline-off
         <a href="https://x.com/m4stanuj" class="chan" target="_blank">X</a>
 <a href="https://mastanuj-comic.vercel.app/" class="chan" target="_blank">mastanuj-comic.vercel.app</a>
       </div>
-      <div class="chan-list" style="margin-top:14px">
-        <a href="https://github.com/m4stanuj/M4STCLAW" class="chan" target="_blank">M4STCLAW</a>
-        <a href="https://github.com/m4stanuj/mast-designs" class="chan" target="_blank">mast-designs</a>
-        <a href="https://github.com/m4stanuj/cai-osint" class="chan" target="_blank">cai-osint</a>
-        <a href="https://github.com/m4stanuj/semantic-cache-engine" class="chan" target="_blank">semantic-cache</a>
-        <a href="https://github.com/m4stanuj/mast-llm-router" class="chan" target="_blank">mast-llm-router</a>
-        <a href="https://github.com/m4stanuj/MAST" class="chan" target="_blank">MAST</a>
-      </div>
+      
     </div>
   </div>
-</section>
+
+    <div class="contact-form" style="margin-top:28px;max-width:520px">
+  <form action="https://formspree.io/f/m4stanuj" method="POST">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <input type="text" name="name" placeholder="Your name" required style="padding:12px 14px;border:1px solid var(--line, rgba(255,255,255,.15));border-radius:8px;background:var(--glass, rgba(255,255,255,.05));color:var(--text, var(--white, #fff));font-family:inherit;font-size:15px">
+      <input type="email" name="email" placeholder="Your email" required style="padding:12px 14px;border:1px solid var(--line, rgba(255,255,255,.15));border-radius:8px;background:var(--glass, rgba(255,255,255,.05));color:var(--text, var(--white, #fff));font-family:inherit;font-size:15px">
+      <textarea name="message" placeholder="Tell me about your project..." required rows="4" style="padding:12px 14px;border:1px solid var(--line, rgba(255,255,255,.15));border-radius:8px;background:var(--glass, rgba(255,255,255,.05));color:var(--text, var(--white, #fff));font-family:inherit;font-size:15px;resize:vertical"></textarea>
+      <button type="submit" style="padding:13px 20px;border:none;border-radius:8px;background:var(--acc, var(--cyan, #00f0ff));color:#000;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer">Send Message</button>
+    </div>
+  </form>
+</div></section>
 
 
 
@@ -436,7 +439,14 @@ document.querySelectorAll('.reveal, .sfx-burst').forEach(el=>io.observe(el));
     </nav>
     <p style="margin:0;font-size:11px;opacity:0.6">c 2026 M4ST - Built by Anuj, Bareilly, India. Zero-cost, always.</p>
   </div>
+<section aria-label="Track record" style="padding:48px 20px 8px;text-align:center;font-family:var(--font, inherit)">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:36px;max-width:860px;margin:0 auto">
+    <div><div style="font-size:34px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,var(--acc,#00f0ff),var(--acc2,#ff2d95));-webkit-background-clip:text;background-clip:text;color:transparent">21M+</div><div style="font-size:12px;opacity:.7;letter-spacing:2px;text-transform:uppercase">tokens processed</div></div>
+    <div><div style="font-size:34px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,var(--acc,#00f0ff),var(--acc2,#ff2d95));-webkit-background-clip:text;background-clip:text;color:transparent">12+</div><div style="font-size:12px;opacity:.7;letter-spacing:2px;text-transform:uppercase">autonomous agents</div></div>
+    <div><div style="font-size:34px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,var(--acc,#00f0ff),var(--acc2,#ff2d95));-webkit-background-clip:text;background-clip:text;color:transparent">14</div><div style="font-size:12px;opacity:.7;letter-spacing:2px;text-transform:uppercase">live portfolios</div></div>
+    <div><div style="font-size:34px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,var(--acc,#00f0ff),var(--acc2,#ff2d95));-webkit-background-clip:text;background-clip:text;color:transparent">100%</div><div style="font-size:12px;opacity:.7;letter-spacing:2px;text-transform:uppercase">open source</div></div>
+  </div>
+</section>
 </footer>
 </body>
 </html>
-

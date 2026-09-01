@@ -300,7 +300,7 @@ a:focus-visible, button:focus-visible{outline:3px solid var(--magenta); outline-
   <div id="canvas-placeholder"><div class="canvas-loader"></div></div>
 <canvas id="canvas3d" loading="eager"></canvas>
   <div class="floating-chips">
-    <span class="chip">MCP servers Ã—21</span>
+    <span class="chip">MCP servers Ã&mdash;21</span>
     <span class="chip">CrewAI</span>
     <span class="chip">Ollama local</span>
     <span class="chip">â‚¹0 inference</span>
@@ -518,9 +518,9 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   const commands = {
     help: "commands: whoami, stack, contact, stats, clear, exit",
     whoami: "Anuj â€” solo systems architect, Bareilly, India. Building M4ST.",
-    stack: "CrewAI Â· 21 MCP servers Â· FalkorDB Â· ChromaDB Â· Ollama (local) Â· 11 free-tier LLM providers",
-    stats: "21 MCP servers Â· 11 free LLM providers Â· â‚¹0 cloud cost Â· 12ms cache latency Â· 40% cost cut",
-    contact: "github.com/m4stanuj Â· linkedin.com/in/mast-anuj Â· x.com/m4stanuj",
+    stack: "CrewAI Â\u00B7 21 MCP servers Â\u00B7 FalkorDB Â\u00B7 ChromaDB Â\u00B7 Ollama (local) Â\u00B7 11 free-tier LLM providers",
+    stats: "21 MCP servers Â\u00B7 11 free LLM providers Â\u00B7 â‚¹0 cloud cost Â\u00B7 12ms cache latency Â\u00B7 40% cost cut",
+    contact: "github.com/m4stanuj Â\u00B7 linkedin.com/in/mast-anuj Â\u00B7 x.com/m4stanuj",
   };
   function open(){
     overlay.classList.add('open');

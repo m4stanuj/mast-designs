@@ -37,6 +37,7 @@ Each folder is a self-contained single-page HTML design, synced to the live netw
 - `health-check.ps1` — verifies all 14 sites are live and links resolve.
 - `seo-audit.ps1` — audits meta / robots / sitemap / IndexNow keys.
 - `sites.json` — machine-readable registry of the live network.
+- `python tools/check_registry.py` — offline check for duplicate origins, mismatched primary entries, and missing source pages. Use `folder` when a site's source directory differs from its name.
 
 ## Stack
 
